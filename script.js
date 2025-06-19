@@ -82,7 +82,7 @@ async function loadEvents() {
                             <span class="league-name">${event.league}</span>
                         </div>
                         <button class="copy-url-button" data-id="${event.id}" title="Copy event URL">
-                            <i class="fa-thin fa-copy"></i>
+                            <i class="fa-solid fa-copy"></i>
                         </button>
                     </div>
                     <div class="event-details">
