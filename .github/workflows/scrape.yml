@@ -1,16 +1,16 @@
 name: Scrape Events
 on:
   schedule:
-    - cron: '0 * * * *' # Jalankan setiap jam (07:00, 08:00, dst. WIB)
-  workflow_dispatch: # Izinkan jalankan manual
+    - cron: '0 * * * *' # Run every hour (00:00, 01:00, etc. UTC; 07:00, 08:00, etc. WIB)
+  workflow_dispatch: # Allow manual trigger
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Update to v4 for consistency
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Update to v5 for latest Python setup
         with:
           python-version: '3.9'
       - name: Install Dependencies
@@ -18,10 +18,11 @@ jobs:
       - name: Run Scrape Script
         run: python scraper/scrape_events.py
       - name: Upload Debug HTML
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # Updated to v4
         with:
           name: debug-html
           path: debug.html
+          retention-days: 5
       - name: Check for Changes and Commit
         run: |
           if git diff --quiet event.json; then
