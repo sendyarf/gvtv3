@@ -39,7 +39,8 @@ def scrape_events():
         'Accept-Language': 'en-US,en;q=0.5',
         'Accept-Encoding': 'gzip, deflate, br',
         'Connection': 'keep-alive',
-        'Upgrade-Insecure-Requests': '1'
+        'Upgrade-Insecure-Requests': '1',
+        'Cache-Control': 'no-cache'
     }
     output_path = os.path.join(os.getcwd(), 'event.json')
 
@@ -49,7 +50,7 @@ def scrape_events():
         response.raise_for_status()
         print(f"Response status code: {response.status_code}")
 
-        # Simpan HTML mentah untuk debugging
+        # Save raw HTML for debugging
         with open('debug.html', 'w', encoding='utf-8') as f:
             f.write(response.text)
         print("Saved raw HTML to debug.html")
@@ -117,26 +118,30 @@ def scrape_events():
         if not events:
             print("No valid events found after processing. Check HTML structure or server availability.")
 
+        # Ensure event.json is written even if empty to confirm script execution
         existing_events = read_existing_json(output_path)
         existing_hash = get_json_hash(existing_events)
         new_hash = get_json_hash(events)
 
-        if existing_hash != new_hash:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(events, f, indent=2, ensure_ascii=False)
-            print(f"Saved {len(events)} events to {output_path} (data changed)")
-            return events, True
-        else:
-            print(f"No changes detected, skipping save to {output_path}")
-            return events, False
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(events, f, indent=2, ensure_ascii=False)
+        print(f"Saved {len(events)} events to {output_path}")
+
+        return events, existing_hash != new_hash
 
     except requests.RequestException as e:
         print(f"Failed to fetch {url}: {str(e)}")
         with open('debug.html', 'w', encoding='utf-8') as f:
             f.write(response.text if 'response' in locals() else 'No response')
+        # Write empty event.json to indicate failure
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump([], f, indent=2, ensure_ascii=False)
+        print(f"Saved empty event.json to {output_path} due to fetch failure")
         return [], False
 
 if __name__ == '__main__':
     events, changed = scrape_events()
     if not events:
         print("No events scraped. Check debug.html for raw HTML.")
+    else:
+        print(f"Scraped {len(events)} events successfully.")
