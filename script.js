@@ -593,35 +593,67 @@ function startPeriodicEventCheck() {
     }, 60000);
 }
 
-// Initialize on page load
 window.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM fully loaded");
     await loadEvents();
     await loadChannels();
-    const activeEventId = sessionStorage.getItem('activeEventId');
-    const activeServerUrl = sessionStorage.getItem(`activeServerUrl_${activeEventId}`);
-    if (activeEventId && activeServerUrl) {
-        const eventContainer = document.querySelector(`.event-container[data-id="${activeEventId}"]`);
+
+    // Parse URL to extract event ID
+    const path = window.location.pathname; // e.g., "/barcamadrid"
+    const eventIdFromUrl = path.replace(/^\/+/, ''); // Remove leading slashes
+    console.log("Event ID from URL:", eventIdFromUrl);
+
+    if (eventIdFromUrl) {
+        const eventContainer = document.querySelector(`.event-container[data-id="${eventIdFromUrl}"]`);
         if (eventContainer) {
-            const serverButton = eventContainer.querySelector(`.server-button[data-url="${activeServerUrl}"]`);
+            const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${eventIdFromUrl}`);
+            const defaultServerUrl = eventContainer.getAttribute('data-url');
+            const videoUrl = savedServerUrl || defaultServerUrl;
+            const serverButton = eventContainer.querySelector(`.server-button[data-url="${videoUrl}"]`);
             if (serverButton) selectServerButton(serverButton);
-            loadEventVideo(eventContainer, activeServerUrl, false);
+            loadEventVideo(eventContainer, videoUrl, false);
             const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
             const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
             const matchDateTime = parseEventDateTime(matchDate, matchTime);
             if (new Date() >= matchDateTime) {
                 toggleServerButtons(eventContainer, true);
-                console.log(`Restored server buttons for saved live event ${activeEventId}`);
+                console.log(`Showing server buttons for URL-loaded event ${eventIdFromUrl}`);
             }
-            return;
+            sessionStorage.setItem('activeEventId', eventIdFromUrl);
+            sessionStorage.removeItem('activeChannelId');
+            setActiveHoverEffect(eventIdFromUrl);
+            switchContent('live-event');
+        } else {
+            console.warn(`No event found for ID: ${eventIdFromUrl}`);
+            // Optional: Redirect to home or show error
+            // window.location.href = 'https://govoet.pages.dev/';
         }
-    }
-    const activeChannelId = sessionStorage.getItem('activeChannelId');
-    if (activeChannelId) {
-        const channelContainer = document.querySelector(`.channel-container[data-id="${activeChannelId}"]`);
-        if (channelContainer) {
-            channelContainer.classList.add('selected');
-            loadEventVideo(channelContainer);
+    } else {
+        const activeEventId = sessionStorage.getItem('activeEventId');
+        const activeServerUrl = sessionStorage.getItem(`activeServerUrl_${activeEventId}`);
+        if (activeEventId && activeServerUrl) {
+            const eventContainer = document.querySelector(`.event-container[data-id="${activeEventId}"]`);
+            if (eventContainer) {
+                const serverButton = eventContainer.querySelector(`.server-button[data-url="${activeServerUrl}"]`);
+                if (serverButton) selectServerButton(serverButton);
+                loadEventVideo(eventContainer, activeServerUrl, false);
+                const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
+                const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
+                const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                if (new Date() >= matchDateTime) {
+                    toggleServerButtons(eventContainer, true);
+                    console.log(`Restored server buttons for saved live event ${activeEventId}`);
+                }
+                return;
+            }
+        }
+        const activeChannelId = sessionStorage.getItem('activeChannelId');
+        if (activeChannelId) {
+            const channelContainer = document.querySelector(`.channel-container[data-id="${activeChannelId}"]`);
+            if (channelContainer) {
+                channelContainer.classList.add('selected');
+                loadEventVideo(channelContainer);
+            }
         }
     }
 });
