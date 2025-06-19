@@ -43,8 +43,9 @@
         "duration": "2.5",
         "icon": "https://via.placeholder.com/30.png?text=Soccer",
         "servers": [
-            { "url": "https://hls.govoet.my.id/?id=ITALIA1", "label": "ESPN ES" },
-            { "url": "https://shakas.govoet.my.id/?id=SKYSPORTS", "label": "Sky Sports" }
+            { "url": "https://shakas.govoet.my.id/?id=BEIN2AUS", "label": "beIN 2 AUS" },
+            { "url": "https://hls.govoet.my.id/?id=ITALIA1", "label": "ITALIA 1" },
+            { "url": "https://shakas.govoet.my.id/?id=BEIN1AUS", "label": "beIN 1 AUS" }
         ]
     },
     {
