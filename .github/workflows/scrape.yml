@@ -8,17 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Update to v4 for consistency
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v5 # Update to v5 for latest Python setup
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install selenium webdriver-manager requests beautifulsoup4
       - name: Run Scrape Script
-        run: python scraper/scrape_events.py
+        run: python scraper/scrape_events_selenium.py
       - name: Upload Debug HTML
-        uses: actions/upload-artifact@v4 # Updated to v4
+        uses: actions/upload-artifact@v4
         with:
           name: debug-html
           path: debug.html

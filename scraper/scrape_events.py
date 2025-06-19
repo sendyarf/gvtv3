@@ -1,10 +1,15 @@
-import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import json
 import re
 from datetime import datetime
 import os
 import hashlib
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def clean_event_id(event_id):
     return re.sub(r'[^a-z0-9]', '', event_id.lower())
@@ -33,32 +38,31 @@ def read_existing_json(file_path):
 
 def scrape_events():
     url = 'https://govoet720.blogspot.com/'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Connection': 'keep-alive',
-        'Upgrade-Insecure-Requests': '1',
-        'Cache-Control': 'no-cache'
-    }
     output_path = os.path.join(os.getcwd(), 'event.json')
+
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36')
 
     try:
         print(f"Fetching {url}")
-        response = requests.get(url, headers=headers, timeout=15)
-        response.raise_for_status()
-        print(f"Response status code: {response.status_code}")
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver.get(url)
 
-        # Save raw HTML for debugging
+        # Wait for .event-list to appear
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.event-list')))
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+        # Save rendered HTML for debugging
         with open('debug.html', 'w', encoding='utf-8') as f:
-            f.write(response.text)
-        print("Saved raw HTML to debug.html")
+            f.write(driver.page_source)
+        print("Saved rendered HTML to debug.html")
 
-        soup = BeautifulSoup(response.text, 'html.parser')
         event_list = soup.select_one('.event-list')
         if not event_list:
-            print("No .event-list found in HTML. Check debug.html for content.")
+            print("No .event-list found in rendered HTML. Check debug.html for content.")
             return [], False
 
         event_cards = event_list.select('.event-card')
@@ -118,7 +122,6 @@ def scrape_events():
         if not events:
             print("No valid events found after processing. Check HTML structure or server availability.")
 
-        # Ensure event.json is written even if empty to confirm script execution
         existing_events = read_existing_json(output_path)
         existing_hash = get_json_hash(existing_events)
         new_hash = get_json_hash(events)
@@ -129,19 +132,22 @@ def scrape_events():
 
         return events, existing_hash != new_hash
 
-    except requests.RequestException as e:
-        print(f"Failed to fetch {url}: {str(e)}")
+    except Exception as e:
+        print(f"Failed to scrape {url}: {str(e)}")
         with open('debug.html', 'w', encoding='utf-8') as f:
-            f.write(response.text if 'response' in locals() else 'No response')
-        # Write empty event.json to indicate failure
+            f.write(driver.page_source if 'driver' in locals() else 'No page source')
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump([], f, indent=2, ensure_ascii=False)
-        print(f"Saved empty event.json to {output_path} due to fetch failure")
+        print(f"Saved empty event.json to {output_path} due to scrape failure")
         return [], False
+    finally:
+        if 'driver' in locals():
+            driver.quit()
+            print("Browser closed")
 
 if __name__ == '__main__':
     events, changed = scrape_events()
     if not events:
-        print("No events scraped. Check debug.html for raw HTML.")
+        print("No events scraped. Check debug.html for rendered HTML.")
     else:
         print(f"Scraped {len(events)} events successfully.")
