@@ -1,314 +1,314 @@
 [
-    {
-      "id": "manchestercitywydad",
-      "league": "FIFA Club World Cup - Round 1",
-      "team1": {
-        "name": "Manchester City",
-        "logo": "https://static.flashscore.com/res/image/data/UXcqj7HG-lQuhqN8N.png"
-      },
-      "team2": {
-        "name": "Wydad",
-        "logo": "https://static.flashscore.com/res/image/data/tEJw0Ph5-GSoKqW7o.png"
-      },
-      "kickoff_date": "2025-06-18",
-      "kickoff_time": "23:00",
-      "match_date": "2025-06-18",
-      "match_time": "23:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-          "label": "CH-DE"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        }
-      ]
+  {
+    "id": "manchestercitywydad",
+    "league": "FIFA Club World Cup - Round 1",
+    "team1": {
+      "name": "Manchester City",
+      "logo": "https://static.flashscore.com/res/image/data/UXcqj7HG-lQuhqN8N.png"
     },
-    {
-      "id": "realmadridalhilal",
-      "league": "FIFA Club World Cup - Round 1",
-      "team1": {
-        "name": "Real Madrid",
-        "logo": "https://static.flashscore.com/res/image/data/A7kHoxZA-fcDVLdrL.png"
-      },
-      "team2": {
-        "name": "Al Hilal",
-        "logo": "https://static.flashscore.com/res/image/data/8YrWgbEG-joUWHZ1t.png"
-      },
-      "kickoff_date": "2025-06-19",
-      "kickoff_time": "02:00",
-      "match_date": "2025-06-19",
-      "match_time": "02:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=TUDNUSA",
-          "label": "CH-ES"
-        },
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-          "label": "CH-DE"
-        }
-      ]
+    "team2": {
+      "name": "Wydad",
+      "logo": "https://static.flashscore.com/res/image/data/tEJw0Ph5-GSoKqW7o.png"
     },
-    {
-      "id": "pachucasalzburg",
-      "league": "FIFA Club World Cup - Round 1",
-      "team1": {
-        "name": "Pachuca",
-        "logo": "https://static.flashscore.com/res/image/data/x4yMKjh5-zFZbB1JF.png"
+    "kickoff_date": "2025-06-18",
+    "kickoff_time": "23:00",
+    "match_date": "2025-06-18",
+    "match_time": "23:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       },
-      "team2": {
-        "name": "Salzburg",
-        "logo": "https://static.flashscore.com/res/image/data/j9rxqbYg-McAr23w3.png"
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-EN"
       },
-      "kickoff_date": "2025-06-19",
-      "kickoff_time": "05:00",
-      "match_date": "2025-06-19",
-      "match_time": "05:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      }
+    ]
+  },
+  {
+    "id": "realmadridalhilal",
+    "league": "FIFA Club World Cup - Round 1",
+    "team1": {
+      "name": "Real Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/A7kHoxZA-fcDVLdrL.png"
     },
-    {
-      "id": "alainjuventus",
-      "league": "FIFA Club World Cup - Round 1",
-      "team1": {
-        "name": "Al Ain",
-        "logo": "https://static.flashscore.com/res/image/data/dS0NzAil-OKa9P8WR.png"
-      },
-      "team2": {
-        "name": "Juventus",
-        "logo": "https://static.flashscore.com/res/image/data/CbDOFGyS-EXzXDYgS.png"
-      },
-      "kickoff_date": "2025-06-19",
-      "kickoff_time": "08:00",
-      "match_date": "2025-06-19",
-      "match_time": "08:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://hls.govoet.my.id/?id=ITALIA1",
-          "label": "CH-IT"
-        },
-        {
-          "url": "https://kilatpink.blogspot.com/?id=ITALIA1",
-          "label": "CH-IT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
+    "team2": {
+      "name": "Al Hilal",
+      "logo": "https://static.flashscore.com/res/image/data/8YrWgbEG-joUWHZ1t.png"
     },
-    {
-      "id": "palmeirasalahly",
-      "league": "FIFA Club World Cup - Round 2",
-      "team1": {
-        "name": "Palmeiras",
-        "logo": "https://static.flashscore.com/res/image/data/xCtpyPHG-ALgHCh57.png"
+    "kickoff_date": "2025-06-19",
+    "kickoff_time": "02:00",
+    "match_date": "2025-06-19",
+    "match_time": "02:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=TUDNUSA",
+        "label": "CH-ES"
       },
-      "team2": {
-        "name": "Al Ahly",
-        "logo": "https://static.flashscore.com/res/image/data/pSJg75YA-CWnyifXm.png"
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       },
-      "kickoff_date": "2025-06-19",
-      "kickoff_time": "23:00",
-      "match_date": "2025-06-19",
-      "match_time": "23:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
+      }
+    ]
+  },
+  {
+    "id": "pachucasalzburg",
+    "league": "FIFA Club World Cup - Round 1",
+    "team1": {
+      "name": "Pachuca",
+      "logo": "https://static.flashscore.com/res/image/data/x4yMKjh5-zFZbB1JF.png"
     },
-    {
-      "id": "intermiamifcporto",
-      "league": "FIFA Club World Cup - Round 2",
-      "team1": {
-        "name": "Inter Miami",
-        "logo": "https://static.flashscore.com/res/image/data/SbujguWg-UwKTVGeG.png"
-      },
-      "team2": {
-        "name": "FC Porto",
-        "logo": "https://static.flashscore.com/res/image/data/2sDzOhWg-Kth3Rz1C.png"
-      },
-      "kickoff_date": "2025-06-20",
-      "kickoff_time": "02:00",
-      "match_date": "2025-06-20",
-      "match_time": "02:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=TUDNUSA",
-          "label": "CH-ES"
-        },
-        {
-          "url": "https://hls.govoet.my.id/?id=ITALIA1",
-          "label": "CH-IT"
-        },
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://kilatpink.blogspot.com/?id=ITALIA1",
-          "label": "CH-IT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
+    "team2": {
+      "name": "Salzburg",
+      "logo": "https://static.flashscore.com/res/image/data/j9rxqbYg-McAr23w3.png"
     },
-    {
-      "id": "seattlesoundersatlmadrid",
-      "league": "FIFA Club World Cup - Round 2",
-      "team1": {
-        "name": "Seattle Sounders",
-        "logo": "https://static.flashscore.com/res/image/data/2NlXcSAr-Q7Ql2Qbi.png"
+    "kickoff_date": "2025-06-19",
+    "kickoff_time": "05:00",
+    "match_date": "2025-06-19",
+    "match_time": "05:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       },
-      "team2": {
-        "name": "Atl. Madrid",
-        "logo": "https://static.flashscore.com/res/image/data/CjfjIsYg-nLBjwR1F.png"
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
       },
-      "kickoff_date": "2025-06-20",
-      "kickoff_time": "05:00",
-      "match_date": "2025-06-20",
-      "match_time": "05:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  },
+  {
+    "id": "alainjuventus",
+    "league": "FIFA Club World Cup - Round 1",
+    "team1": {
+      "name": "Al Ain",
+      "logo": "https://static.flashscore.com/res/image/data/dS0NzAil-OKa9P8WR.png"
     },
-    {
-      "id": "psgbotafogorj",
-      "league": "FIFA Club World Cup - Round 2",
-      "team1": {
-        "name": "PSG",
-        "logo": "https://static.flashscore.com/res/image/data/EskJufg5-A7UDDuOO.png"
+    "team2": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/CbDOFGyS-EXzXDYgS.png"
+    },
+    "kickoff_date": "2025-06-19",
+    "kickoff_time": "08:00",
+    "match_date": "2025-06-19",
+    "match_time": "08:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       },
-      "team2": {
-        "name": "Botafogo RJ",
-        "logo": "https://static.flashscore.com/res/image/data/jBDSUABr-rJBthgZj.png"
+      {
+        "url": "https://hls.govoet.my.id/?id=ITALIA1",
+        "label": "CH-IT"
       },
-      "kickoff_date": "2025-06-20",
-      "kickoff_time": "08:00",
-      "match_date": "2025-06-20",
-      "match_time": "08:00",
-      "duration": "3.1",
-      "icon": "https://via.placeholder.com/30.png?text=Soccer",
-      "servers": [
-        {
-          "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-          "label": "CH-PT"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-          "label": "CH-EN"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
-        {
-          "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-          "label": "CH-ES"
-        }
-      ]
-    }
-  ]
+      {
+        "url": "https://kilatpink.blogspot.com/?id=ITALIA1",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  },
+  {
+    "id": "palmeirasalahly",
+    "league": "FIFA Club World Cup - Round 2",
+    "team1": {
+      "name": "Palmeiras",
+      "logo": "https://static.flashscore.com/res/image/data/xCtpyPHG-ALgHCh57.png"
+    },
+    "team2": {
+      "name": "Al Ahly",
+      "logo": "https://static.flashscore.com/res/image/data/pSJg75YA-CWnyifXm.png"
+    },
+    "kickoff_date": "2025-06-19",
+    "kickoff_time": "23:00",
+    "match_date": "2025-06-19",
+    "match_time": "23:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  },
+  {
+    "id": "intermiamifcporto",
+    "league": "FIFA Club World Cup - Round 2",
+    "team1": {
+      "name": "Inter Miami",
+      "logo": "https://static.flashscore.com/res/image/data/SbujguWg-UwKTVGeG.png"
+    },
+    "team2": {
+      "name": "FC Porto",
+      "logo": "https://static.flashscore.com/res/image/data/2sDzOhWg-Kth3Rz1C.png"
+    },
+    "kickoff_date": "2025-06-20",
+    "kickoff_time": "02:00",
+    "match_date": "2025-06-20",
+    "match_time": "02:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=TUDNUSA",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=ITALIA1",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=ITALIA1",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  },
+  {
+    "id": "seattlesoundersatlmadrid",
+    "league": "FIFA Club World Cup - Round 2",
+    "team1": {
+      "name": "Seattle Sounders",
+      "logo": "https://static.flashscore.com/res/image/data/2NlXcSAr-Q7Ql2Qbi.png"
+    },
+    "team2": {
+      "name": "Atl. Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/CjfjIsYg-nLBjwR1F.png"
+    },
+    "kickoff_date": "2025-06-20",
+    "kickoff_time": "05:00",
+    "match_date": "2025-06-20",
+    "match_time": "05:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  },
+  {
+    "id": "psgbotafogorj",
+    "league": "FIFA Club World Cup - Round 2",
+    "team1": {
+      "name": "PSG",
+      "logo": "https://static.flashscore.com/res/image/data/EskJufg5-A7UDDuOO.png"
+    },
+    "team2": {
+      "name": "Botafogo RJ",
+      "logo": "https://static.flashscore.com/res/image/data/jBDSUABr-rJBthgZj.png"
+    },
+    "kickoff_date": "2025-06-20",
+    "kickoff_time": "08:00",
+    "match_date": "2025-06-20",
+    "match_time": "08:00",
+    "duration": "3.1",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+    ]
+  }
+]
