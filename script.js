@@ -454,7 +454,7 @@ function setupChannels() {
 function loadEventVideo(container, serverUrl = null, updateSession = true) {
     const id = container.getAttribute('data-id');
     const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${id}`);
-    const videoUrl = serverUrl || savedServerUrl || container.getAttribute('data-url') || 'https://bikinbaru96.blogspot.com/2024/06/blog-post_13.html';
+    const videoUrl = serverUrl || savedServerUrl || container.getAttribute('data-url') || 'https://listcanal.blogspot.com/';
     const isChannel = container.classList.contains('channel-container');
     const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
     const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
@@ -491,7 +491,7 @@ function loadEventVideo(container, serverUrl = null, updateSession = true) {
 
     if (!videoUrl || videoUrl === 'about:blank') {
         console.error(`Invalid video URL for ${id}: ${videoUrl}`);
-        videoIframe.src = 'https://bikinbaru96.blogspot.com/2024/06/blog-post_13.html';
+        videoIframe.src = 'https://listcanal.blogspot.com/';
         videoIframe.style.display = 'block';
         videoPlaceholder.style.display = 'none';
         videoCountdownContainer.style.display = 'none';

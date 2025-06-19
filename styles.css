@@ -369,6 +369,7 @@ html, body {
 }
 
 .sport-icon {
+    display: none;
     width: 28px;
     height: auto;
     margin-right: 12px;
