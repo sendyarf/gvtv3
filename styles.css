@@ -335,6 +335,21 @@ html, body {
 
 .server-button:hover {
     background-color: #3AAFA9;
+}.copy-url-button {
+    background: none;
+    border: none;
+    color: #2B7A78;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-url-button:hover {
+    color: #3AAFA9;
 }
 
 .event-header {
