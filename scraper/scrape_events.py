@@ -11,11 +11,12 @@ def clean_event_id(event_id):
 
 def convert_date_format(date_str):
     try:
-        return datetime.strptime(date_str, '%Y-%m-%d').strftime('%Y-%m-%d')
+        return datetime.strptime(date_str, '%d.%m.%Y').strftime('%Y-%m-%d')
     except ValueError:
         try:
-            return datetime.strptime(date_str, '%d.%m.%Y').strftime('%Y-%m-%d')
+            return datetime.strptime(date_str, '%Y-%m-%d').strftime('%Y-%m-%d')
         except ValueError:
+            print(f"Invalid date format: {date_str}")
             return '2025-01-01'
 
 def get_json_hash(data):
@@ -27,30 +28,39 @@ def read_existing_json(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
+        print(f"No existing event.json found at {file_path}, starting fresh")
         return []
 
 def scrape_events():
     url = 'https://govoet720.blogspot.com/'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5',
-        'Connection': 'keep-alive'
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
     }
     output_path = os.path.join(os.getcwd(), 'event.json')
 
     try:
         print(f"Fetching {url}")
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+        print(f"Response status code: {response.status_code}")
 
-        # Log HTML untuk debugging
+        # Simpan HTML mentah untuk debugging
         with open('debug.html', 'w', encoding='utf-8') as f:
             f.write(response.text)
-        print(f"Saved raw HTML to debug.html")
+        print("Saved raw HTML to debug.html")
 
-        event_cards = soup.select('.event-card')
+        soup = BeautifulSoup(response.text, 'html.parser')
+        event_list = soup.select_one('.event-list')
+        if not event_list:
+            print("No .event-list found in HTML. Check debug.html for content.")
+            return [], False
+
+        event_cards = event_list.select('.event-card')
         print(f"Found {len(event_cards)} event(s)")
 
         events = []
@@ -94,7 +104,7 @@ def scrape_events():
                         'kickoff_time': match_time,
                         'match_date': match_date,
                         'match_time': match_time,
-                        'duration': '2.5',
+                        'duration': '3.1',
                         'icon': 'https://via.placeholder.com/30.png?text=Soccer',
                         'servers': servers
                     }
@@ -103,6 +113,9 @@ def scrape_events():
 
             except Exception as e:
                 print(f"Error processing event {index}: {str(e)}")
+
+        if not events:
+            print("No valid events found after processing. Check HTML structure or server availability.")
 
         existing_events = read_existing_json(output_path)
         existing_hash = get_json_hash(existing_events)

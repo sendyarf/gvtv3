@@ -1,7 +1,7 @@
 name: Scrape Events
 on:
   schedule:
-    - cron: '0 * * * *' # Jalankan setiap jam (00:00, 01:00, dst. UTC; 07:00, 08:00, dst. WIB)
+    - cron: '0 * * * *' # Jalankan setiap jam (07:00, 08:00, dst. WIB)
   workflow_dispatch: # Izinkan jalankan manual
 jobs:
   scrape:
@@ -17,6 +17,11 @@ jobs:
         run: pip install requests beautifulsoup4
       - name: Run Scrape Script
         run: python scraper/scrape_events.py
+      - name: Upload Debug HTML
+        uses: actions/upload-artifact@v3
+        with:
+          name: debug-html
+          path: debug.html
       - name: Check for Changes and Commit
         run: |
           if git diff --quiet event.json; then
