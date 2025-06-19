@@ -11,17 +11,18 @@ def clean_event_id(event_id):
 
 def convert_date_format(date_str):
     try:
-        return datetime.strptime(date_str, '%d.%m.%Y').strftime('%Y-%m-%d')
+        return datetime.strptime(date_str, '%Y-%m-%d').strftime('%Y-%m-%d')
     except ValueError:
-        return '2025-01-01'
+        try:
+            return datetime.strptime(date_str, '%d.%m.%Y').strftime('%Y-%m-%d')
+        except ValueError:
+            return '2025-01-01'
 
 def get_json_hash(data):
-    """Menghitung hash dari data JSON untuk perbandingan."""
     json_str = json.dumps(data, sort_keys=True, ensure_ascii=False)
     return hashlib.sha256(json_str.encode('utf-8')).hexdigest()
 
 def read_existing_json(file_path):
-    """Membaca file JSON yang ada, kembalikan [] jika tidak ada."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -31,7 +32,10 @@ def read_existing_json(file_path):
 def scrape_events():
     url = 'https://govoet720.blogspot.com/'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Connection': 'keep-alive'
     }
     output_path = os.path.join(os.getcwd(), 'event.json')
 
@@ -40,6 +44,11 @@ def scrape_events():
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Log HTML untuk debugging
+        with open('debug.html', 'w', encoding='utf-8') as f:
+            f.write(response.text)
+        print(f"Saved raw HTML to debug.html")
 
         event_cards = soup.select('.event-card')
         print(f"Found {len(event_cards)} event(s)")
@@ -95,26 +104,26 @@ def scrape_events():
             except Exception as e:
                 print(f"Error processing event {index}: {str(e)}")
 
-        # Baca file JSON yang ada
         existing_events = read_existing_json(output_path)
         existing_hash = get_json_hash(existing_events)
         new_hash = get_json_hash(events)
 
-        # Simpan hanya jika ada perubahan
         if existing_hash != new_hash:
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(events, f, indent=2, ensure_ascii=False)
             print(f"Saved {len(events)} events to {output_path} (data changed)")
-            return events, True  # Data berubah
+            return events, True
         else:
             print(f"No changes detected, skipping save to {output_path}")
-            return events, False  # Tidak ada perubahan
+            return events, False
 
     except requests.RequestException as e:
         print(f"Failed to fetch {url}: {str(e)}")
+        with open('debug.html', 'w', encoding='utf-8') as f:
+            f.write(response.text if 'response' in locals() else 'No response')
         return [], False
 
 if __name__ == '__main__':
     events, changed = scrape_events()
     if not events:
-        print("No events scraped. Page may be JavaScript-rendered or blocked. Consider using Selenium.")
+        print("No events scraped. Check debug.html for raw HTML.")
