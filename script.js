@@ -81,6 +81,9 @@ async function loadEvents() {
                             <img src="${event.icon}" class="sport-icon" onerror="this.src='https://placehold.co/30x30/png?text=Icon';">
                             <span class="league-name">${event.league}</span>
                         </div>
+                        <button class="copy-url-button" data-id="${event.id}" title="Copy event URL">
+                            <i class="fa-thin fa-copy"></i>
+                        </button>
                     </div>
                     <div class="event-details">
                         <div class="team-left">
@@ -126,6 +129,7 @@ async function loadEvents() {
 
         liveEventContent.insertAdjacentHTML('beforeend', '<div class="spacer"></div>');
         setupEvents();
+        setupCopyButtons(); // Initialize copy buttons
 
         const savedEventId = sessionStorage.getItem('activeEventId');
         const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${savedEventId}`);
@@ -144,9 +148,64 @@ async function loadEvents() {
                 }
             }
         }
+
+        // Handle URL-based event loading
+        const path = window.location.pathname;
+        const eventIdFromUrl = path.replace(/^\/+/, '');
+        console.log("Event ID from URL:", eventIdFromUrl);
+        if (eventIdFromUrl) {
+            const eventContainer = document.querySelector(`.event-container[data-id="${eventIdFromUrl}"]`);
+            if (eventContainer) {
+                const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${eventIdFromUrl}`);
+                const defaultServerUrl = eventContainer.getAttribute('data-url');
+                const videoUrl = savedServerUrl || defaultServerUrl;
+                const serverButton = eventContainer.querySelector(`.server-button[data-url="${videoUrl}"]`);
+                if (serverButton) selectServerButton(serverButton);
+                loadEventVideo(eventContainer, videoUrl, false);
+                const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
+                const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
+                const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                if (new Date() >= matchDateTime) {
+                    toggleServerButtons(eventContainer, true);
+                    console.log(`Showing server buttons for URL-loaded event ${eventIdFromUrl}`);
+                }
+                sessionStorage.setItem('activeEventId', eventIdFromUrl);
+                sessionStorage.removeItem('activeChannelId');
+                setActiveHoverEffect(eventIdFromUrl);
+                switchContent('live-event');
+            } else {
+                console.warn(`No event found for ID: ${eventIdFromUrl}`);
+            }
+        }
     } catch (error) {
         console.error("Error loading events:", error);
     }
+}
+
+// Sets up event listeners for copy buttons
+function setupCopyButtons() {
+    const copyButtons = document.querySelectorAll('.copy-url-button');
+    console.log("Copy Buttons Found:", copyButtons.length);
+    copyButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent triggering event container click
+            const eventId = button.getAttribute('data-id');
+            const eventUrl = `${window.location.origin}/${eventId}`;
+            navigator.clipboard.writeText(eventUrl).then(() => {
+                console.log(`Copied URL for event ${eventId}: ${eventUrl}`);
+                // Provide visual feedback
+                const icon = button.querySelector('i');
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check');
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                }, 2000);
+            }).catch(err => {
+                console.error(`Failed to copy URL for event ${eventId}:`, err);
+            });
+        });
+    });
 }
 
 // Checks if the device is mobile
@@ -593,6 +652,7 @@ function startPeriodicEventCheck() {
     }, 60000);
 }
 
+// Initialize on page load
 window.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM fully loaded");
     await loadEvents();
