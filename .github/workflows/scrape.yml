@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: pip install selenium webdriver-manager requests beautifulsoup4
       - name: Run Scrape Script
-        run: python scraper/scrape_events_selenium.py
+        run: python scraper/scrape_events.py
       - name: Upload Debug HTML
         uses: actions/upload-artifact@v4
         with:
