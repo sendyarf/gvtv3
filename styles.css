@@ -71,6 +71,7 @@ html, body {
     margin-bottom: 12px;
     font-size: 28px;
     font-weight: 500;
+
 }
 
 .countdown-timer {
@@ -193,7 +194,7 @@ html, body {
     transition: background-color 0.3s ease;
     margin: 0;
     border-left: 1px solid #2B7A78;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Teko', sans-serif;
     font-size: 18px;
     font-weight: 500;
 }
@@ -224,7 +225,7 @@ html, body {
     transition: background-color 0.3s ease;
     margin: 0;
     border-left: 1px solid #FEFFFF;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Teko', sans-serif;
     font-size: 18px;
     font-weight: 500;
 }
@@ -364,6 +365,7 @@ html, body {
 .league-info {
     display: flex;
     align-items: center;
+    font-family: 'Teko', sans-serif;
 }
 
 .sport-icon {
