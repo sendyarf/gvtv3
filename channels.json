@@ -1,0 +1,16 @@
+[
+    {
+        "id": "channel1",
+        "name": "ESPN",
+        "logo": "https://via.placeholder.com/100x50.png?text=ESPN+Logo",
+        "url": "https://hls.govoet.my.id/?id=ESPN",
+        "status": "Online"
+    },
+    {
+        "id": "channel2",
+        "name": "CNN",
+        "logo": "https://via.placeholder.com/100x50.png?text=CNN+Logo",
+        "url": "https://shakas.govoet.my.id/?id=CNN",
+        "status": "Online"
+    }
+]

@@ -1,0 +1,648 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #FEFFFF;
+    font-family: 'Inter', sans-serif;
+    background-color: #17252A;
+    line-height: 1.4;
+}
+
+#main-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container {
+    flex: 1;
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe,
+.video-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.countdown-wrapper {
+    color: #FEFFFF;
+    font-size: 34px;
+    text-align: center;
+    background-color: rgba(23, 37, 42, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.03); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.countdown-title {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.countdown-timer {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.channel-container {
+    display: flex;
+    align-items: center;
+    background-color: #DEF2F1;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    flex-shrink: 0;
+    width: 90px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEFFFF;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.info-container {
+    margin-left: 12px;
+}
+
+.channel-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #17252A;
+}
+
+.status {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2B7A78;
+}
+
+.channel-container:hover,
+.channel-container.selected {
+    background-color: #3AAFA9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.channel-container:hover .channel-name,
+.channel-container.selected .channel-name {
+    color: #FEFFFF;
+}
+
+.channel-container:hover .status,
+.channel-container.selected .status {
+    color: #DEF2F1;
+}
+
+.sidebar {
+    flex: 0 0 400px;
+    background-color: #17252A;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-wrapper-top {
+    background-color: #2B7A78;
+    padding: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #17252A;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.menu-wrapper-bottom .downloadapk-button {
+    background-color: #3AAFA9;
+    color: #FEFFFF;
+}
+
+.menu-wrapper-bottom .downloadapk-button:hover {
+    background-color: #2B7A78;
+}
+
+.menu-wrapper-bottom .donasi-button {
+    background-color: #DEF2F1;
+    color: #17252A;
+}
+
+.menu-wrapper-bottom .donasi-button:hover {
+    background-color: #FEFFFF;
+}
+
+.menu-wrapper-bottom .menu-button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    border-left: 1px solid #2B7A78;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-wrapper-bottom .menu-button:first-child {
+    border-left: none;
+}
+
+.menu-wrapper-bottom .menu-button i {
+    margin-right: 8px;
+}
+
+.menu-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    background-color: #3AAFA9;
+    color: #FEFFFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    border-left: 1px solid #FEFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-button:first-child {
+    border-left: none;
+}
+
+.menu-button:hover {
+    background-color: #2B7A78;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+    padding: 10px;
+    display: none;
+    overflow-y: auto;
+    background-color: #17252A;
+}
+
+.sidebar-content.active {
+    display: block;
+}
+
+.event-container {
+    position: relative;
+    background-color: #DEF2F1;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.event-container:hover,
+.event-container.hover-effect {
+    background-color: #3AAFA9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.event-container:hover .league-name,
+.event-container.hover-effect .league-name,
+.event-container:hover .team-name,
+.event-container.hover-effect .team-name,
+.event-container:hover .kickoff-match-date,
+.event-container.hover-effect .kickoff-match-date,
+.event-container:hover .kickoff-match-time,
+.event-container.hover-effect .kickoff-match-time {
+    color: #FEFFFF;
+}
+
+.live-label {
+    display: none;
+    background-color: #2B7A78;
+    color: #FEFFFF;
+    padding: 4px 10px;
+    font-size: 0.65em;
+    font-weight: 500;
+    border-radius: 4px;
+    text-align: center;
+    margin: 8px auto 0;
+    width: fit-content;
+}
+
+.server-buttons {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 0;
+    margin-top: 12px;
+    width: 100%;
+    font-size: 0.75em;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+}
+
+.server-button {
+    background-color: #2B7A78;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #FEFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    min-width: 70px;
+    max-width: 130px;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+.server-button.active {
+    background-color: #3AAFA9;
+    border: 1px solid #2B7A78;
+}
+
+.server-button:hover {
+    background-color: #3AAFA9;
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.league-info {
+    display: flex;
+    align-items: center;
+}
+
+.sport-icon {
+    width: 28px;
+    height: auto;
+    margin-right: 12px;
+}
+
+.league-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #17252A;
+}
+
+.event-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.team-left, .team-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.team-logo {
+    width: 45px;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.team-name {
+    font-size: 0.75em;
+    font-weight: 500;
+    text-align: center;
+    color: #17252A;
+    min-height: 2.4em;
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.kickoff-match-date {
+    font-size: 0.75em;
+    font-weight: 400;
+    text-align: center;
+    color: #17252A;
+}
+
+.kickoff-match-time {
+    font-size: 0.75em;
+    font-weight: 400;
+    text-align: center;
+    color: #17252A;
+}
+
+.match-date, .match-time {
+    display: none;
+}
+
+.chat-iframe {
+    width: 100%;
+    height: 98%;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.spacer {
+    height: 140px;
+    width: 100%;
+    background: transparent;
+}
+
+/* Tablet Mode (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #main-content {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        flex: 0 0 320px;
+    }
+
+    .video-container {
+        flex: 1;
+    }
+
+    .menu-button {
+        font-size: 17px;
+        padding: 11px 0;
+    }
+
+    .channel-container {
+        padding: 11px;
+    }
+
+    .logo-container {
+        width: 85px;
+        height: 55px;
+    }
+
+    .channel-name {
+        font-size: 17px;
+    }
+
+    .status {
+        font-size: 13.5px;
+    }
+
+    .league-name {
+        font-size: 1.05em;
+    }
+
+    .team-logo {
+        width: 40px;
+    }
+
+    .team-name {
+        font-size: 0.9em;
+        min-height: 2.2em;
+    }
+
+    .kickoff-match-date, .kickoff-match-time {
+        font-size: 0.9em;
+    }
+
+    .server-button {
+        font-size: 0.8em;
+        padding: 5.5px 11px;
+        min-width: 65px;
+        max-width: 120px;
+    }
+
+    .countdown-wrapper {
+        font-size: 30px;
+        padding: 18px;
+    }
+
+    .countdown-title {
+        font-size: 25px;
+    }
+
+    .countdown-timer {
+        font-size: 34px;
+    }
+}
+
+/* Tablet: Portrait Orientation */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .sidebar {
+        flex: 0 0 300px;
+    }
+}
+
+/* Tablet: Landscape Orientation */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .sidebar {
+        flex: 0 0 340px;
+    }
+}
+
+/* Mobile Mode (≤ 768px) */
+@media (max-width: 768px) {
+    #main-content {
+        flex-direction: column;
+        display: flex;
+        height: 100vh;
+    }
+
+    .video-container {
+        width: 100%;
+        position: relative;
+        padding-top: 56.25%;
+    }
+
+    .video-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        flex-shrink: 0;
+        flex-grow: 1;
+        min-height: calc(100vh - 56.25vw);
+    }
+
+    .menu-button {
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .chat-iframe {
+        height: 80vh;
+        border: none;
+    }
+
+    .countdown-wrapper {
+        font-size: 26px;
+        padding: 15px;
+    }
+
+    .countdown-title {
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .countdown-timer {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .menu-wrapper-bottom {
+        position: fixed;
+        bottom: env(safe-area-inset-bottom);
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        padding-bottom: calc(0px + env(safe-area-inset-bottom));
+    }
+
+    .server-buttons {
+        padding: 4px 0;
+        gap: 4px;
+    }
+
+    .buttons-container {
+        gap: 4px;
+    }
+
+    .server-button {
+        font-size: 0.75em;
+        font-weight: 500;
+        padding: 5px 10px;
+        min-width: 60px;
+        max-width: 110px;
+    }
+
+    .team-left, .team-right {
+        width: 35%;
+    }
+
+    .match-info {
+        width: 25%;
+    }
+
+    .team-logo {
+        width: 35px;
+    }
+
+    .team-name {
+        font-size: 0.85em;
+        min-height: 2.3em;
+    }
+
+    .kickoff-match-date, .kickoff-match-time {
+        font-size: 0.85em;
+    }
+
+    .channel-container {
+        padding: 10px;
+    }
+
+    .logo-container {
+        width: 80px;
+        height: 50px;
+    }
+
+    .channel-name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .status {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .league-name {
+        font-size: 1em;
+        font-weight: 600;
+    }
+}

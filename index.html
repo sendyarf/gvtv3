@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="encrypted-media=(self 'https://hls.govoet.my.id' 'https://shakas.govoet.my.id')">
+    <title>KLTRATV | Free Streaming Sports</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-content">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <img id="video-placeholder" src="https://kltraid.pages.dev/images/home_11zon.jpg" alt="Hosted Image" style="display: block;">
+                <iframe id="video-iframe" src="about:blank" frameborder="0" title="Video Stream" allowfullscreen allow="encrypted-media" scrolling="no" style="display:none;"></iframe>
+                <div class="countdown-wrapper" id="video-countdown">
+                    <div class="countdown-title">Event will start in:</div>
+                    <div class="countdown-timer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="menu-wrapper-top">
+                <div class="menu-container">
+                    <button class="menu-button" onclick="switchContent('live-event')">Events</button>
+                    <button class="menu-button" onclick="switchContent('live-tv')">Channels</button>
+                    <button class="menu-button" onclick="switchContent('chat')">Livescore</button>
+                </div>
+            </div>
+
+            <div class="sidebar-content active" id="live-event">
+                <div id="content"></div>
+            </div>
+
+            <div class="sidebar-content" id="live-tv">
+                <div id="content"></div>
+            </div>
+
+            <div class="sidebar-content" id="chat">
+                <script type="text/javascript" src="https://www.livescore.bz/api.livescore.0.1.js" api="livescore" async></script>
+                <a href="https://www.livescore.bz" sport="football(soccer)" data-1="today" lang="en">Loading...</a>
+                <div class="spacer"></div>
+            </div>
+
+            <div class="menu-wrapper-bottom">
+                <div class="menu-container">
+                    <button class="menu-button downloadapk-button" onclick="window.open('https://govoet.my.id', '_blank')">
+                        <i class="fa-brands fa-android"></i>Telegram Channel
+                    </button>
+                    <button class="menu-button donasi-button" onclick="window.open('https://saweria.co/justfutball', '_blank')">
+                        <i class="fa-solid fa-mug-hot"></i> Saweria
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
