@@ -1,0 +1,32 @@
+name: Scrape Events
+on:
+  schedule:
+    - cron: '0 * * * *' # Jalankan setiap jam (00:00, 01:00, dst. UTC; 07:00, 08:00, dst. WIB)
+  workflow_dispatch: # Izinkan jalankan manual
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+      - name: Run Scrape Script
+        run: python scraper/scrape_events.py
+      - name: Check for Changes and Commit
+        run: |
+          if git diff --quiet event.json; then
+            echo "No changes in event.json, skipping commit"
+          else
+            git config user.name "GitHub Action"
+            git config user.email "action@github.com"
+            git add event.json
+            git commit -m "Update event.json with latest scraped events"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
