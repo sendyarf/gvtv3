@@ -90,6 +90,7 @@ html, body {
     box-sizing: border-box;
     margin-bottom: 4px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .logo-container {
@@ -469,12 +470,12 @@ html, body {
 
     .channel-container {
         padding: 11px;
-        cursor: pointer;
+        
     }
 
     .logo-container {
-        width: 70px;
-        height: 53px;
+        width: 85px;
+        height: 55px;
     }
 
     .channel-name {
