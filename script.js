@@ -222,12 +222,12 @@ function setupEvents() {
         const eventId = container.getAttribute('data-id');
         eventIds.push(eventId);
 
-        const matchDate = container.querySelector('.match-date').dataset.originalDate;
-        const matchTime = container.querySelector('.match-time').dataset.originalTime;
-        const kickoffDate = container.querySelector('.kickoff-match-date').textContent.trim();
-        const kickoffTime = container.querySelector('.kickoff-match-time').textContent.trim();
-        const matchDateTime = parseEventDateTime(matchDate, matchTime);
-        const kickoffDateTime = parseEventDateTime(kickoffDate, kickoffTime);
+        const matchDate = container.querySelector('.match-date');
+        const matchTime = container.querySelector('.match-time');
+        const kickoffDate = container.querySelector('.kickoff-match-date');
+        const kickoffTime = container.querySelector('.kickoff-match-time');
+        const matchDateTime = parseEventDateTime(matchDate.getAttribute('data-original-date'), matchTime.getAttribute('data-original-time'));
+        const kickoffDateTime = parseEventDateTime(kickoffDate.textContent.trim(), kickoffTime.textContent.trim());
         const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
         const durationMs = duration * 60 * 60 * 1000;
 
@@ -652,12 +652,70 @@ function startPeriodicEventCheck() {
     }, 60000);
 }
 
+// Function to check for and handle ended events
+function checkAndHandleEndedEvents() {
+    const eventContainers = Array.from(document.querySelectorAll('.event-container'));
+    const currentlyActiveEvent = document.querySelector('.event-container.active');
+    const activeEventId = currentlyActiveEvent ? currentlyActiveEvent.getAttribute('data-id') : null;
+    const eventsToRemove = [];
+    
+    // First pass: Identify all events that need to be removed
+    eventContainers.forEach(container => {
+        const eventId = container.getAttribute('data-id');
+        if (eventId === activeEventId) return;
+        
+        const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
+        const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
+        const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
+        
+        if (matchDate && matchTime) {
+            const matchDateTime = parseEventDateTime(matchDate, matchTime);
+            const durationMs = duration * 60 * 60 * 1000;
+            const endTime = new Date(matchDateTime.getTime() + durationMs);
+            
+            if (new Date() >= endTime) {
+                console.log(`Event ${eventId} has ended, marking for removal`);
+                eventsToRemove.push(container);
+            }
+        }
+    });
+
+    // Second pass: Remove all ended events at once
+    if (eventsToRemove.length > 0) {
+        console.log(`Removing ${eventsToRemove.length} ended events`);
+        
+        // Apply fade out to all events
+        eventsToRemove.forEach(container => {
+            container.style.transition = 'opacity 0.5s ease';
+            container.style.opacity = '0';
+        });
+        
+        // Remove all ended events after animation
+        setTimeout(() => {
+            eventsToRemove.forEach(container => {
+                if (container && container.parentNode) {
+                    container.parentNode.removeChild(container);
+                }
+            });
+            
+            // Add a spacer if no events left
+            const content = document.querySelector("#live-event #content");
+            if (content && content.children.length === 0) {
+                content.innerHTML = '<div class="spacer"></div>';
+            }
+        }, 500);
+    }
+}
+
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM fully loaded");
     await loadEvents();
     await loadChannels();
-
+    
+    // Start periodic check for ended events (every 1 minute)
+    setInterval(checkAndHandleEndedEvents, 60000);
+    
     // Parse URL to extract event ID
     const path = window.location.pathname; // e.g., "/barcamadrid"
     const eventIdFromUrl = path.replace(/^\/+/, ''); // Remove leading slashes
