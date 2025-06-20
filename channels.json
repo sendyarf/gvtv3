@@ -1,16 +1,65 @@
 [
     {
-        "id": "channel1",
-        "name": "ESPN",
-        "logo": "https://via.placeholder.com/100x50.png?text=ESPN+Logo",
-        "url": "https://hls.govoet.my.id/?id=ESPN",
+        "id": "ssc1",
+        "name": "SSC Sports 1",
+        "logo": "https://i.ibb.co.com/d5KXK6T/ssc1.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC1",
         "status": "Online"
     },
     {
-        "id": "channel2",
-        "name": "CNN",
-        "logo": "https://via.placeholder.com/100x50.png?text=CNN+Logo",
-        "url": "https://shakas.govoet.my.id/?id=CNN",
+        "id": "ssc2",
+        "name": "SSC Sports 2",
+        "logo": "https://i.ibb.co.com/2qVY61S/ssc2.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC2",
+        "status": "Online"
+    },
+    {
+        "id": "ssc3",
+        "name": "SSC Sports 3",
+        "logo": "https://i.ibb.co.com/WpLnwRN/ssc3.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC3",
+        "status": "Online"
+    },
+    {
+        "id": "ssc4",
+        "name": "SSC Sports 4",
+        "logo": "https://i.ibb.co.com/0hwdSbD/ssc4.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC4",
+        "status": "Online"
+    },
+    {
+        "id": "ssc5",
+        "name": "SSC Sports 5",
+        "logo": "https://i.ibb.co.com/8m9Czd5/ssc5.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC5",
+        "status": "Online"
+    },
+    {
+        "id": "ssc1x",
+        "name": "SSC Extra 1",
+        "logo": "https://i.ibb.co.com/tswCqzB/ssc1x.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC1X",
+        "status": "Online"
+    },
+    {
+        "id": "ssc2x",
+        "name": "SSC Extra 2",
+        "logo": "https://i.ibb.co.com/18PXp9P/ssc2x.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC2X",
+        "status": "Online"
+    },
+    {
+        "id": "ssc3x",
+        "name": "SSC Extra 3",  
+        "logo": "https://i.ibb.co.com/GM4vHw6/ssc3x.png",
+        "url": "https://shakas.govoet.my.id/?id=SSC3X",
+        "status": "Online"
+    },
+    {
+        "id": "usanetwork",
+        "name": "USA Network",
+        "logo": "https://i.ibb.co.com/5LwNH8z/usa.png",
+        "url": "https://shakas.govoet.my.id/?id=USANETWORK",
         "status": "Online"
     }
 ]
