@@ -148,15 +148,51 @@ def scrape_events():
                     for button in button_group.select('.stream-button'):
                         try:
                             onclick = button.get('onclick', '')
-                            url_match = re.search(r"changeStream\('([^']+)'\)", onclick)
-                            if url_match:
-                                url = url_match.group(1)
-                                label = button.get_text(strip=True) or f"Server {len(servers) + 1}"
-                                if url and label:
-                                    servers.append({'url': url, 'label': label})
+                            print(f"Processing button with onclick: {onclick}")
+                            
+                            # Handle different URL formats in onclick
+                            url = None
+                            patterns = [
+                                r"changeStream\(['\"]([^'\"]+)['\"]\)",  # changeStream('URL')
+                                r"changeStream\(['\"]([^'\"]+)['\"],"   # changeStream('URL', ...)
+                            ]
+                            
+                            for pattern in patterns:
+                                match = re.search(pattern, onclick)
+                                if match:
+                                    url = match.group(1)
+                                    break
+                            
+                            if not url:
+                                print(f"  Could not extract URL from: {onclick}")
+                                continue
+                                
+                            # Clean up the URL
+                            url = url.strip("'\"")
+                            
+                            # Get the label (button text)
+                            label = button.get_text(strip=True) or f"Server {len(servers) + 1}"
+                            label = re.sub(r'\s+', ' ', label).strip()
+                            
+                            if url and label:
+                                servers.append({
+                                    'url': url,
+                                    'label': label
+                                })
+                                print(f"  Added server: {label} - {url}")
+                            else:
+                                print(f"  Skipping invalid server - URL: {url}, Label: {label}")
+                                
                         except Exception as e:
                             print(f"Error processing server button: {e}")
-                            continue
+                            import traceback
+                            traceback.print_exc()
+                    
+                # Debug: Print all found servers
+                print(f"\nFound {len(servers)} servers for {team_home} vs {team_away}:")
+                for i, server in enumerate(servers, 1):
+                    print(f"  {i}. {server['label']}: {server['url']}")
+                print()
 
                 if team_home != 'Unknown Home' and team_away != 'Unknown Away' and servers:
                     event = {
