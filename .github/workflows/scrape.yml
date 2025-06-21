@@ -9,31 +9,53 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 'latest'
+          
       - name: Install Dependencies
-        run: pip install selenium webdriver-manager requests beautifulsoup4
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium webdriver-manager requests beautifulsoup4
+          
       - name: Run Scrape Script
-        run: python scraper/scrape_events.py
+        run: |
+          echo "Running scrape script..."
+          cd scraper
+          python scrape_events.py
+          cd ..
+          
+      - name: Debug - Show current directory
+        run: pwd && ls -la
+        
+      - name: Debug - Show event.json
+        run: cat event.json || echo "No event.json found"
+        
       - name: Upload Debug HTML
         uses: actions/upload-artifact@v4
         with:
-          name: debug-html
-          path: debug.html
+          name: debug-artifacts
+          path: |
+            debug.html
+            event.json
           retention-days: 5
+          
       - name: Check for Changes and Commit
         run: |
+          echo "Checking for changes in event.json..."
           if git diff --quiet event.json; then
             echo "No changes in event.json, skipping commit"
           else
-            git config user.name "GitHub Action"
-            git config user.email "action@github.com"
+            echo "Changes detected, committing..."
+            git config --global user.name "GitHub Action"
+            git config --global user.email "action@github.com"
             git add event.json
             git commit -m "Update event.json with latest scraped events"
             git push
