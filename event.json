@@ -56,6 +56,26 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/20",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
       }
     ]
   },
@@ -80,6 +100,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
       }
     ]
   },
@@ -104,6 +136,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
       }
     ]
   },
@@ -128,6 +172,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
       }
     ]
   },
@@ -152,6 +208,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
       }
     ]
   },
@@ -180,6 +248,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=ITALIA1",
         "label": "CH-IT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "label": "CH-IT"
       }
     ]
   },
@@ -204,6 +284,22 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=TUDNUSA",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
       }
     ]
   },
@@ -228,6 +324,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "label": "CH-IT"
       }
     ]
   },
@@ -252,6 +360,18 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-FR"
       }
     ]
   }
