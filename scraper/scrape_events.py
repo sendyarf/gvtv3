@@ -337,11 +337,26 @@ def scrape_sportsonline_servers(url, matches, dict_file='french_dict.json'):
     
     return matches
 
+def convert_rereyano_channel(channel):
+    """Mengonversi format channel Rereyano menjadi URL dan label yang sesuai"""
+    channel = channel.strip().lower()
+    # Mencocokkan format channel seperti CH20fr, ch20fr, 20fr, CH94es, dll.
+    channel_match = re.search(r'(?:ch)?(\d+)([a-z]{0,2})?', channel, re.IGNORECASE)
+    if channel_match:
+        channel_num = channel_match.group(1)
+        lang = channel_match.group(2) or 'fr'  # Default ke 'fr' jika tidak ada kode bahasa
+        return f"https://envivo.govoet.my.id/{channel_num}", f"CH-{lang.upper()}"
+    logging.warning(f"Format channel Rereyano tidak dikenali: {channel}")
+    return None, None
+
 def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.html', dict_file='french_dict.json'):
+    """Mengambil jadwal dari Rereyano dan menambahkannya ke daftar pertandingan"""
     utc2_tz = pytz.timezone('Europe/Paris')
     current_date = datetime.now().date()
     end_date = current_date + timedelta(days=days)
     french_dict = load_french_dict(dict_file)
+    
+    logging.info(f"Mengambil data dari Rereyano: {url}")
     
     try:
         soup = scrape_with_selenium(url)
@@ -362,33 +377,53 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     if cache_file:
         save_cache(url, str(soup), cache_file)
     
-    textarea = soup.select_one('textarea, div.schedule, pre, p, span')
+    textarea = soup.find('textarea')
     if not textarea:
-        logging.warning("Tidak ada elemen teks jadwal di Rereyano")
+        logging.warning("Tidak menemukan textarea di halaman Rereyano")
         return matches
     
     text = textarea.text.strip()
-    logging.debug(f"Data Rereyano (200 karakter pertama): {text[:200]}...")
-    lines = text.split('\n')
+    lines = [line.strip() for line in text.split('\n') 
+             if re.search(r'\d{2}-\d{2}-\d{4}\s+\(\d{2}:\d{2}\)', line)]
+    
+    if not lines:
+        logging.warning("Tidak menemukan jadwal di konten Rereyano")
+        return matches
+    
+    logging.debug(f"Ditemukan {len(lines)} baris jadwal di Rereyano")
     
     for line in lines:
-        line = line.strip()
-        if not line:
-            logging.debug("Baris kosong Rereyano, dilewati")
-            continue
-        logging.debug(f"Memproses baris Rereyano: {line}")
-        
-        match = re.match(r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^(\n]+?)\s*[-vs]\s*([^(\n]+?)(?:\s*\((.*?)\))?', line, re.IGNORECASE)
-        if match:
-            date_str, time_str, league_name, home_team, away_team, channels_str = match.groups()
+        try:
+            # Perbaiki regex untuk menangkap semua channel dalam tanda kurung
+            match = re.match(
+                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^-]+?)\s*-\s*([^\s(]+)\s*(?:\(([^)]+)\))?(?:\s*\(([^)]+)\))?', 
+                line
+            )
             
-            league_name_translated = french_dict['leagues'].get(league_name.strip(), league_name.strip())
-            home_team_translated = french_dict['teams'].get(home_team.strip(), home_team.strip())
-            away_team_translated = french_dict['teams'].get(away_team.strip(), away_team.strip())
+            if not match:
+                logging.debug(f"Baris tidak cocok: {line}")
+                continue
+                
+            date_str, time_str, league_name, home_team, away_team, channels_str1, channels_str2 = match.groups()
             
-            logging.debug(f"Terjemahan: Liga={league_name} -> {league_name_translated}, Home={home_team} -> {home_team_translated}, Away={away_team} -> {away_team_translated}")
+            # Gabungkan channels_str1 dan channels_str2 jika ada
+            channels_str = ''
+            if channels_str1:
+                channels_str += channels_str1
+            if channels_str2:
+                channels_str += ' ' + channels_str2
+                
+            home_team = home_team.strip()
+            away_team = away_team.strip()
+            league_name = league_name.strip()
             
-            if len(home_team_translated.strip()) < 2 or len(away_team_translated.strip()) < 2:
+            league_name_translated = french_dict['leagues'].get(league_name, league_name)
+            home_team_translated = french_dict['teams'].get(home_team, home_team)
+            away_team_translated = french_dict['teams'].get(away_team, away_team)
+            
+            logging.debug(f"Memproses: {home_team_translated} vs {away_team_translated} - {league_name_translated}")
+            
+            if len(home_team_translated) < 2 or len(away_team_translated) < 2:
                 logging.warning(f"Nama tim tidak valid: Home={home_team_translated}, Away={away_team_translated}")
                 continue
             
@@ -399,28 +434,114 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 
                 if current_date <= match_date.date() <= end_date:
                     match_id = generate_match_id(home_team_translated, away_team_translated)
-                    for existing_id, match in matches.items():
-                        if match_league(league_name_translated, match['league']) and \
-                           match['kickoff_date'] == wib_date and \
-                           match['kickoff_time'] == wib_time and \
-                           ((match_name(match['team1']['name'], home_team_translated) and \
-                             match_name(match['team2']['name'], away_team_translated)) or \
-                            (match_name(match['team1']['name'], away_team_translated) and \
-                             match_name(match['team2']['name'], home_team_translated))):
-                            channels = re.findall(r'\((CH[^)]+)\)', channels_str) if channels_str else []
-                            for channel in channels:
+                    match_found = False
+                    added_servers = []
+                    
+                    for existing_id, match in list(matches.items()):
+                        try:
+                            league_match = match_league(league_name_translated, match['league'])
+                            time_match = match['kickoff_time'] == wib_time
+                            
+                            home_match1 = match_name(home_team_translated, match['team1']['name'])
+                            away_match1 = match_name(away_team_translated, match['team2']['name'])
+                            home_match2 = match_name(home_team_translated, match['team2']['name'])
+                            away_match2 = match_name(away_team_translated, match['team1']['name'])
+                            
+                            if league_match and (time_match or match_date.date() == datetime.strptime(match['kickoff_date'], '%Y-%m-%d').date()):
+                                if (home_match1 and away_match1) or (home_match2 and away_match2):
+                                    match_found = True
+                                    logging.debug(f"Pertandingan ditemukan: {existing_id}")
+                                    
+                                    if channels_str:
+                                        # Log channels_str sebelum pembersihan
+                                        logging.debug(f"Raw channels_str: {channels_str}")
+                                        # Hapus tanda kurung dan bersihkan spasi berlebih
+                                        channels_str = re.sub(r'[()]+', '', channels_str).strip()
+                                        # Pisahkan berdasarkan spasi untuk mendapatkan channel
+                                        channel_list = [ch.strip() for ch in channels_str.split(' ') if ch.strip()]
+                                        logging.debug(f"Channel list setelah pemisahan: {channel_list}")
+                                        
+                                        for channel in channel_list:
+                                            # Validasi channel menggunakan regex
+                                            channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
+                                            if channel_match:
+                                                url, label = convert_rereyano_channel(channel)
+                                                if url and label:
+                                                    normalized_url = url.lower().rstrip('/')
+                                                    server_exists = any(
+                                                        s['url'].lower().rstrip('/') == normalized_url 
+                                                        for s in match['servers']
+                                                    )
+                                                    
+                                                    if not server_exists and url not in added_servers:
+                                                        match['servers'].append({
+                                                            'url': url,
+                                                            'label': label
+                                                        })
+                                                        added_servers.append(url)
+                                                        logging.info(f"Menambahkan server Rereyano: {label} - {url}")
+                                            else:
+                                                logging.warning(f"Channel tidak valid: {channel}")
+                            
+                        except Exception as e:
+                            logging.error(f"Error memproses pertandingan {existing_id}: {e}")
+                            continue
+                    
+                    if not match_found and channels_str:
+                        # Log channels_str sebelum pembersihan
+                        logging.debug(f"Raw channels_str (new match): {channels_str}")
+                        # Hapus tanda kurung dan bersihkan spasi berlebih
+                        channels_str = re.sub(r'[()]+', '', channels_str).strip()
+                        # Pisahkan berdasarkan spasi untuk mendapatkan channel
+                        channel_list = [ch.strip() for ch in channels_str.split(' ') if ch.strip()]
+                        logging.debug(f"Channel list setelah pemisahan (new match): {channel_list}")
+                        
+                        servers = []
+                        for channel in channel_list:
+                            # Validasi channel menggunakan regex
+                            channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
+                            if channel_match:
                                 url, label = convert_rereyano_channel(channel)
-                                if url and label:
-                                    matches[existing_id]['servers'].append({
+                                if url and label and url not in added_servers:
+                                    servers.append({
                                         'url': url,
                                         'label': label
                                     })
-                                    logging.info(f"Server Rereyano: {home_team_translated} vs {away_team_translated}, URL={url}, Label={label}")
-                            break
+                                    added_servers.append(url)
+                                    logging.info(f"Server baru ditambahkan: {label} - {url}")
+                            else:
+                                logging.warning(f"Channel tidak valid: {channel}")
+                        
+                        if servers:
+                            matches[match_id] = {
+                                'id': match_id,
+                                'league': league_name_translated,
+                                'team1': {
+                                    'name': home_team_translated,
+                                    'logo': ''
+                                },
+                                'team2': {
+                                    'name': away_team_translated,
+                                    'logo': ''
+                                },
+                                'kickoff_date': wib_date,
+                                'kickoff_time': wib_time,
+                                'match_date': wib_date,
+                                'match_time': (datetime.strptime(wib_time, '%H:%M') - timedelta(minutes=10)).strftime('%H:%M'),
+                                'duration': '3.5',
+                                'icon': 'https://via.placeholder.com/30.png?text=Soccer',
+                                'servers': servers,
+                                'is_womens': 'women' in league_name_translated.lower()
+                            }
+                            logging.info(f"Pertandingan baru dibuat: {home_team_translated} vs {away_team_translated} dengan {len(servers)} server")
+                            
             except ValueError as e:
-                logging.error(f"Error mem-parsing {line}: {e}")
+                logging.error(f"Error mem-parsing tanggal/waktu {date_str} {time_str}: {e}")
                 continue
-        logging.debug(f"Baris Rereyano tidak cocok: {line}")
+                
+        except Exception as e:
+            logging.error(f"Error memproses baris '{line}': {e}")
+            continue
     
     return matches
 
