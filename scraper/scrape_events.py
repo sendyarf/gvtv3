@@ -431,7 +431,6 @@ def main():
     
     output = list(matches.values())
     
-    # Baca event.json yang ada
     try:
         with open(output_file, 'r', encoding='utf-8') as f:
             old_data = json.load(f)
@@ -440,7 +439,6 @@ def main():
         old_hash = ""
         old_data = []
     
-    # Hitung hash data baru
     new_hash = compute_json_hash(output)
     
     if new_hash != old_hash:
