@@ -1,7 +1,7 @@
 [
   {
     "id": "aucklandcity-bocajuniors",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Auckland City",
       "logo": "https://static.flashscore.com/res/image/data/K0cONJS0-E7VNOejE.png"
@@ -25,7 +25,7 @@
   },
   {
     "id": "benfica-bayernmunich",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Benfica",
       "logo": "https://static.flashscore.com/res/image/data/ttVtr6hT-GEKimEim.png"
@@ -44,7 +44,7 @@
   },
   {
     "id": "esperancetunis-chelsea",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Esperance Tunis",
       "logo": "https://static.flashscore.com/res/image/data/MwJ5a4AN-QwBpoY8M.png"
@@ -63,7 +63,7 @@
   },
   {
     "id": "losangelesfc-flamengorj",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Los Angeles FC",
       "logo": "https://static.flashscore.com/res/image/data/jHAzzjXH-nJbaxYrp.png"
@@ -82,7 +82,7 @@
   },
   {
     "id": "dortmund-ulsanhd",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Dortmund",
       "logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png"
@@ -101,7 +101,7 @@
   },
   {
     "id": "mamelodisundowns-fluminense",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Mamelodi Sundowns",
       "logo": "https://static.flashscore.com/res/image/data/tOpnxPoe-x2G2Q2c3.png"
@@ -120,7 +120,7 @@
   },
   {
     "id": "inter-riverplate",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Inter",
       "logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-jDrBQiMS.png"
@@ -139,7 +139,7 @@
   },
   {
     "id": "urawareds-monterrey",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Urawa Reds",
       "logo": "https://static.flashscore.com/res/image/data/fuoFW9UH-nqhLBCKD.png"
@@ -158,7 +158,7 @@
   },
   {
     "id": "juventus-manchestercity",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Juventus",
       "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
@@ -177,7 +177,7 @@
   },
   {
     "id": "wydad-alain",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Wydad",
       "logo": "https://static.flashscore.com/res/image/data/Y7MV6X5k-GSoKqW7o.png"
@@ -196,7 +196,7 @@
   },
   {
     "id": "alhilal-pachuca",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Al Hilal",
       "logo": "https://static.flashscore.com/res/image/data/EVoO06R0-joUWHZ1t.png"
@@ -215,7 +215,7 @@
   },
   {
     "id": "salzburg-realmadrid",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Salzburg",
       "logo": "https://static.flashscore.com/res/image/data/byg6g6hT-McAr23w3.png"
@@ -234,7 +234,7 @@
   },
   {
     "id": "palmeiras-botafogorj",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "Palmeiras",
       "logo": "https://static.flashscore.com/res/image/data/6yCLyXU0-ALgHCh57.png"
@@ -253,7 +253,7 @@
   },
   {
     "id": "psg-intermiami",
-    "league": "FIFA Club World Cup",
+    "league": "Bundesliga",
     "team1": {
       "name": "PSG",
       "logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png"
