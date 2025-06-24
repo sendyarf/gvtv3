@@ -21,32 +21,23 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Google Chrome and Chromedriver
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 'latest'
+
+      - name: Verify Chrome and Chromedriver
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          echo "Chrome version: $CHROME_VERSION"
-          # Coba unduh Chromedriver untuk versi Chrome yang sama
-          LATEST_RELEASE=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*} || echo "")
-          if [ -z "$LATEST_RELEASE" ]; then
-            echo "Tidak dapat menemukan rilis Chromedriver untuk versi ${CHROME_VERSION%.*}, mencoba versi terbaru"
-            LATEST_RELEASE=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          fi
-          if [ -z "$LATEST_RELEASE" ]; then
-            echo "Gagal mengambil versi Chromedriver, menggunakan versi default"
-            LATEST_RELEASE="137.0.7151" # Fallback ke versi terakhir yang diketahui
-          fi
-          echo "Mengunduh Chromedriver versi: $LATEST_RELEASE"
-          wget -q -O chromedriver.zip "https://chromedriver.storage.googleapis.com/$LATEST_RELEASE/chromedriver_linux64.zip" || {
-            echo "Gagal mengunduh Chromedriver, keluar"
-            exit 1
-          }
-          unzip -o chromedriver.zip
-          sudo mv chromedriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
+          google-chrome --version
           chromedriver --version
-        shell: /usr/bin/bash -e {0}
+          if ! command -v chromedriver; then
+            echo "Chromedriver tidak terinstal"
+            exit 1
+          fi
+          if ! command -v google-chrome; then
+            echo "Google Chrome tidak terinstal"
+            exit 1
+          fi
 
       - name: Install Dependencies
         run: |
