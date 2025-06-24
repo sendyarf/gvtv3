@@ -129,7 +129,6 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
     current_year = current_date.year
     current_month = current_date.month
     end_date = current_date + timedelta(days=days)
-    #utc1_tz = pytz.timezone('Europe/London')
     
     try:
         soup = scrape_with_selenium(url)
@@ -199,7 +198,8 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     continue
                 
                 match_date_str = match_date.strftime('%Y-%m-%d')
-                wib_date, wib_time = convert_to_wib(time_str, match_date_str, utc1_tz)
+                original_date = match_date.strftime('%Y-%m-%d')
+                original_time = time_str
                 
                 match_id = generate_match_id(home_team, away_team)
                 matches[match_id] = {
@@ -207,16 +207,16 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     'league': league_name,
                     'team1': {'name': home_team, 'logo': home_logo},
                     'team2': {'name': away_team, 'logo': away_logo},
-                    'kickoff_date': wib_date,
-                    'kickoff_time': wib_time,
-                    'match_date': wib_date,
-                    'match_time': calculate_match_time(wib_time),
+                    'kickoff_date': original_date,
+                    'kickoff_time': original_time,
+                    'match_date': original_date,
+                    'match_time': calculate_match_time(original_time),
                     'duration': '3.5',
                     'icon': 'https://via.placeholder.com/30.png?text=Soccer',
                     'servers': [],
-                    'is_womens': False  # Default: bukan jadwal perempuan
+                    'is_womens': False
                 }
-                logging.info(f"Pertandingan: {league_name} - {home_team} vs {away_team} pada {wib_date} {wib_time} WIB")
+                logging.info(f"Pertandingan: {league_name} - {home_team} vs {away_team} pada {original_date} {original_time}")
         except Exception as e:
             logging.error(f"Error mem-parsing waktu atau elemen untuk {time_text}: {e}")
             continue
