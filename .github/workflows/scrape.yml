@@ -1,8 +1,8 @@
-name: Scrape Football Events
+name: Scrape Players
 
 on:
   schedule:
-    - cron: '0 * * * *' # Jalankan setiap jam (UTC)
+    - cron: '0 * * * *' # Per jam
   push:
     branches:
       - main
@@ -13,46 +13,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set Timezone to WIB
+      - name: Set WIB Timezone
         uses: szenius/set-timezone@v2.0
         with:
           timezoneLinux: "Asia/Jakarta"
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Set up Chrome
+      - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 'latest'
 
-      - name: Verify Chrome and Chromedriver
+      - name: Verify Chrome
         run: |
           google-chrome --version
           chromedriver --version
-          if ! command -v chromedriver; then
-            echo "Chromedriver tidak terinstal"
-            exit 1
-          fi
-          if ! command -v google-chrome; then
-            echo "Google Chrome tidak terinstal"
-            exit 1
-          fi
+          if ! command -v chromedriver; then exit 1; fi
+          if ! command -v google-chrome; then exit 1; fi
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 selenium fuzzywuzzy python-dateutil tenacity pytz requests python-Levenshtein
+          pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
 
       - name: Ensure french_dict.json
         run: |
           if [ ! -f french_dict.json ]; then
-            echo "french_dict.json tidak ditemukan, pastikan sudah di-commit ke repository"
+            echo "french_dict.json tidak ditemukan"
             exit 1
           fi
 
@@ -60,17 +54,16 @@ jobs:
         run: |
           if [ ! -f manual_schedule.json ]; then
             echo "[]" > manual_schedule.json
-            echo "manual_schedule.json dibuat dengan konten kosong"
           fi
 
-      - name: Run Scrape Script
+      - name: Run Scraper
         run: python scraper/scrape_events.py
 
-      - name: Commit and Push Changes
+      - name: Commit Changes
         run: |
-          git config --global user.name "GitHub Actions Bot"
+          git config --global user.name "GitHub Bot"
           git config --global user.email "actions@github.com"
-          git add event.json manual_schedule.json
-          git diff --cached --quiet || (git commit -m "Update event.json and manual_schedule.json" && git push)
+          git add *.json *.html
+          git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
