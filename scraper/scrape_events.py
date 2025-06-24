@@ -1,6 +1,7 @@
 import json
 import logging
 import re
+import hashlib
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
@@ -171,7 +172,7 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     'team1': {'name': home_team, 'logo': home_logo},
                     'team2': {'name': away_team, 'logo': away_logo},
                     'kickoff_date': match_date.strftime('%Y-%m-%d'),
-                    'kickoff_time': time_str,  # Waktu langsung (WIB)
+                    'kickoff_time': time_str,
                     'match_date': match_date.strftime('%Y-%m-%d'),
                     'match_time': calculate_match_time(time_str),
                     'duration': '3.5',
@@ -369,7 +370,6 @@ def merge_manual_schedule(manual_file, auto_schedule):
             continue
         
         try:
-            # Validasi waktu
             datetime.strptime(manual_match['kickoff_time'], '%H:%M')
         except (KeyError, ValueError):
             logging.warning(f"Format waktu manual tidak valid: {manual_match.get('kickoff_time', 'tidak ada')}")
@@ -390,13 +390,22 @@ def merge_manual_schedule(manual_file, auto_schedule):
     
     return merged_schedule
 
+def compute_json_hash(data):
+    """Menghitung hash dari konten JSON untuk perbandingan."""
+    json_str = json.dumps(data, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(json_str.encode('utf-8')).hexdigest()
+
 def main():
     flashscore_urls = [
-        ("https://www.flashscore.com/football/world/fifa-club-world-cup/fixtures/", "FIFA Club World Cup")
+        ("https://www.flashscore.com/football/world/fifa-club-world-cup/fixtures/", "FIFA Club World Cup"),
+        ("https://www.flashscore.com/football/england/premier-league/fixtures/", "Premier League"),
+        ("https://www.flashscore.com/football/france/ligue-1/fixtures/", "Ligue 1"),
+        ("https://www.flashscore.com/football/germany/bundesliga/fixtures/", "Bundesliga")
     ]
     sportsonline_url = "https://sportsonline.ci/prog.txt"
     rereyano_url = "https://rereyano.ru/"
     manual_schedule_file = "manual_schedule.json"
+    output_file = "event.json"
     
     matches = {}
     
@@ -404,7 +413,7 @@ def main():
         for url, league_name in flashscore_urls:
             matches.update(scrape_flashscore_schedule(url, days=5, league_name=league_name))
             team_list = [f"{m['team1']['name']} vs {m['team2']['name']}" for m in matches.values()]
-            logging.debug(f"Tim Flashscore: {team_list}")
+            logging.debug(f"Tim Flashscore ({league_name}): {team_list}")
     except Exception as e:
         logging.error(f"Error saat scraping Flashscore: {e}")
     
@@ -422,12 +431,27 @@ def main():
     
     output = list(matches.values())
     
+    # Baca event.json yang ada
     try:
-        with open('event.json', 'w', encoding='utf-8') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
-        logging.info("Jadwal disimpan ke event.json")
-    except Exception as e:
-        logging.error(f"Gagal menyimpan event.json: {e}")
+        with open(output_file, 'r', encoding='utf-8') as f:
+            old_data = json.load(f)
+        old_hash = compute_json_hash(old_data)
+    except (FileNotFoundError, json.JSONDecodeError):
+        old_hash = ""
+        old_data = []
+    
+    # Hitung hash data baru
+    new_hash = compute_json_hash(output)
+    
+    if new_hash != old_hash:
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+            logging.info(f"Jadwal diperbarui dan disimpan ke {output_file}")
+        except Exception as e:
+            logging.error(f"Gagal menyimpan {output_file}: {e}")
+    else:
+        logging.info(f"Tidak ada perubahan pada jadwal, {output_file} tidak diperbarui")
     
     logging.info(f"Total pertandingan: {len(output)}")
     return output

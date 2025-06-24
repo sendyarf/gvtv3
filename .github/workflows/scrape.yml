@@ -2,7 +2,7 @@ name: Scrape Football Events
 
 on:
   schedule:
-    - cron: '0 * * * *' # Jalankan setiap jam 
+    - cron: '0 * * * *' # Jalankan setiap jam (UTC)
   push:
     branches:
       - main
@@ -55,7 +55,7 @@ jobs:
       - name: Run Scrape Script
         run: python scraper/scrape_events.py
 
-      - name: Commit and Push event.json
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
