@@ -39,30 +39,16 @@ def calculate_match_time(time_str):
         logging.error(f"Error menghitung match_time: {time_str}, error: {e}")
         return time_str
 
-def convert_utc1_to_wib(time_str, match_date):
-    try:
-        utc1_tz = pytz.timezone('Europe/London')  # UTC+1 (misalnya, BST tanpa DST pada Juni)
-        wib_tz = pytz.timezone('Asia/Jakarta')    # UTC+7
-        # Parse waktu dengan tanggal untuk konteks
-        dt = datetime.strptime(f"{match_date} {time_str}", '%Y-%m-%d %H:%M')
-        utc1_time = utc1_tz.localize(dt)
-        wib_time = utc1_time.astimezone(wib_tz)
-        logging.debug(f"Waktu UTC+1: {utc1_time}, Waktu WIB: {wib_time}")
-        return wib_time.strftime('%H:%M')
-    except ValueError as e:
-        logging.error(f"Gagal mengonversi waktu UTC+1 ke WIB: {time_str}, error: {e}")
-        return time_str
-
 def convert_cet_to_wib(time_str):
     try:
-        cet_tz = pytz.timezone('Europe/Paris')    # CEST (UTC+2 pada Juni)
-        wib_tz = pytz.timezone('Asia/Jakarta')    # UTC+7
+        cet_tz = pytz.timezone('Europe/Paris')
+        wib_tz = pytz.timezone('Asia/Jakarta')
         cet_time = cet_tz.localize(datetime.strptime(time_str, '%H:%M:%S'))
         wib_time = cet_time.astimezone(wib_tz)
         logging.debug(f"Waktu CEST: {cet_time}, Offset: {cet_time.utcoffset().total_seconds()/3600} jam, Waktu WIB: {wib_time}")
         return wib_time
     except ValueError as e:
-        logging.error(f"Gagal mengonversi waktu CEST ke WIB: {time_str}, error: {e}")
+        logging.error(f"Gagal mengonversi waktu: {time_str}, error: {e}")
         return datetime.now(pytz.timezone('Asia/Jakarta'))
 
 @retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
@@ -180,9 +166,6 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     logging.warning(f"Tim tidak lengkap: Home={home_team}, Away={away_team}")
                     continue
                 
-                # Konversi waktu dari UTC+1 ke WIB
-                wib_time = convert_utc1_to_wib(time_str, match_date.strftime('%Y-%m-%d'))
-                
                 match_id = generate_match_id(home_team, away_team)
                 matches[match_id] = {
                     'id': match_id,
@@ -190,14 +173,14 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     'team1': {'name': home_team, 'logo': home_logo},
                     'team2': {'name': away_team, 'logo': away_logo},
                     'kickoff_date': match_date.strftime('%Y-%m-%d'),
-                    'kickoff_time': wib_time,
+                    'kickoff_time': time_str,
                     'match_date': match_date.strftime('%Y-%m-%d'),
-                    'match_time': calculate_match_time(wib_time),
+                    'match_time': calculate_match_time(time_str),
                     'duration': '3.5',
                     'icon': 'https://via.placeholder.com/30.png?text=Soccer',
                     'servers': []
                 }
-                logging.info(f"Pertandingan: {league_name} - {home_team} vs {away_team} pada {match_date.strftime('%Y-%m-%d')} {wib_time} WIB")
+                logging.info(f"Pertandingan: {league_name} - {home_team} vs {away_team} pada {match_date.strftime('%Y-%m-%d')} {time_str}")
         except (ValueError, AttributeError) as e:
             logging.error(f"Error mem-parsing waktu atau elemen untuk {time_text}: {e}")
             continue
@@ -409,6 +392,7 @@ def merge_manual_schedule(manual_file, auto_schedule):
     return merged_schedule
 
 def compute_json_hash(data):
+    """Menghitung hash dari konten JSON untuk perbandingan."""
     json_str = json.dumps(data, sort_keys=True, ensure_ascii=False)
     return hashlib.sha256(json_str.encode('utf-8')).hexdigest()
 
