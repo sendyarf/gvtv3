@@ -31,10 +31,11 @@ jobs:
         with:
           chrome-version: 'latest'
 
-      - name: Setup ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
+      - name: Install Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@v1
         with:
           chromedriver-version: 'latest'
+          check-latest: true
 
       - name: Verify Chrome and ChromeDriver
         run: |
@@ -71,3 +72,8 @@ jobs:
           git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+ 
