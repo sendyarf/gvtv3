@@ -19,23 +19,23 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd10.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
-        "label": "Mobile-4"
+        "label": "CH-4"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "Mobile-5"
+        "label": "CH-5"
       },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTV2",
@@ -64,35 +64,35 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "Mobile-4"
+        "label": "CH-4"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "Mobile-5"
+        "label": "CH-5"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "Mobile-6"
+        "label": "CH-6"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "Mobile-7"
+        "label": "CH-7"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "Mobile-8"
+        "label": "CH-8"
       },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
@@ -125,31 +125,31 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "Mobile-4"
+        "label": "CH-4"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd10.html",
-        "label": "Mobile-5"
+        "label": "CH-5"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "Mobile-6"
+        "label": "CH-6"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "Mobile-7"
+        "label": "CH-7"
       },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTV2",
@@ -178,15 +178,15 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
@@ -215,35 +215,35 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "Mobile-4"
+        "label": "CH-4"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "Mobile-5"
+        "label": "CH-5"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "Mobile-6"
+        "label": "CH-6"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "Mobile-7"
+        "label": "CH-7"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "Mobile-8"
+        "label": "CH-8"
       }
     ],
     "is_womens": false
@@ -268,11 +268,11 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       }
     ],
     "is_womens": false
@@ -297,31 +297,31 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "Mobile-3"
+        "label": "CH-3"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "Mobile-4"
+        "label": "CH-4"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "Mobile-5"
+        "label": "CH-5"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "Mobile-6"
+        "label": "CH-6"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "Mobile-7"
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -346,11 +346,11 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "Mobile-1"
+        "label": "CH-1"
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "Mobile-2"
+        "label": "CH-2"
       }
     ],
     "is_womens": false
