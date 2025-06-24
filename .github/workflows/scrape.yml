@@ -2,7 +2,7 @@ name: Scrape Players
 
 on:
   schedule:
-    - cron: '0 * * * *' # Per jam
+    - cron: '0 0 * * *' # Per jam
   push:
     branches:
       - main
