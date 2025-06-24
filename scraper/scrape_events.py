@@ -320,14 +320,14 @@ def scrape_sportsonline_servers(url, matches, dict_file='french_dict.json'):
                 # Extract channel number from URL (e.g., hd4 from hd4.php)
                 channel = server_url.split('/')[-1].replace('.php', '')
                 # Count existing mobile servers for this match
-                mobile_count = len([s for s in matches[best_match]["servers"] if s["label"].startswith("Mobile-")])
+                mobile_count = len([s for s in matches[best_match]["servers"] if s["label"].startswith("CH-")])
                 # Create server entry with listsportsembed URL
                 matches[best_match]['servers'].append({
                     'url': f'https://listsportsembed.blogspot.com/p/{channel}.html',
-                    'label': f'Mobile-{mobile_count + 1}'
+                    'label': f'CH-{mobile_count + 1}'
                 })
                 matches[best_match]['is_womens'] = is_womens  # Update is_womens status
-                logging.info(f"Added Sportsonline server: {home_team_translated} vs {away_team_translated} (Womens={is_womens}), URL: Mobile-{mobile_count + 1}")
+                logging.info(f"Added Sportsonline server: {home_team_translated} vs {away_team_translated} (Womens={is_womens}), URL: CH-{mobile_count + 1}")
             else:
                 logging.debug(f"Tidak ada pertandingan yang cocok untuk {home_team_translated} vs {away_team_translated} (Womens={is_womens})")
         
