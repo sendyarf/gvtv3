@@ -31,7 +31,12 @@ jobs:
         with:
           chrome-version: 'latest'
 
-      - name: Verify Chrome
+      - name: Setup ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
+        with:
+          chromedriver-version: 'latest'
+
+      - name: Verify Chrome and ChromeDriver
         run: |
           google-chrome --version
           chromedriver --version
@@ -46,8 +51,7 @@ jobs:
       - name: Ensure french_dict.json
         run: |
           if [ ! -f french_dict.json ]; then
-            echo "french_dict.json tidak ditemukan"
-            exit 1
+            echo '{"leagues": {}, "teams": {"ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
           fi
 
       - name: Ensure manual_schedule.json

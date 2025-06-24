@@ -19,9 +19,30 @@
     "servers": [
       {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "Mobile-1"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "Mobile-2"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd10.html",
+        "label": "Mobile-3"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
+        "label": "Mobile-4"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br3.html",
+        "label": "Mobile-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
         "label": "Manual-1"
       }
-    ]
+    ],
+    "is_womens": false
   },
   {
     "id": "manual-manchesterunited-arsenal",
