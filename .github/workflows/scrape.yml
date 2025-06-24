@@ -37,10 +37,11 @@ jobs:
         with:
           chrome-version: 'latest'
 
-      - name: Set up ChromeDriver
+      - name: Setup Chrome and ChromeDriver
         uses: browser-actions/setup-chromedriver@v1
         with:
           chrome-version: 'latest'
+          check-latest: true
 
       - name: Verify Chrome and ChromeDriver
         run: |
