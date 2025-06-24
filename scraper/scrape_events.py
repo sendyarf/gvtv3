@@ -41,7 +41,7 @@ def calculate_match_time(time_str):
 
 def convert_utc1_to_wib(time_str, match_date):
     try:
-        utc1_tz = pytz.timezone('Europe/Paris')  # UTC+1 (misalnya, BST tanpa DST pada Juni)
+        utc1_tz = pytz.timezone('Europe/Islandia')  # UTC+1 (misalnya, BST tanpa DST pada Juni)
         wib_tz = pytz.timezone('Asia/Jakarta')    # UTC+7
         # Parse waktu dengan tanggal untuk konteks
         dt = datetime.strptime(f"{match_date} {time_str}", '%Y-%m-%d %H:%M')
