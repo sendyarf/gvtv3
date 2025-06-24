@@ -129,7 +129,7 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
     current_year = current_date.year
     current_month = current_date.month
     end_date = current_date + timedelta(days=days)
-    utc1_tz = pytz.timezone('Europe/London')
+    #utc1_tz = pytz.timezone('Europe/London')
     
     try:
         soup = scrape_with_selenium(url)
