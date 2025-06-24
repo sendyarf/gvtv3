@@ -2,7 +2,7 @@ name: Scrape Players
 
 on:
   schedule:
-    - cron: '0 * * * *' # Per jam
+    - cron: '0 * * * *'  # Every hour
   push:
     branches:
       - main
@@ -11,6 +11,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # timeout-minutes: 15   Add timeout
 
     steps:
       - name: Checkout
@@ -26,48 +27,53 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Setup Chrome
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+
+      - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 'latest'
 
-      - name: Setup ChromeDriver
-        uses: nanasess/setup-chromedriver@v1
+      - name: Set up ChromeDriver
+        uses: browser-actions/setup-chromedriver@v1
         with:
-          chromedriver-version: 'latest'
+          chrome-version: 'latest'
 
       - name: Verify Chrome and ChromeDriver
         run: |
           google-chrome --version
           chromedriver --version
-          if ! command -v chromedriver; then exit 1; fi
-          if ! command -v google-chrome; then exit 1; fi
 
-      - name: Install Dependencies
+      - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
 
-      - name: Ensure french_dict.json
+      - name: Ensure required files exist
         run: |
           if [ ! -f french_dict.json ]; then
             echo '{"leagues": {}, "teams": {"ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
           fi
-
-      - name: Ensure manual_schedule.json
-        run: |
           if [ ! -f manual_schedule.json ]; then
             echo "[]" > manual_schedule.json
           fi
 
       - name: Run Scraper
-        run: python scraper/scrape_events.py
+        run: |
+          export DISPLAY=:0
+          python scraper/scrape_events.py
+        env:
+          PYTHONUNBUFFERED: 1
 
       - name: Commit Changes
+        if: success()
         run: |
           git config --global user.name "GitHub Bot"
           git config --global user.email "actions@github.com"
           git add *.json *.html
-          git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
+          git diff --cached --quiet || (git commit -m "Update schedules and caches [skip ci]" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
