@@ -15,13 +15,13 @@ import os
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def clean_team_name(name):
-    return re.sub(r'[^\w\s]', '', name).strip()
+    return re.sub(r'[^\w\s]', '', name).strip().lower()
 
 def generate_match_id(team1, team2):
-    return f"{clean_team_name(team1).lower().replace(' ', '')}-{clean_team_name(team2).lower().replace(' ', '')}"
+    return f"{clean_team_name(team1).replace(' ', '')}-{clean_team_name(team2).replace(' ', '')}"
 
-def match_name(name1, name2, threshold=60):
-    score = fuzz.ratio(clean_team_name(name1).lower(), clean_team_name(name2).lower())
+def match_name(name1, name2, threshold=50):
+    score = fuzz.ratio(clean_team_name(name1), clean_team_name(name2))
     logging.debug(f"Pencocokan fuzzy: {name1} vs {name2} -> Skor: {score}")
     return score >= threshold
 
@@ -46,10 +46,10 @@ def convert_utc1_to_wib(time_str, match_date):
         dt = datetime.strptime(f"{match_date} {time_str}", '%Y-%m-%d %H:%M')
         utc1_time = utc1_tz.localize(dt)
         wib_time = utc1_time.astimezone(wib_tz)
-        logging.debug(f"Waktu UTC+1: {utc1_time}, Waktu WIB: {wib_time}")
+        logging.debug(f"Konversi waktu: UTC+1 {utc1_time} -> WIB {wib_time}")
         return wib_time.strftime('%H:%M')
     except ValueError as e:
-        logging.error(f"Gagal mengonversi waktu UTC+1 ke WIB: {time_str}, error: {e}")
+        logging.error(f"Gagal mengonversi waktu UTC+1 ke WIB: {time_str}, date: {match_date}, error: {e}")
         return time_str
 
 def convert_cet_to_wib(time_str):
@@ -74,6 +74,7 @@ def scrape_with_selenium(url):
     driver = webdriver.Chrome(options=options)
     try:
         driver.get(url)
+        time.sleep(2)
         html = driver.page_source
         return BeautifulSoup(html, 'html.parser')
     finally:
@@ -121,9 +122,9 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
     
     try:
         soup = scrape_with_selenium(url)
-    except Exception:
+    except Exception as e:
         soup = None
-        logging.warning(f"Gagal mengambil {url}, mencoba cache")
+        logging.warning(f"Gagal mengambil {url}, mencoba cache: {e}")
     
     if not soup and cache_file:
         soup = load_cache(cache_file)
@@ -179,7 +180,6 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     logging.warning(f"Tim tidak lengkap: Home={home_team}, Away={away_team}")
                     continue
                 
-                # Konversi waktu dari UTC+1 ke WIB
                 wib_time = convert_utc1_to_wib(time_str, match_date.strftime('%Y-%m-%d'))
                 
                 match_id = generate_match_id(home_team, away_team)
@@ -197,7 +197,7 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
                     'servers': []
                 }
                 logging.info(f"Pertandingan: {league_name} - {home_team} vs {away_team} pada {match_date.strftime('%Y-%m-%d')} {wib_time} WIB")
-        except (ValueError, AttributeError) as e:
+        except Exception as e:
             logging.error(f"Error mem-parsing waktu atau elemen untuk {time_text}: {e}")
             continue
     
@@ -209,39 +209,80 @@ def scrape_sportsonline_servers(url, matches):
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         lines = response.text.splitlines()
+        logging.debug(f"Isi Sportsonline prog.txt (10 baris pertama): {lines[:10]}")
     except Exception as e:
         logging.error(f"Gagal mengambil Sportsonline {url}: {e}")
         return matches
     
+    # Deteksi tanggal dari header
+    current_date = datetime.now(pytz.timezone('Asia/Jakarta')).date()
+    last_update_match = re.search(r'LAST UPDATE: (\d{2})-(\d{2})-(\d{2})', '\n'.join(lines))
+    if last_update_match:
+        day, month, year = map(int, last_update_match.groups())
+        year = 2000 + year  # Asumsi format DD-MM-YY
+        update_date = datetime(year, month, day).date()
+    else:
+        update_date = current_date
+        logging.warning("Tidak dapat mendeteksi LAST UPDATE, menggunakan tanggal saat ini")
+    
+    # Mapping hari ke tanggal
+    day_mapping = {
+        'MONDAY': update_date - timedelta(days=1) if update_date.weekday() == 1 else update_date,
+        'TUESDAY': update_date if update_date.weekday() == 1 else update_date + timedelta(days=1),
+        # Tambahkan hari lain jika perlu
+    }
+    current_day = None
+    
     for line in lines:
         line = line.strip()
         if not line:
+            logging.debug("Baris kosong di Sportsonline, dilewati")
             continue
         
-        match = re.match(r'(\d{2}/\d{2}/\d{4})\s+(\d{2}:\d{2})\s+(.+?)\s*-\s*(.+?)(?:\s*\((.+?)\))?', line)
-        if match:
-            date_str, time_str, home_team, away_team, channel = match.groups()
-            try:
-                match_date = datetime.strptime(date_str, '%d/%m/%Y').date()
-                home_team_clean = clean_team_name(home_team)
-                away_team_clean = clean_team_name(away_team)
-                match_id = generate_match_id(home_team, away_team)
-                
-                for existing_match_id, existing_match in matches.items():
-                    if match_date.strftime('%Y-%m-%d') == existing_match['kickoff_date'] and \
-                       match_name(home_team_clean, existing_match['team1']['name']) and \
-                       match_name(away_team_clean, existing_match['team2']['name']):
-                        if channel:
-                            url = f"https://sportsonline.ci/stream/{channel.lower()}"
-                            matches[existing_match_id]['servers'].append({
-                                'url': url,
-                                'label': f"CH-SO-{channel}"
-                            })
-                            logging.info(f"Server Sportsonline ditambahkan: {home_team} vs {away_team}, URL: {url}")
-                        break
-            except ValueError as e:
-                logging.error(f"Error mem-parsing Sportsonline {line}: {e}")
+        # Deteksi header hari
+        if line in day_mapping:
+            current_day = day_mapping[line]
+            logging.debug(f"Deteksi hari: {line} -> {current_day}")
+            continue
+        
+        # Parse baris pertandingan
+        match = re.match(r'(\d{2}:\d{2})\s+(.+?)\s+x\s+(.+?)\s+\|\s+(https://sportzonline\.si/channels/[^\s]+)', line)
+        if not match:
+            logging.debug(f"Baris Sportsonline tidak cocok dengan regex: {line}")
+            continue
+        
+        time_str, home_team, away_team, url = match.groups()
+        logging.debug(f"Parsed Sportsonline: Time={time_str}, Home={home_team}, Away={away_team}, URL={url}")
+        
+        try:
+            if not current_day:
+                logging.warning(f"Tidak ada hari yang ditentukan untuk baris: {line}")
                 continue
+            
+            match_date = current_day
+            wib_time = convert_utc1_to_wib(time_str, match_date.strftime('%Y-%m-%d'))
+            
+            home_team_clean = clean_team_name(home_team)
+            away_team_clean = clean_team_name(away_team)
+            match_id = generate_match_id(home_team, away_team)
+            
+            for existing_match_id, existing_match in matches.items():
+                existing_date = datetime.strptime(existing_match['kickoff_date'], '%Y-%m-%d').date()
+                if existing_date == match_date and \
+                   match_name(home_team_clean, existing_match['team1']['name']) and \
+                   match_name(away_team_clean, existing_match['team2']['name']):
+                    channel = url.split('/')[-1].replace('.php', '')
+                    matches[existing_match_id]['servers'].append({
+                        'url': url,
+                        'label': f"CH-SO-{channel}"
+                    })
+                    logging.info(f"Server Sportsonline ditambahkan: {home_team} vs {away_team}, URL: {url}, Label: CH-SO-{channel}")
+                    break
+            else:
+                logging.debug(f"Tidak ada pertandingan yang cocok untuk {home_team} vs {away_team} pada {match_date}")
+        except ValueError as e:
+            logging.error(f"Error memproses baris Sportsonline {line}: {e}")
+            continue
     
     return matches
 
@@ -273,7 +314,6 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     textarea = soup.select_one('textarea') or soup.select_one('div, pre, p, span')
     if not textarea:
         logging.warning("Tidak ada elemen teks jadwal di Rereyano")
-        logging.debug(f"Isi halaman Rereyano: {soup.prettify()[:500]}...")
         return matches
     
     text = textarea.text.strip()
@@ -288,7 +328,7 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
             continue
         logging.debug(f"Memproses baris Rereyano: {line}")
         
-        match = re.match(r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^(\n]+?)\s*[\-vs]\s*([^(\n]+?)(?:\s*\((.*?)\))?', line, re.IGNORECASE)
+        match = re.match(r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^(\n]+?)\s*[-vs]\s*([^(\n]+?)(?:\s*\((.*?)\))?', line, re.IGNORECASE)
         if match:
             date_str, time_str, league_name, home_team, away_team, channels_str = match.groups()
             
@@ -302,10 +342,6 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 logging.warning(f"Nama tim tidak valid: Home={home_team_translated}, Away={away_team_translated}, Baris={line}")
                 continue
             
-            home_team_clean = clean_team_name(home_team_translated)
-            away_team_clean = clean_team_name(away_team_translated)
-            match_id = generate_match_id(home_team_translated, away_team_translated)
-            
             try:
                 match_date = datetime.strptime(date_str, '%d-%m-%Y').date()
                 wib_time = convert_cet_to_wib(f"{time_str}:00")
@@ -313,6 +349,7 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 logging.debug(f"Konversi waktu Rereyano: {time_str} CEST -> {time_wib} WIB")
                 
                 if current_date <= match_date <= end_date:
+                    match_id = generate_match_id(home_team_translated, away_team_translated)
                     found = False
                     for existing_match_id, match in matches.items():
                         if match_league(league_name_translated, match['league']):
@@ -332,9 +369,6 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                                         logging.info(f"Server Rereyano ditambahkan: {home_team_translated} vs {away_team_translated}, URL: {url}, Label: {label}")
                                 found = True
                                 break
-                        else:
-                            logging.debug(f"Liga tidak cocok: {league_name_translated} vs {match['league']}")
-                    
                     if not found:
                         matches[match_id] = {
                             'id': match_id,

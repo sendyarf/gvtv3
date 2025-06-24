@@ -1,5 +1,20 @@
 [
     {
+      "id": "aucklandcity-bocajuniors",
+      "league": "FIFA Club World Cup",
+      "team1": {"name": "Auckland City", "logo": ""},
+      "team2": {"name": "Boca Juniors", "logo": ""},
+      "kickoff_date": "2025-06-25",
+      "kickoff_time": "20:00", 
+      "match_date": "2025-06-25",
+      "match_time": "19:50",
+      "duration": "3.5",
+      "icon": "https://via.placeholder.com/30.png?text=Soccer",
+      "servers": [
+        {"url": "https://listsportsembed.blogspot.com/p/hd2.html", "label": "Manual-1"}
+      ]
+    },
+    {
       "id": "manual-manchesterunited-arsenal",
       "league": "Friendly Match",
       "team1": {"name": "Manchester United", "logo": "https://example.com/mu_logo.png"},
@@ -14,29 +29,5 @@
         {"url": "https://manualstream.com/1", "label": "CH-EN"},
         {"url": "https://manualstream.com/2", "label": "CH-ID"}
       ]
-    },
-    {
-        "id": "aucklandcity-bocajuniors",
-        "league": "FIFA Club World Cup",
-        "team1": {
-          "name": "Auckland City",
-          "logo": " "
-        },
-        "team2": {
-          "name": "Boca Juniors",
-          "logo": " "
-        },
-        "kickoff_date": "2025-06-25",
-        "kickoff_time": "02:00",
-        "match_date": "2025-06-25",
-        "match_time": "01:50",
-        "duration": "3.5",
-        "icon": "https://via.placeholder.com/30.png?text=Soccer",
-        "servers": [
-          {
-            "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-            "label": "Manual-1"
-          }
-        ]
-      }
+    }
   ]
