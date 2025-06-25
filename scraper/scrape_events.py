@@ -350,7 +350,7 @@ def convert_rereyano_channel(channel):
     return None, None
 
 def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.html', dict_file='french_dict.json'):
-    """Mengambil jadwal dari Rereyano dan menambahkannya ke daftar pertandingan"""
+    """Mengambil server dari Rereyano dan menambahkannya ke pertandingan yang sudah ada"""
     utc2_tz = pytz.timezone('Europe/Paris')
     current_date = datetime.now().date()
     end_date = current_date + timedelta(days=days)
@@ -394,7 +394,7 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     
     for line in lines:
         try:
-            # Perbaiki regex untuk menangkap semua channel dalam tanda kurung
+            # Regex untuk menangkap semua channel dalam tanda kurung
             match = re.match(
                 r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^-]+?)\s*-\s*([^\s(]+)\s*(?:\(([^)]+)\))?(?:\s*\(([^)]+)\))?', 
                 line
@@ -487,53 +487,9 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                             logging.error(f"Error memproses pertandingan {existing_id}: {e}")
                             continue
                     
-                    if not match_found and channels_str:
-                        # Log channels_str sebelum pembersihan
-                        logging.debug(f"Raw channels_str (new match): {channels_str}")
-                        # Hapus tanda kurung dan bersihkan spasi berlebih
-                        channels_str = re.sub(r'[()]+', '', channels_str).strip()
-                        # Pisahkan berdasarkan spasi untuk mendapatkan channel
-                        channel_list = [ch.strip() for ch in channels_str.split(' ') if ch.strip()]
-                        logging.debug(f"Channel list setelah pemisahan (new match): {channel_list}")
-                        
-                        servers = []
-                        for channel in channel_list:
-                            # Validasi channel menggunakan regex
-                            channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
-                            if channel_match:
-                                url, label = convert_rereyano_channel(channel)
-                                if url and label and url not in added_servers:
-                                    servers.append({
-                                        'url': url,
-                                        'label': label
-                                    })
-                                    added_servers.append(url)
-                                    logging.info(f"Server baru ditambahkan: {label} - {url}")
-                            else:
-                                logging.warning(f"Channel tidak valid: {channel}")
-                        
-                        if servers:
-                            matches[match_id] = {
-                                'id': match_id,
-                                'league': league_name_translated,
-                                'team1': {
-                                    'name': home_team_translated,
-                                    'logo': ''
-                                },
-                                'team2': {
-                                    'name': away_team_translated,
-                                    'logo': ''
-                                },
-                                'kickoff_date': wib_date,
-                                'kickoff_time': wib_time,
-                                'match_date': wib_date,
-                                'match_time': (datetime.strptime(wib_time, '%H:%M') - timedelta(minutes=10)).strftime('%H:%M'),
-                                'duration': '3.5',
-                                'icon': 'https://via.placeholder.com/30.png?text=Soccer',
-                                'servers': servers,
-                                'is_womens': 'women' in league_name_translated.lower()
-                            }
-                            logging.info(f"Pertandingan baru dibuat: {home_team_translated} vs {away_team_translated} dengan {len(servers)} server")
+                    if not match_found:
+                        logging.debug(f"Tidak ada pertandingan yang cocok untuk {home_team_translated} vs {away_team_translated}, melewati penambahan server")
+                        continue
                             
             except ValueError as e:
                 logging.error(f"Error mem-parsing tanggal/waktu {date_str} {time_str}: {e}")
