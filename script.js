@@ -707,6 +707,55 @@ function checkAndHandleEndedEvents() {
     }
 }
 
+
+// Mobile notification functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Only show on desktop
+    if (window.innerWidth > 768) {
+        const mobileNotification = document.getElementById('mobile-notification');
+        const closeNotification = document.querySelector('.close-notification');
+        let timer;
+
+        // Show notification
+        setTimeout(() => {
+            mobileNotification.style.display = 'block';
+            
+            // Auto-hide after 10 seconds
+            timer = setTimeout(() => {
+                mobileNotification.classList.add('closing');
+                setTimeout(() => {
+                    mobileNotification.style.display = 'none';
+                    mobileNotification.classList.remove('closing');
+                }, 500);
+            }, 10000); // Auto-hide after 10 seconds
+        }, 2000); // Show after 2 seconds
+
+        // Close button functionality
+        closeNotification.addEventListener('click', function(e) {
+            e.stopPropagation();
+            clearTimeout(timer);
+            mobileNotification.classList.add('closing');
+            setTimeout(() => {
+                mobileNotification.style.display = 'none';
+                mobileNotification.classList.remove('closing');
+            }, 500);
+        });
+        
+        // Close when clicking outside the notification
+        mobileNotification.addEventListener('click', function(e) {
+            if (e.target === mobileNotification) {
+                clearTimeout(timer);
+                mobileNotification.classList.add('closing');
+                setTimeout(() => {
+                    mobileNotification.style.display = 'none';
+                    mobileNotification.classList.remove('closing');
+                }, 500);
+            }
+        });
+    }
+});
+
+
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM fully loaded");

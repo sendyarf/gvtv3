@@ -449,6 +449,83 @@ html, body {
     background: transparent;
 }
 
+/* Mobile Notification Styles */
+.mobile-notification {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 280px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+.notification-content {
+    position: relative;
+    padding-right: 20px;
+}
+
+.close-notification {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #ff4444;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.notification-timer {
+    height: 3px;
+    background: #4CAF50;
+    width: 100%;
+    margin-top: 10px;
+    animation: timer 10s linear forwards;
+}
+
+.mobile-notification.closing {
+    animation: slideOut 0.5s ease-in forwards;
+}
+
+@keyframes slideOut {
+    from { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to { 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes timer {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Hide notification on mobile devices */
+@media (max-width: 768px) {
+    .mobile-notification {
+        display: none !important;
+    }
+}
+
 /* Tablet Mode (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     #main-content {
