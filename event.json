@@ -44,6 +44,10 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       }
     ],
     "is_womens": false
@@ -77,6 +81,10 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br3.html",
         "label": "CH-3"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTV2",
+        "label": "CH-PT"
       }
     ],
     "is_womens": false
@@ -155,6 +163,10 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       }
     ],
     "is_womens": false
