@@ -100,5 +100,81 @@
       }
     ],
     "is_womens": false
+  },
+  {
+    "id": "juventus-manchestercity",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+    },
+    "team2": {
+      "name": "Manchester City",
+      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
+    },
+    "kickoff_date": "2025-06-27",
+    "kickoff_time": "02:00",
+    "match_date": "2025-06-27",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "wydad-alain",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Wydad",
+      "logo": "https://static.flashscore.com/res/image/data/Y7MV6X5k-GSoKqW7o.png"
+    },
+    "team2": {
+      "name": "Al Ain",
+      "logo": "https://static.flashscore.com/res/image/data/4xQjb4kC-OKa9P8WR.png"
+    },
+    "kickoff_date": "2025-06-27",
+    "kickoff_time": "02:00",
+    "match_date": "2025-06-27",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTV2",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  
+  {
+    "id": "salzburg-realmadrid",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Salzburg",
+      "logo": "https://static.flashscore.com/res/image/data/byg6g6hT-McAr23w3.png"
+    },
+    "team2": {
+      "name": "Real Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
+    },
+    "kickoff_date": "2025-06-27",
+    "kickoff_time": "08:00",
+    "match_date": "2025-06-27",
+    "match_time": "07:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
   }
   ]
