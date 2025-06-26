@@ -114,15 +114,6 @@ def load_french_dict(dict_file):
         logging.warning(f"File kamus {dict_file} tidak ditemukan, menggunakan default")
         return {"leagues": {}, "teams": {}}
 
-def convert_rereyano_channel(channel):
-    channel = channel.strip().lower()
-    if channel.startswith('ch') and channel.endswith('fr'):
-        return f"https://envivo.govoet.my.id/{channel[2:-2]}", f"CH-FR"
-    elif channel.startswith('ch') and channel.endswith('es'):
-        return f"https://envivo.govoet.my.id/{channel[2:-2]}", f"CH-ES"
-    logging.warning(f"Channel Rereyano tidak dikenali: {channel}")
-    return None, None
-
 def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_file='flashscore_cache.html'):
     matches = {}
     current_date = datetime.now().date()
@@ -350,7 +341,6 @@ def convert_rereyano_channel(channel):
     return None, None
 
 def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.html', dict_file='french_dict.json'):
-    """Mengambil server dari Rereyano dan menambahkannya ke pertandingan yang sudah ada"""
     utc2_tz = pytz.timezone('Europe/Paris')
     current_date = datetime.now().date()
     end_date = current_date + timedelta(days=days)
@@ -394,9 +384,9 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     
     for line in lines:
         try:
-            # Regex untuk menangkap semua channel dalam tanda kurung
+            logging.debug(f"Processing line: {line}")
             match = re.match(
-                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^-]+?)\s*-\s*([^\s(]+)\s*(?:\(([^)]+)\))?(?:\s*\(([^)]+)\))?', 
+                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^-]+?)\s*-\s*([^\s(]+)\s*(.*)', 
                 line
             )
             
@@ -404,15 +394,14 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 logging.debug(f"Baris tidak cocok: {line}")
                 continue
                 
-            date_str, time_str, league_name, home_team, away_team, channels_str1, channels_str2 = match.groups()
+            date_str, time_str, league_name, home_team, away_team, channels_str = match.groups()
             
-            # Gabungkan channels_str1 dan channels_str2 jika ada
-            channels_str = ''
-            if channels_str1:
-                channels_str += channels_str1
-            if channels_str2:
-                channels_str += ' ' + channels_str2
-                
+            # Extract all channels
+            channel_list = re.findall(r'\(([^)]+)\)', channels_str) if channels_str else []
+            channel_list = [ch.strip() for ch in ' '.join(channel_list).split() if ch.strip()]
+            logging.debug(f"Extracted: date={date_str}, time={time_str}, league={league_name}, "
+                         f"home={home_team}, away={away_team}, channels={channel_list}")
+            
             home_team = home_team.strip()
             away_team = away_team.strip()
             league_name = league_name.strip()
@@ -452,43 +441,35 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                                     match_found = True
                                     logging.debug(f"Pertandingan ditemukan: {existing_id}")
                                     
-                                    if channels_str:
-                                        # Log channels_str sebelum pembersihan
-                                        logging.debug(f"Raw channels_str: {channels_str}")
-                                        # Hapus tanda kurung dan bersihkan spasi berlebih
-                                        channels_str = re.sub(r'[()]+', '', channels_str).strip()
-                                        # Pisahkan berdasarkan spasi untuk mendapatkan channel
-                                        channel_list = [ch.strip() for ch in channels_str.split(' ') if ch.strip()]
-                                        logging.debug(f"Channel list setelah pemisahan: {channel_list}")
-                                        
-                                        for channel in channel_list:
-                                            # Validasi channel menggunakan regex
-                                            channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
-                                            if channel_match:
-                                                url, label = convert_rereyano_channel(channel)
-                                                if url and label:
-                                                    normalized_url = url.lower().rstrip('/')
-                                                    server_exists = any(
-                                                        s['url'].lower().rstrip('/') == normalized_url 
-                                                        for s in match['servers']
-                                                    )
-                                                    
-                                                    if not server_exists and url not in added_servers:
-                                                        match['servers'].append({
-                                                            'url': url,
-                                                            'label': label
-                                                        })
-                                                        added_servers.append(url)
-                                                        logging.info(f"Menambahkan server Rereyano: {label} - {url}")
-                                            else:
-                                                logging.warning(f"Channel tidak valid: {channel}")
+                                    for channel in channel_list:
+                                        channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
+                                        if channel_match:
+                                            url, label = convert_rereyano_channel(channel)
+                                            if url and label:
+                                                normalized_url = url.lower().rstrip('/')
+                                                server_exists = any(
+                                                    s['url'].lower().rstrip('/') == normalized_url 
+                                                    for s in match['servers']
+                                                )
+                                                
+                                                if not server_exists and url not in added_servers:
+                                                    match['servers'].append({
+                                                        'url': url,
+                                                        'label': label
+                                                    })
+                                                    added_servers.append(url)
+                                                    logging.info(f"Menambahkan server Rereyano: {label} - {url}")
+                                                else:
+                                                    logging.debug(f"Server dilewati (sudah ada): {label} - {url}")
+                                        else:
+                                            logging.warning(f"Channel tidak valid: {channel}")
                             
                         except Exception as e:
                             logging.error(f"Error memproses pertandingan {existing_id}: {e}")
                             continue
                     
                     if not match_found:
-                        logging.debug(f"Tidak ada pertandingan yang cocok untuk {home_team_translated} vs {away_team_translated}, melewati penambahan server")
+                        logging.debug(f"Tidak ada pertandingan yang cocok untuk {home_team_translated} vs {away_team_translated}")
                         continue
                             
             except ValueError as e:
