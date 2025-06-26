@@ -1,107 +1,5 @@
 [
   {
-    "id": "inter-riverplate",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Inter",
-      "logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-jDrBQiMS.png"
-    },
-    "team2": {
-      "name": "River Plate",
-      "logo": "https://static.flashscore.com/res/image/data/pAiUJ8hT-nqhLBCKD.png"
-    },
-    "kickoff_date": "2025-06-26",
-    "kickoff_time": "08:00",
-    "match_date": "2025-06-26",
-    "match_time": "07:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-7"
-      },
-         {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=ITALIA1",
-        "label": "CH-IT"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "urawareds-monterrey",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Urawa Reds",
-      "logo": "https://static.flashscore.com/res/image/data/fuoFW9UH-nqhLBCKD.png"
-    },
-    "team2": {
-      "name": "Monterrey",
-      "logo": "https://static.flashscore.com/res/image/data/Gnf7VRQq-MVPKYVvK.png"
-    },
-    "kickoff_date": "2025-06-26",
-    "kickoff_time": "08:00",
-    "match_date": "2025-06-26",
-    "match_time": "07:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/21",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/95",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "juventus-manchestercity",
     "league": "FIFA Club World Cup",
     "team1": {
@@ -122,6 +20,14 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/20",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
       }
     ],
     "is_womens": false
