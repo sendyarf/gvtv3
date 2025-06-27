@@ -1,86 +1,67 @@
 [
   {
-    "id": "juventus-manchestercity",
+    "id": "palmeiras-botafogorj",
     "league": "FIFA Club World Cup",
     "team1": {
-      "name": "Juventus",
-      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+      "name": "Palmeiras",
+      "logo": "https://static.flashscore.com/res/image/data/6yCLyXU0-ALgHCh57.png"
     },
     "team2": {
-      "name": "Manchester City",
-      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
+      "name": "Botafogo RJ",
+      "logo": "https://static.flashscore.com/res/image/data/YyEcuJVH-rJBthgZj.png"
     },
-    "kickoff_date": "2025-06-27",
-    "kickoff_time": "02:00",
-    "match_date": "2025-06-27",
-    "match_time": "01:50",
+    "kickoff_date": "2025-06-28",
+    "kickoff_time": "23:00",
+    "match_date": "2025-06-28",
+    "match_time": "22:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
+    "servers": [ 
       {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
+        "url": "https://envivo.govoet.my.id/68",
         "label": "CH-ES"
       }
     ],
     "is_womens": false
   },
   {
-    "id": "wydad-alain",
+    "id": "benfica-chelsea",
     "league": "FIFA Club World Cup",
     "team1": {
-      "name": "Wydad",
-      "logo": "https://static.flashscore.com/res/image/data/Y7MV6X5k-GSoKqW7o.png"
+      "name": "Benfica",
+      "logo": "https://static.flashscore.com/res/image/data/ttVtr6hT-GEKimEim.png"
     },
     "team2": {
-      "name": "Al Ain",
-      "logo": "https://static.flashscore.com/res/image/data/4xQjb4kC-OKa9P8WR.png"
+      "name": "Chelsea",
+      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
     },
-    "kickoff_date": "2025-06-27",
-    "kickoff_time": "02:00",
-    "match_date": "2025-06-27",
-    "match_time": "01:50",
+    "kickoff_date": "2025-06-29",
+    "kickoff_time": "03:00",
+    "match_date": "2025-06-29",
+    "match_time": "02:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTV2",
-        "label": "CH-PT"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
-  
   {
-    "id": "salzburg-realmadrid",
+    "id": "psg-intermiami",
     "league": "FIFA Club World Cup",
     "team1": {
-      "name": "Salzburg",
-      "logo": "https://static.flashscore.com/res/image/data/byg6g6hT-McAr23w3.png"
+      "name": "PSG",
+      "logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png"
     },
     "team2": {
-      "name": "Real Madrid",
-      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
+      "name": "Inter Miami",
+      "logo": "https://static.flashscore.com/res/image/data/z94JGZTH-UwKTVGeG.png"
     },
-    "kickoff_date": "2025-06-27",
-    "kickoff_time": "08:00",
-    "match_date": "2025-06-27",
-    "match_time": "07:50",
+    "kickoff_date": "2025-06-29",
+    "kickoff_time": "23:00",
+    "match_date": "2025-06-29",
+    "match_time": "22:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      }
-    ],
+    "servers": [],
     "is_womens": false
-  }
+  },
   ]
