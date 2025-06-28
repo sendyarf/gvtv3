@@ -44,6 +44,7 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
+<<<<<<< HEAD
       },
       {
         "url": "https://envivo.govoet.my.id/20",
@@ -56,6 +57,8 @@
       {
         "url": "https://envivo.govoet.my.id/68",
         "label": "CH-ES"
+=======
+>>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
       }
     ],
     "is_womens": false
@@ -105,6 +108,7 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
+<<<<<<< HEAD
       },
       {
         "url": "https://envivo.govoet.my.id/20",
@@ -113,6 +117,8 @@
       {
         "url": "https://envivo.govoet.my.id/94",
         "label": "CH-ES"
+=======
+>>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
       }
     ],
     "is_womens": false
@@ -156,6 +162,7 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
     "is_womens": false
+<<<<<<< HEAD
   },
   {
     "id": "inter-fluminense",
@@ -340,5 +347,7 @@
       }
     ],
     "is_womens": false
+=======
+>>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
   }
 ]
