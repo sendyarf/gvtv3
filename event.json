@@ -44,7 +44,6 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
-<<<<<<< HEAD
       },
       {
         "url": "https://envivo.govoet.my.id/20",
@@ -57,8 +56,6 @@
       {
         "url": "https://envivo.govoet.my.id/68",
         "label": "CH-ES"
-=======
->>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
       }
     ],
     "is_womens": false
@@ -108,7 +105,6 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
-<<<<<<< HEAD
       },
       {
         "url": "https://envivo.govoet.my.id/20",
@@ -117,8 +113,6 @@
       {
         "url": "https://envivo.govoet.my.id/94",
         "label": "CH-ES"
-=======
->>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
       }
     ],
     "is_womens": false
@@ -162,7 +156,6 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
     "is_womens": false
-<<<<<<< HEAD
   },
   {
     "id": "inter-fluminense",
@@ -243,111 +236,5 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
     "is_womens": false
-  },
-  {
-    "id": "benfica-bayernmunich",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Benfica",
-      "logo": ""
-    },
-    "team2": {
-      "name": "Bayern Munich",
-      "logo": ""
-    },
-    "kickoff_date": "2025-06-25",
-    "kickoff_time": "02:00",
-    "match_date": "2025-06-25",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=ITALIA1",
-        "label": "CH-IT"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "aucklandcity-bocajuniors",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Auckland City",
-      "logo": ""
-    },
-    "team2": {
-      "name": "Boca Juniors",
-      "logo": ""
-    },
-    "kickoff_date": "2025-06-25",
-    "kickoff_time": "02:00",
-    "match_date": "2025-06-25",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTV2",
-        "label": "CH-PT"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "esperancetunis-chelsea",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Esperance Tunis",
-      "logo": ""
-    },
-    "team2": {
-      "name": "Chelsea",
-      "logo": ""
-    },
-    "kickoff_date": "2025-06-25",
-    "kickoff_time": "08:00",
-    "match_date": "2025-06-25",
-    "match_time": "07:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTV2",
-        "label": "CH-PT"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "losangelesfc-flamengorj",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Los Angeles FC",
-      "logo": ""
-    },
-    "team2": {
-      "name": "Flamengo RJ",
-      "logo": ""
-    },
-    "kickoff_date": "2025-06-25",
-    "kickoff_time": "08:00",
-    "match_date": "2025-06-25",
-    "match_time": "07:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      }
-    ],
-    "is_womens": false
-=======
->>>>>>> 58aa640cc08ae6ce9af27df32c70a94f7bcf50a5
   }
 ]
