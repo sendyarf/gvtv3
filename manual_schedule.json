@@ -1,59 +1,5 @@
 [
   {
-    "id": "palmeiras-botafogorj",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Palmeiras",
-      "logo": "https://static.flashscore.com/res/image/data/6yCLyXU0-ALgHCh57.png"
-    },
-    "team2": {
-      "name": "Botafogo RJ",
-      "logo": "https://static.flashscore.com/res/image/data/YyEcuJVH-rJBthgZj.png"
-    },
-    "kickoff_date": "2025-06-28",
-    "kickoff_time": "23:00",
-    "match_date": "2025-06-28",
-    "match_time": "22:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [ 
-       {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/68",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "benfica-chelsea",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Benfica",
-      "logo": "https://static.flashscore.com/res/image/data/ttVtr6hT-GEKimEim.png"
-    },
-    "team2": {
-      "name": "Chelsea",
-      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
-    },
-    "kickoff_date": "2025-06-29",
-    "kickoff_time": "03:00",
-    "match_date": "2025-06-29",
-    "match_time": "02:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "psg-intermiami",
     "league": "FIFA Club World Cup",
     "team1": {
@@ -72,6 +18,135 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "flamengorj-bayernmunich",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Flamengo RJ",
+      "logo": "https://static.flashscore.com/res/image/data/8URbBane-2R2JjDQC.png"
+    },
+    "team2": {
+      "name": "Bayern Munich",
+      "logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png"
+    },
+    "kickoff_date": "2025-06-30",
+    "kickoff_time": "03:00",
+    "match_date": "2025-06-30",
+    "match_time": "02:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=ITALIA1",
+        "label": "CH-IT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "inter-fluminense",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Inter",
+      "logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-jDrBQiMS.png"
+    },
+    "team2": {
+      "name": "Fluminense",
+      "logo": "https://static.flashscore.com/res/image/data/SII56zA6-WUfDDYk1.png"
+    },
+    "kickoff_date": "2025-07-01",
+    "kickoff_time": "02:00",
+    "match_date": "2025-07-01",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "manchestercity-alhilal",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Manchester City",
+      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
+    },
+    "team2": {
+      "name": "Al Hilal",
+      "logo": "https://static.flashscore.com/res/image/data/EVoO06R0-joUWHZ1t.png"
+    },
+    "kickoff_date": "2025-07-01",
+    "kickoff_time": "08:00",
+    "match_date": "2025-07-01",
+    "match_time": "07:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "realmadrid-juventus",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Real Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
+    },
+    "team2": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+    },
+    "kickoff_date": "2025-07-02",
+    "kickoff_time": "02:00",
+    "match_date": "2025-07-02",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "dortmund-monterrey",
+    "league": "FIFA Club World Cup",
+    "team1": {
+      "name": "Dortmund",
+      "logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png"
+    },
+    "team2": {
+      "name": "Monterrey",
+      "logo": "https://static.flashscore.com/res/image/data/Gnf7VRQq-MVPKYVvK.png"
+    },
+    "kickoff_date": "2025-07-02",
+    "kickoff_time": "08:00",
+    "match_date": "2025-07-02",
+    "match_time": "07:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
       }
