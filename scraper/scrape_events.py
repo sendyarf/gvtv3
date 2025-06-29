@@ -308,7 +308,7 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
         try:
             logging.debug(f"Memproses baris Rereyano: {line}")
             match = re.match(
-                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+?)\s*:\s*([^:]*?[^:\s])\s*-\s*([^\s(]+)\s*(.*)', 
+                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+)\s*:\s*([^:]+?)\s*-\s*(.+?)(?:\s*\(([^)]+)\))?$', 
                 line
             )
             
@@ -318,8 +318,8 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 
             date_str, time_str, league_name, home_team, away_team, channels_str = match.groups()
             
-            channel_list = re.findall(r'\(([^)]+)\)', channels_str) if channels_str else []
-            channel_list = [ch.strip() for ch in ' '.join(channel_list).split() if ch.strip()]
+            channel_list = channels_str.split() if channels_str else []
+            channel_list = [ch.strip('()') for ch in channel_list if ch.strip('()')]
             logging.debug(f"Hasil ekstrak Rereyano: date={date_str}, time={time_str}, league={league_name}, "
                          f"home={home_team}, away={away_team}, channels={channel_list}")
             
@@ -348,14 +348,14 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 wib_date, wib_time = convert_to_wib(time_str, match_date_str, utc2_tz)
                 
                 if current_date <= match_date.date() <= end_date:
-                    match_id = generate_match_id(home_team_translated, away_team_translated)
                     match_found = False
                     added_servers = []
                     
+                    # Pencocokan berdasarkan liga, waktu, dan tim
                     for existing_id, match in list(matches.items()):
                         try:
-                            league_match = match_league(league_name_translated, match['league'])
-                            time_match = time_within_window(wib_time, match['kickoff_time'])
+                            league_match = match_league(league_name_translated, match['league'], threshold=30)
+                            time_match = time_within_window(wib_time, match['kickoff_time'], window_minutes=120)
                             date_match = match_date.date() == datetime.strptime(match['kickoff_date'], '%Y-%m-%d').date()
                             
                             home_match1 = match_name(home_team_translated, match['team1']['name'])
@@ -392,15 +392,20 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                                             logging.warning(f"Channel Rereyano tidak valid: {channel}")
                             
                             if not match_found:
-                                logging.info(f"Tidak cocok untuk Rereyano: {home_team_translated} vs {away_team_translated}, "
-                                            f"league={league_name_translated}, time={wib_time}, date={wib_date}")
+                                logging.debug(f"Pencocokan gagal untuk {existing_id}: league_score={fuzz.ratio(league_name_translated.lower(), match['league'].lower())}, "
+                                             f"home_score1={fuzz.ratio(clean_team_name(home_team_translated), clean_team_name(match['team1']['name']))}, "
+                                             f"away_score1={fuzz.ratio(clean_team_name(away_team_translated), clean_team_name(match['team2']['name']))}, "
+                                             f"home_score2={fuzz.ratio(clean_team_name(home_team_translated), clean_team_name(match['team2']['name']))}, "
+                                             f"away_score2={fuzz.ratio(clean_team_name(away_team_translated), clean_team_name(match['team1']['name']))}, "
+                                             f"time_match={time_within_window(wib_time, match['kickoff_time'])}")
                         
                         except Exception as e:
                             logging.error(f"Error memproses pertandingan Rereyano {existing_id}: {e}")
                             continue
                     
                     if not match_found:
-                        logging.info(f"Tidak ada pertandingan yang cocok untuk Rereyano: {home_team_translated} vs {away_team_translated}")
+                        logging.warning(f"Tidak ada pertandingan yang cocok untuk Rereyano: {home_team_translated} vs {away_team_translated}, "
+                                       f"league={league_name_translated}, time={wib_time}, date={wib_date}. Tidak menambahkan server.")
                             
             except ValueError as e:
                 logging.error(f"Error mem-parsing tanggal/waktu Rereyano {date_str} {time_str}: {e}")
