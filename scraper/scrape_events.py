@@ -425,8 +425,9 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
         if cache_file:
             with open(cache_file, 'w', encoding='utf-8') as f:
                 f.write(text)
-        lines = text.split('\n')[:10]
-        logging.info(f"Isi SportsOnline prog.txt (10 baris pertama): {lines}")
+        lines = text.split('\n')
+        schedule_lines = [line for line in lines if re.match(r'\d{2}:\d{2}\s+.*?\s*x\s*.*?\s*\|.*sport[zs]online\.si.*', line, re.IGNORECASE)]
+        logging.info(f"Isi SportsOnline prog.txt (semua baris jadwal, {len(schedule_lines)} baris):\n" + '\n'.join(schedule_lines))
     except Exception as e:
         logging.warning(f"Gagal mengambil {url}, mencoba cache: {e}")
         if cache_file and os.path.exists(cache_file):
@@ -440,40 +441,14 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
     current_date = datetime.now().date()
     end_date = current_date + timedelta(days=days)
     
-    last_update_match = re.search(r'LAST UPDATE: (\d{2})-(\d{2})-(\d{2})', text)
-    if last_update_match:
-        day, month, year = map(int, last_update_match.groups())
-        year = 2000 + year
-        update_date = datetime(year, month, day).date()
-    else:
-        update_date = current_date
-        logging.warning("Tidak dapat mendeteksi LAST UPDATE, menggunakan tanggal saat ini")
-    
-    # Gunakan tanggal dari Flashscore jika tersedia
-    day_mapping = {
-        'MONDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() if matches else update_date,
-        'TUESDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=1) if matches else update_date,
-        'WEDNESDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=2) if matches else update_date,
-        'THURSDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=3) if matches else update_date,
-        'FRIDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=4) if matches else update_date,
-        'SATURDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=5) if matches else update_date,
-        'SUNDAY': datetime.strptime(matches[list(matches.keys())[0]]['kickoff_date'], '%Y-%m-%d').date() + timedelta(days=6) if matches else update_date,
-    }
-    current_day = None
-    
     for line in lines:
         line = line.strip()
         if not line:
             logging.debug("Baris kosong di SportsOnline, dilewati")
             continue
         
-        if line.upper() in day_mapping:
-            current_day = day_mapping[line.upper()]
-            logging.info(f"Deteksi hari: {line} -> {current_day}")
-            continue
-        
         match = re.match(
-            r'(\d{2}:\d{2})\s+((?:[^:]+?\s*:\s*)?)([^x]*?)(?:\s*W)?\sx\s*([^\s|]+)(?:\s*W)?(?:\s*\((W)\))?\s*\|\s*(https?://sport[zs]online\.si/channels/[^\s]+)', 
+            r'(\d{2}:\d{2})\s+((?:[^:]+?\s*:\s*)?)(.*?)(?:\s*W)?\sx\s*(.*?)(?:\s*W)?(?:\s*\((W)\))?\s*\|\s*(https?://sport[zs]online\.si/channels/[^\s]+)', 
             line, re.IGNORECASE
         )
         if not match:
@@ -481,38 +456,40 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             continue
         
         time_str, league_name, home_team, away_team, is_womens_explicit, server_url = match.groups()
-        # Tentukan apakah baris SportsOnline adalah pertandingan wanita
-        is_womens_sportsonline = bool(is_womens_explicit or 'W' in line.split('x')[0] or 'W' in line.split('x')[1])
+        is_womens_sportsonline = bool(
+            is_womens_explicit or 
+            home_team.strip().endswith(' W') or 
+            away_team.strip().endswith(' W') or
+            french_dict['teams'].get(home_team.strip(), '').endswith(' Women') or
+            french_dict['teams'].get(away_team.strip(), '').endswith(' Women')
+        )
         
         league_name = league_name.strip(':').strip() if league_name else 'Unknown League'
         league_name_translated = french_dict['leagues'].get(league_name.strip(), league_name.strip())
         if league_name_translated == 'Unknown League':
             league_name_translated = 'FIFA Club World Cup' if not is_womens_sportsonline else 'Women’s International'
         
-        logging.debug(f"Hasil ekstrak SportsOnline: Time={time_str}, League={league_name_translated}, Home={home_team}, Away={away_team}, Womens={is_womens_sportsonline}, URL={server_url}")
+        logging.debug(f"Hasil ekstrak SportsOnline: Time={time_str}, League={league_name_translated}, Home={home_team.strip()}, Away={away_team.strip()}, Womens={is_womens_sportsonline}, URL={server_url}")
         
         try:
-            if not current_day:
-                logging.warning(f"Tidak ada hari yang ditentukan untuk baris: {line}")
-                continue
+            # Konversi waktu tanpa tanggal spesifik, gunakan tanggal saat ini sebagai default
+            match_date = current_date
+            match_date_str = current_date.strftime('%Y-%m-%d')
+            wib_date, wib_time = convert_to_wib(time_str, match_date_str, utc1_tz)
             
             home_team_translated = french_dict['teams'].get(home_team.strip(), home_team.strip())
             if home_team_translated == home_team.strip():
-                home_team_translated = find_team_fallback(home_team, matches)
+                home_team_translated = find_team_fallback(home_team.strip(), matches, threshold=70)
             
             away_team_translated = french_dict['teams'].get(away_team.strip(), away_team.strip())
             if away_team_translated == away_team.strip():
-                away_team_translated = find_team_fallback(away_team, matches)
+                away_team_translated = find_team_fallback(away_team.strip(), matches, threshold=70)
             
             logging.debug(f"SportsOnline setelah terjemahan: home={home_team_translated}, away={away_team_translated}, league={league_name_translated}")
             
             if len(home_team_translated) < 2 or len(away_team_translated) < 2:
                 logging.warning(f"Nama tim SportsOnline tidak valid: Home={home_team_translated}, Away={away_team_translated}")
                 continue
-            
-            match_date = current_day
-            match_date_str = current_day.strftime('%Y-%m-%d')
-            wib_date, wib_time = convert_to_wib(time_str, match_date_str, utc1_tz)
             
             if current_date <= match_date <= end_date:
                 match_id = generate_match_id(home_team_translated, away_team_translated)
@@ -521,21 +498,24 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
                 
                 for existing_id, match in list(matches.items()):
                     try:
-                        # Cocokkan berdasarkan is_womens
                         if match.get('is_womens', False) != is_womens_sportsonline:
                             logging.debug(f"Melewati pertandingan Flashscore: {existing_id}, is_womens Flashscore={match.get('is_womens', False)}, is_womens SportsOnline={is_womens_sportsonline}")
                             continue
                         
-                        league_match = match_league(league_name_translated, match['league'])
-                        time_match = time_within_window(wib_time, match['kickoff_time'])
-                        date_match = match_date == datetime.strptime(match['kickoff_date'], '%Y-%m-%d').date()
+                        league_match = match_league(league_name_translated, match['league'], threshold=30)
+                        time_match = time_within_window(wib_time, match['kickoff_time'], window_minutes=120)
                         
-                        home_match1 = match_name_sportsonline(home_team_translated, match['team1']['name'])
-                        away_match1 = match_name_sportsonline(away_team_translated, match['team2']['name'])
-                        home_match2 = match_name_sportsonline(home_team_translated, match['team2']['name'])
-                        away_match2 = match_name_sportsonline(away_team_translated, match['team1']['name'])
+                        home_match1 = match_name_sportsonline(home_team_translated, match['team1']['name'], threshold=70)
+                        away_match1 = match_name_sportsonline(away_team_translated, match['team2']['name'], threshold=70)
+                        home_match2 = match_name_sportsonline(home_team_translated, match['team2']['name'], threshold=70)
+                        away_match2 = match_name_sportsonline(away_team_translated, match['team1']['name'], threshold=70)
                         
-                        if league_match and (time_match or date_match):
+                        logging.debug(f"Pencocokan untuk {existing_id}: league_match={league_match}, time_match={time_match}, "
+                                     f"home_match1={home_match1}, away_match1={away_match1}, home_match2={home_match2}, away_match2={away_match2}, "
+                                     f"home_score1={fuzz.ratio(clean_team_name(home_team_translated), clean_team_name(match['team1']['name']))}, "
+                                     f"away_score1={fuzz.ratio(clean_team_name(away_team_translated), clean_team_name(match['team2']['name']))}")
+                        
+                        if league_match and time_match:
                             if (home_match1 and away_match1) or (home_match2 and away_match2):
                                 match_found = True
                                 logging.info(f"Pertandingan SportsOnline cocok: {existing_id}, home={home_team_translated}, away={away_team_translated}, is_womens={is_womens_sportsonline}")
@@ -554,28 +534,46 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
                                         'url': normalized_url,
                                         'label': label
                                     })
-                                    # Tidak perlu mengatur is_womens karena sudah diatur oleh Flashscore
                                     added_servers.append(normalized_url)
                                     logging.info(f"Menambahkan server SportsOnline: {label} - {normalized_url} untuk {existing_id}")
                                 else:
                                     logging.debug(f"Server SportsOnline dilewati (sudah ada): {normalized_url}")
-                        
-                        if not match_found:
-                            logging.info(f"Tidak cocok untuk SportsOnline: {home_team_translated} vs {away_team_translated}, "
-                                        f"league={league_name_translated}, time={wib_time}, date={wib_date}, is_womens={is_womens_sportsonline}")
                         
                     except Exception as e:
                         logging.error(f"Error memproses pertandingan SportsOnline {existing_id}: {e}")
                         continue
                 
                 if not match_found:
-                    logging.info(f"Tidak ada pertandingan yang cocok untuk SportsOnline: {home_team_translated} vs {away_team_translated}, is_womens={is_womens_sportsonline}")
+                    logging.info(f"Tidak ada pertandingan yang cocok untuk SportsOnline: {home_team_translated} vs {away_team_translated}, "
+                                f"league={league_name_translated}, time={wib_time}, date={wib_date}, is_womens={is_womens_sportsonline}")
+                    matches[match_id] = {
+                        'id': match_id,
+                        'league': league_name_translated,
+                        'team1': {'name': home_team_translated, 'logo': ''},
+                        'team2': {'name': away_team_translated, 'logo': ''},
+                        'kickoff_date': wib_date,
+                        'kickoff_time': wib_time,
+                        'match_date': wib_date,
+                        'match_time': calculate_match_time(wib_time),
+                        'duration': '3.5',
+                        'icon': 'https://via.placeholder.com/30.png?text=Soccer',
+                        'servers': [],
+                        'is_womens': is_womens_sportsonline
+                    }
+                    channel = server_url.split('/')[-1].replace('.php', '')
+                    normalized_url = f'https://listsportsembed.blogspot.com/p/{channel}.html'
+                    matches[match_id]['servers'].append({
+                        'url': normalized_url,
+                        'label': 'CH-1'
+                    })
+                    logging.info(f"Pertandingan baru ditambahkan: {match_id}, server: {normalized_url}")
                             
         except ValueError as e:
             logging.error(f"Error mem-parsing tanggal/waktu SportsOnline {time_str}: {e}")
             continue
                 
     return matches
+
 
 def merge_manual_schedule(manual_file, auto_schedule):
     try:
