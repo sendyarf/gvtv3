@@ -37,19 +37,22 @@ def match_name_sportsonline(name1, name2, threshold=30):
     logging.debug(f"Pencocokan tim (SportsOnline): {name1} vs {name2} -> Skor: {score}")
     return score >= threshold
 
-def match_league(league1, league2, threshold=40):
+def match_league(league1, league2, threshold=30):
     score = fuzz.ratio(league1.lower(), league2.lower())
     logging.debug(f"Pencocokan liga: {league1} vs {league2} -> Skor: {score}")
     return score >= threshold
 
-def find_team_fallback(team_name, matches, threshold=70):
+def find_team_fallback(team_name, matches, threshold=60):
     best_match = team_name
     best_score = 0
     for match_id, match in matches.items():
         for team_key in ['team1', 'team2']:
             team = match[team_key]['name']
             score = fuzz.ratio(clean_team_name(team_name), clean_team_name(team))
-            current_threshold = 40 if len(team_name) < 5 else threshold
+            current_threshold = 40 if len(team_name) < 7 else threshold
+            # Bonus skor untuk kecocokan substring
+            if team_name.lower() in team.lower() or team.lower() in team_name.lower():
+                score += 20
             if score > best_score and score >= current_threshold:
                 best_match = team
                 best_score = score
@@ -488,7 +491,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             
             home_team_translated = french_dict['teams'].get(home_team.strip(), home_team.strip())
             if home_team_translated == home_team.strip():
-                home_team_translated = find_team_fallback(home_team.strip(), matches, threshold=70)
+                home_team_translated = find_team_fallback(home_team.strip(), matches, threshold=50)
             
             away_team_translated = french_dict['teams'].get(away_team.strip(), away_team.strip())
             if away_team_translated == away_team.strip():
@@ -608,10 +611,10 @@ def compute_json_hash(data):
 
 def main():
     flashscore_urls = [
-        ("https://www.flashscore.com/football/world/fifa-club-world-cup/fixtures/", "FIFA Club World Cup"),
-        ("https://www.flashscore.com/football/england/premier-league/fixtures/", "Premier League"),
-        ("https://www.flashscore.com/football/france/ligue-1/fixtures/", "Ligue 1"),
-        ("https://www.flashscore.com/football/germany/bundesliga/fixtures/", "Bundesliga")
+        ("https://www.flashscore.com/football/world/fifa-club-world-cup/fixtures/", "FIFA Club World Cup")
+       # ("https://www.flashscore.com/football/england/premier-league/fixtures/", "Premier League"),
+        #("https://www.flashscore.com/football/france/ligue-1/fixtures/", "Ligue 1"),
+        #("https://www.flashscore.com/football/germany/bundesliga/fixtures/", "Bundesliga")
     ]
     sportsonline_url = "https://sportsonline.ci/prog.txt"
     rereyano_url = "https://rereyano.ru/"
