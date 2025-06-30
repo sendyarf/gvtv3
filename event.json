@@ -1,25 +1,5 @@
 [
   {
-    "id": "inter-fluminense",
-    "league": "FIFA Club World Cup",
-    "team1": {
-      "name": "Inter",
-      "logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-jDrBQiMS.png"
-    },
-    "team2": {
-      "name": "Fluminense",
-      "logo": "https://static.flashscore.com/res/image/data/SII56zA6-WUfDDYk1.png"
-    },
-    "kickoff_date": "2025-07-01",
-    "kickoff_time": "02:00",
-    "match_date": "2025-07-01",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
-    "is_womens": false
-  },
-  {
     "id": "manchestercity-alhilal",
     "league": "FIFA Club World Cup",
     "team1": {
@@ -37,34 +17,6 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-7"
-      },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
@@ -99,42 +51,6 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-        "label": "CH-7"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-8"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-9"
-      },
-      {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
       },
@@ -167,34 +83,6 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-7"
-      },
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
