@@ -1,16 +1,17 @@
 {
     "leagues": {
       "Coupe Du Monde Des Clubs Fifa": "FIFA Club World Cup",
-      "Ligue 1": "Ligue 1"
+      "Ligue 1": "Ligue 1",
+      "MLS": "MLS"
     },
     "teams": {
       "Auckland City": "Auckland City",
       "Boca Juniors": "Boca Juniors",
       "Benfica": "Benfica",
       "Bayern Munich": "Bayern Munich",
+      "Bayern": "Bayern",
       "Esperance Tunis": "Esperance Tunis",
       "Chelsea": "Chelsea",
-      "Los Angeles FC": "Los Angeles FC",
       "Flamengo": "Flamengo RJ",
         "Internazionale": "Inter",
         "Borussia Dortmund": "Dortmund",
@@ -26,9 +27,8 @@
         "Juventus": "Juventus",
         "Red Bull Salzbourg": "Salzburg",
         "Real Madrid": "Real Madrid",
-        "PSG": "PSG",
-        "Inter Miami": "Inter Miami",
-        "Bayern München": "Bayern Munich"
+        "Los Angeles FC": "Los Angeles FC",
+        "Vancouver Whitecaps": "Vancouver Whitecaps"
 
     }
   }
