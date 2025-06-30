@@ -307,8 +307,9 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     for line in lines:
         try:
             logging.debug(f"Memproses baris Rereyano: {line}")
+            # Pisahkan baris menjadi bagian utama
             match = re.match(
-                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+)\s*:\s*([^:]+?)\s*-\s*(.+?)(?:\s*\(([^)]+)\))?$', 
+                r'(\d{2}-\d{2}-\d{4})\s+\((\d{2}:\d{2})\)\s+([^:]+)\s*:\s*([^:]+?)\s*-\s*([^()]+)', 
                 line
             )
             
@@ -316,10 +317,11 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                 logging.debug(f"Baris Rereyano tidak cocok: {line}")
                 continue
                 
-            date_str, time_str, league_name, home_team, away_team, channels_str = match.groups()
+            date_str, time_str, league_name, home_team, away_team = match.groups()
+            # Tangkap hanya channel yang valid (CH followed by numbers and optional letters)
+            channel_list = re.findall(r'\((CH\d+[a-zA-Z]{0,2})\)', line, re.IGNORECASE)
+            channel_list = [ch.strip() for ch in channel_list if ch.strip()]
             
-            channel_list = channels_str.split() if channels_str else []
-            channel_list = [ch.strip('()') for ch in channel_list if ch.strip('()')]
             logging.debug(f"Hasil ekstrak Rereyano: date={date_str}, time={time_str}, league={league_name}, "
                          f"home={home_team}, away={away_team}, channels={channel_list}")
             
@@ -328,13 +330,18 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
             league_name = league_name.strip()
             
             league_name_translated = french_dict['leagues'].get(league_name, league_name)
-            home_team_translated = french_dict['teams'].get(home_team, home_team)
-            if home_team_translated == home_team:
+            # Hanya panggil find_team_fallback jika tim tidak ada di french_dict.json
+            home_team_translated = french_dict['teams'].get(home_team)
+            if home_team_translated is None:
                 home_team_translated = find_team_fallback(home_team, matches)
+            else:
+                logging.debug(f"Tim ditemukan di french_dict: {home_team} -> {home_team_translated}")
             
-            away_team_translated = french_dict['teams'].get(away_team, away_team)
-            if away_team_translated == away_team:
+            away_team_translated = french_dict['teams'].get(away_team)
+            if away_team_translated is None:
                 away_team_translated = find_team_fallback(away_team, matches)
+            else:
+                logging.debug(f"Tim ditemukan di french_dict: {away_team} -> {away_team_translated}")
             
             logging.debug(f"Rereyano setelah terjemahan: home={home_team_translated}, away={away_team_translated}, league={league_name_translated}")
             
@@ -369,25 +376,23 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
                                     logging.info(f"Pertandingan Rereyano cocok: {existing_id}, home={home_team_translated}, away={away_team_translated}")
                                     
                                     for channel in channel_list:
-                                        channel_match = re.match(r'(?:CH|ch)?(\d+[a-zA-Z]{0,2})', channel, re.IGNORECASE)
-                                        if channel_match:
-                                            url, label = convert_rereyano_channel(channel)
-                                            if url and label:
-                                                normalized_url = url.lower().rstrip('/')
-                                                server_exists = any(
-                                                    s['url'].lower().rstrip('/') == normalized_url 
-                                                    for s in match['servers']
-                                                )
-                                                
-                                                if not server_exists and url not in added_servers:
-                                                    match['servers'].append({
-                                                        'url': url,
-                                                        'label': label
-                                                    })
-                                                    added_servers.append(url)
-                                                    logging.info(f"Menambahkan server Rereyano: {label} - {url} untuk {existing_id}")
-                                                else:
-                                                    logging.debug(f"Server Rereyano dilewati (sudah ada): {label} - {url}")
+                                        url, label = convert_rereyano_channel(channel)
+                                        if url and label:
+                                            normalized_url = url.lower().rstrip('/')
+                                            server_exists = any(
+                                                s['url'].lower().rstrip('/') == normalized_url 
+                                                for s in match['servers']
+                                            )
+                                            
+                                            if not server_exists and url not in added_servers:
+                                                match['servers'].append({
+                                                    'url': url,
+                                                    'label': label
+                                                })
+                                                added_servers.append(url)
+                                                logging.info(f"Menambahkan server Rereyano: {label} - {url} untuk {existing_id}")
+                                            else:
+                                                logging.debug(f"Server Rereyano dilewati (sudah ada): {label} - {url}")
                                         else:
                                             logging.warning(f"Channel Rereyano tidak valid: {channel}")
                             
