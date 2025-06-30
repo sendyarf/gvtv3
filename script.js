@@ -6,7 +6,7 @@ let activeEventId = null;
 // Loads channel data from channels.json
 async function loadChannels() {
     try {
-        const response = await fetch('channels.json');
+        const response = await fetch('https://govoet.pages.dev/channels.json');
         const channels = await response.json();
         const liveTvContent = document.querySelector("#live-tv #content");
         console.log("Live TV Content Element:", liveTvContent);
@@ -46,7 +46,7 @@ function isEventEnded(event) {
 // Loads event data from event.json
 async function loadEvents() {
     try {
-        const response = await fetch('event.json');
+        const response = await fetch('https://govoet.pages.dev/event.json');
         const events = await response.json();
         const liveEventContent = document.querySelector("#live-event #content");
         console.log("Live Event Content Element:", liveEventContent);
