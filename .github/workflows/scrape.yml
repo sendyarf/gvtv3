@@ -26,16 +26,26 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Chrome
+      - name: Install Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable=138.0.7204.49
-          google-chrome --version
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz webdrivermanager
 
-      - name: Install ChromeDriver
+      - name: Install Chrome and ChromeDriver
         run: |
-          CHROMEDRIVER_VERSION="138.0.7204.49"
-          wget -N https://storage.googleapis.com/chrome-for-testing-public/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip
+          # Install dependencies untuk Chrome
+          sudo apt-get update
+          sudo apt-get install -y wget unzip fonts-liberation libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2 libcurl4 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libu2f-udev libvulkan1 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 xdg-utils
+          
+          # Install Chrome 138.0.7204.49 dari Chrome for Testing
+          wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.49/linux64/chrome-linux64.zip
+          unzip chrome-linux64.zip
+          sudo mv chrome-linux64/chrome /usr/bin/google-chrome
+          sudo chmod +x /usr/bin/google-chrome
+          google-chrome --version
+          
+          # Install ChromeDriver 138.0.7204.49 dari Chrome for Testing
+          wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.49/linux64/chromedriver-linux64.zip
           unzip chromedriver-linux64.zip
           sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
           sudo chmod +x /usr/bin/chromedriver
@@ -47,11 +57,6 @@ jobs:
           chromedriver --version
           if ! command -v chromedriver; then exit 1; fi
           if ! command -v google-chrome; then exit 1; fi
-
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
 
       - name: Ensure french_dict.json
         run: |
