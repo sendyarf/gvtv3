@@ -1,4 +1,3 @@
-
 import json
 import logging
 import re
@@ -10,6 +9,7 @@ from fuzzywuzzy import fuzz
 from tenacity import retry, stop_after_attempt, wait_fixed
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,8 +17,7 @@ from selenium.common.exceptions import TimeoutException, WebDriverException
 import requests
 import os
 import time
-import tempfile
-import shutil
+import random
 
 # Konfigurasi logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -106,47 +105,49 @@ def time_within_window(time1, time2, window_minutes=120):
 @retry(stop=stop_after_attempt(5), wait=wait_fixed(10))
 def scrape_with_selenium(url):
     """Mengambil konten halaman menggunakan Selenium."""
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--window-size=1920,1080')
-    options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36')
-    options.add_argument('--disable-blink-features=AutomationControlled')
-    options.add_experimental_option('excludeSwitches', ['enable-automation'])
-    options.add_experimental_option('useAutomationExtension', False)
-
-    # Use a random port to avoid conflicts
-    port = random.randint(1024, 65535)
-    service = Service('/usr/bin/chromedriver', port=port)
-    logging.debug(f"Starting ChromeDriver on port {port} with default user-data-dir")
-
-    driver = None
     try:
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--window-size=1920,1080')
+        options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36')
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        options.add_experimental_option('useAutomationExtension', False)
+
+        # Use a random port to avoid conflicts
+        port = random.randint(1024, 65535)
+        service = Service('/usr/bin/chromedriver', port=port)
+        logging.debug(f"Starting ChromeDriver on port {port} with default user-data-dir")
+
         driver = webdriver.Chrome(service=service, options=options)
         logging.debug(f"ChromeDriver started successfully for URL: {url}")
-        driver.get(url)
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'body'))
-        )
-        time.sleep(2)
-        html = driver.page_source
-        soup = BeautifulSoup(html, 'html.parser')
-        if not soup.select('body'):
-            logging.error(f"Halaman kosong atau gagal dimuat: {url}")
-            raise ValueError("Halaman tidak memuat konten yang valid")
-        return soup
-    except (TimeoutException, WebDriverException) as e:
-        logging.error(f"Gagal memuat {url}: {e}")
-        raise
-    finally:
-        if driver:
+        try:
+            driver.get(url)
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'body'))
+            )
+            time.sleep(2)
+            html = driver.page_source
+            soup = BeautifulSoup(html, 'html.parser')
+            if not soup.select('body'):
+                logging.error(f"Halaman kosong atau gagal dimuat: {url}")
+                raise ValueError("Halaman tidak memuat konten yang valid")
+            return soup
+        except (TimeoutException, WebDriverException) as e:
+            logging.error(f"Gagal memuat {url}: {e}")
+            raise
+        finally:
             try:
                 driver.quit()
                 logging.debug(f"ChromeDriver closed successfully")
             except Exception as e:
                 logging.warning(f"Gagal menutup driver: {e}")
+    except Exception as e:
+        logging.error(f"Error in scrape_with_selenium: {type(e).__name__}: {str(e)}")
+        raise
 
 def load_cache(cache_file):
     """Memuat konten dari file cache."""
@@ -157,7 +158,9 @@ def load_cache(cache_file):
                 logging.warning(f"Cache {cache_file} terlalu lama ({file_age/3600:.2f} jam), diabaikan")
                 return None
         with open(cache_file, 'r', encoding='utf-8') as f:
-            return f.read()
+            content = f.read()
+            logging.debug(f"Cache loaded from {cache_file}")
+            return content
     except FileNotFoundError:
         logging.warning(f"Cache {cache_file} tidak ditemukan")
         return None
@@ -196,9 +199,10 @@ def scrape_flashscore_schedule(url, days=5, league_name='Unknown League', cache_
     
     try:
         soup = scrape_with_selenium(url)
+        logging.debug(f"Successfully scraped {url}")
     except Exception as e:
         soup = None
-        logging.warning(f"Gagal mengambil {url}, mencoba cache: {e}")
+        logging.warning(f"Gagal mengambil {url}, mencoba cache: {type(e).__name__}: {str(e)}")
     
     if not soup and cache_file:
         cached_content = load_cache(cache_file)
@@ -335,10 +339,11 @@ def scrape_rereyano_servers(url, matches, days=5, cache_file='rereyano_cache.htm
     soup = None
     try:
         soup = scrape_with_selenium(url)
+        logging.debug(f"Successfully scraped Rereyano: {url}")
         if soup and cache_file:
             save_cache(url, str(soup), cache_file)
     except Exception as e:
-        logging.warning(f"Gagal mengambil {url}, mencoba cache: {e}")
+        logging.warning(f"Gagal mengambil {url}, mencoba cache: {type(e).__name__}: {str(e)}")
     
     if not soup and cache_file:
         cached_content = load_cache(cache_file)
@@ -499,7 +504,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
         schedule_lines = [line for line in lines if re.match(r'\d{2}:\d{2}\s+.*?\s*x\s*.*?\s*\|.*sport[zs]online\.si.*', line, re.IGNORECASE)]
         logging.info(f"Isi SportsOnline prog.txt (semua baris jadwal, {len(schedule_lines)} baris):\n" + '\n'.join(schedule_lines))
     except Exception as e:
-        logging.warning(f"Gagal mengambil {url}, mencoba cache: {e}")
+        logging.warning(f"Gagal mengambil {url}, mencoba cache: {type(e).__name__}: {str(e)}")
         if cache_file and os.path.exists(cache_file):
             with open(cache_file, 'r', encoding='utf-8') as f:
                 text = f.read()
@@ -691,26 +696,26 @@ def main():
             matches.update(league_matches)
             logging.info(f"Tim Flashscore ({name}): {list(league_matches.keys())}")
         except Exception as e:
-            logging.error(f"Gagal scraping Flashscore untuk {name}: {e}")
+            logging.error(f"Gagal scraping Flashscore untuk {name}: {type(e).__name__}: {str(e)}")
             continue
     
     # Scrape SportsOnline
     try:
         matches = scrape_sportsonline_servers(sportsonline_url, matches, dict_file=dict_file)
     except Exception as e:
-        logging.error(f"Gagal scraping SportsOnline: {e}")
+        logging.error(f"Gagal scraping SportsOnline: {type(e).__name__}: {str(e)}")
     
     # Scrape Rereyano
     try:
         matches = scrape_rereyano_servers(rereyano_url, matches, dict_file=dict_file)
     except Exception as e:
-        logging.error(f"Gagal scraping Rereyano: {e}")
+        logging.error(f"Gagal scraping Rereyano: {type(e).__name__}: {str(e)}")
     
     # Merge manual schedule
     try:
         matches = merge_manual_schedule(manual_schedule_file, matches)
     except Exception as e:
-        logging.error(f"Gagal menggabungkan manual schedule: {e}")
+        logging.error(f"Gagal menggabungkan manual schedule: {type(e).__name__}: {str(e)}")
     
     # Convert matches to list for output
     output = list(matches.values())
@@ -726,7 +731,7 @@ def main():
     except FileNotFoundError:
         logging.info(f"File {output_file} tidak ditemukan, akan membuat baru")
     except json.JSONDecodeError as e:
-        logging.error(f"Error decoding {output_file}: {e}, akan menimpa file")
+        logging.error(f"Error decoding {output_file}: {e}")
     except Exception as e:
         logging.error(f"Gagal membaca {output_file}: {e}")
     
@@ -740,7 +745,7 @@ def main():
                 json.dump(output, f, indent=2, ensure_ascii=False)
             logging.info(f"Jadwal updated: {output_file} dengan {len(output)} pertandingan")
         except Exception as e:
-            logging.error(f"Gagal menyimpan {output_file}: {e}")
+            logging.error(f"Gagal menyimpan {output_file}: {type(e).__name__}: {str(e)}")
     else:
         logging.info(f"Tidak ada perubahan, {output_file} tidak diupdate")
     
