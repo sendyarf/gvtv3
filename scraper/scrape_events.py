@@ -1,3 +1,4 @@
+
 import json
 import logging
 import re
@@ -18,6 +19,7 @@ import requests
 import os
 import time
 import random
+import subprocess
 
 # Konfigurasi logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -102,17 +104,29 @@ def time_within_window(time1, time2, window_minutes=120):
     except ValueError:
         return False
 
-@retry(stop=stop_after_attempt(5), wait=wait_fixed(10))
+@retry(stop=stop_after_attempt(5), wait=wait_fixed(15))
 def scrape_with_selenium(url):
     """Mengambil konten halaman menggunakan Selenium."""
     try:
+        # Log system state before starting ChromeDriver
+        logging.debug("Checking running Chrome/ChromeDriver processes before starting:")
+        try:
+            result = subprocess.run(['ps', 'aux'], capture_output=True, text=True)
+            logging.debug(f"Processes:\n{result.stdout}")
+            chrome_processes = subprocess.run(['ps', 'aux', '|', 'grep', '-E', 'chromedriver|google-chrome'], capture_output=True, text=True, shell=True)
+            logging.debug(f"Chrome/ChromeDriver processes:\n{chrome_processes.stdout}")
+            tmp_dirs = subprocess.run(['ls', '-l', '/tmp', '|', 'grep', 'tmp'], capture_output=True, text=True, shell=True)
+            logging.debug(f"Temporary directories in /tmp:\n{tmp_dirs.stdout}")
+        except Exception as e:
+            logging.warning(f"Failed to check system state: {e}")
+
         options = Options()
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-gpu')
         options.add_argument('--window-size=1920,1080')
-        options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36')
+        options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36')
         options.add_argument('--disable-blink-features=AutomationControlled')
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
@@ -126,7 +140,7 @@ def scrape_with_selenium(url):
         logging.debug(f"ChromeDriver started successfully for URL: {url}")
         try:
             driver.get(url)
-            WebDriverWait(driver, 10).until(
+            WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, 'body'))
             )
             time.sleep(2)
@@ -137,7 +151,7 @@ def scrape_with_selenium(url):
                 raise ValueError("Halaman tidak memuat konten yang valid")
             return soup
         except (TimeoutException, WebDriverException) as e:
-            logging.error(f"Gagal memuat {url}: {e}")
+            logging.error(f"Gagal memuat {url}: {type(e).__name__}: {str(e)}")
             raise
         finally:
             try:
@@ -147,6 +161,13 @@ def scrape_with_selenium(url):
                 logging.warning(f"Gagal menutup driver: {e}")
     except Exception as e:
         logging.error(f"Error in scrape_with_selenium: {type(e).__name__}: {str(e)}")
+        # Attempt to clean up any stuck processes
+        try:
+            subprocess.run(['pkill', '-9', 'chromedriver'], check=False)
+            subprocess.run(['pkill', '-9', 'google-chrome'], check=False)
+            logging.debug("Attempted to clean up ChromeDriver and Chrome processes")
+        except Exception as cleanup_e:
+            logging.warning(f"Failed to clean up processes: {cleanup_e}")
         raise
 
 def load_cache(cache_file):
@@ -157,13 +178,13 @@ def load_cache(cache_file):
             if file_age > 24 * 60 * 60:
                 logging.warning(f"Cache {cache_file} terlalu lama ({file_age/3600:.2f} jam), diabaikan")
                 return None
-        with open(cache_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-            logging.debug(f"Cache loaded from {cache_file}")
-            return content
-    except FileNotFoundError:
-        logging.warning(f"Cache {cache_file} tidak ditemukan")
-        return None
+            with open(cache_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+                logging.info(f"Cache loaded successfully from {cache_file}")
+                return content
+        else:
+            logging.warning(f"Cache file {cache_file} does not exist")
+            return None
     except Exception as e:
         logging.error(f"Gagal memuat cache {cache_file}: {e}")
         return None
