@@ -1,3 +1,4 @@
+
 import json
 import logging
 import re
@@ -16,6 +17,8 @@ from selenium.common.exceptions import TimeoutException, WebDriverException
 import requests
 import os
 import time
+import tempfile
+import shutil
 
 # Konfigurasi logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -100,7 +103,7 @@ def time_within_window(time1, time2, window_minutes=120):
     except ValueError:
         return False
 
-@retry(stop=stop_after_attempt(3), wait=wait_fixed(5))
+@retry(stop=stop_after_attempt(5), wait=wait_fixed(10))
 def scrape_with_selenium(url):
     """Mengambil konten halaman menggunakan Selenium."""
     options = Options()
@@ -113,6 +116,10 @@ def scrape_with_selenium(url):
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_experimental_option('excludeSwitches', ['enable-automation'])
     options.add_experimental_option('useAutomationExtension', False)
+
+    # Create a unique temporary directory for user data
+    user_data_dir = tempfile.mkdtemp()
+    options.add_argument(f'--user-data-dir={user_data_dir}')
 
     driver = webdriver.Chrome(options=options)
     try:
@@ -132,6 +139,11 @@ def scrape_with_selenium(url):
         raise
     finally:
         driver.quit()
+        # Clean up the temporary directory
+        try:
+            shutil.rmtree(user_data_dir, ignore_errors=True)
+        except Exception as e:
+            logging.warning(f"Gagal menghapus user-data-dir {user_data_dir}: {e}")
 
 def load_cache(cache_file):
     """Memuat konten dari file cache."""
