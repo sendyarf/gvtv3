@@ -1,8 +1,9 @@
+
 name: Scrape Players
 
 on:
   schedule:
-    - cron: '30 16 * * *' # Per jam
+    - cron: '30 16 * * *' 
   push:
     branches:
       - main
@@ -57,6 +58,18 @@ jobs:
           chromedriver --version
           if ! command -v chromedriver; then exit 1; fi
           if ! command -v google-chrome; then exit 1; fi
+
+      - name: Check System Resources
+        run: |
+          free -h
+          df -h
+          ulimit -a
+
+      - name: Clean Up ChromeDriver Processes
+        run: |
+          pkill -9 chromedriver || true
+          pkill -9 google-chrome || true
+        if: always()
 
       - name: Ensure french_dict.json
         run: |
