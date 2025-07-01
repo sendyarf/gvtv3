@@ -117,12 +117,15 @@ def scrape_with_selenium(url):
     options.add_experimental_option('excludeSwitches', ['enable-automation'])
     options.add_experimental_option('useAutomationExtension', False)
 
-    # Create a unique temporary directory for user data
-    user_data_dir = tempfile.mkdtemp()
-    options.add_argument(f'--user-data-dir={user_data_dir}')
+    # Use a random port to avoid conflicts
+    port = random.randint(1024, 65535)
+    service = Service('/usr/bin/chromedriver', port=port)
+    logging.debug(f"Starting ChromeDriver on port {port} with default user-data-dir")
 
-    driver = webdriver.Chrome(options=options)
+    driver = None
     try:
+        driver = webdriver.Chrome(service=service, options=options)
+        logging.debug(f"ChromeDriver started successfully for URL: {url}")
         driver.get(url)
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'body'))
@@ -138,12 +141,12 @@ def scrape_with_selenium(url):
         logging.error(f"Gagal memuat {url}: {e}")
         raise
     finally:
-        driver.quit()
-        # Clean up the temporary directory
-        try:
-            shutil.rmtree(user_data_dir, ignore_errors=True)
-        except Exception as e:
-            logging.warning(f"Gagal menghapus user-data-dir {user_data_dir}: {e}")
+        if driver:
+            try:
+                driver.quit()
+                logging.debug(f"ChromeDriver closed successfully")
+            except Exception as e:
+                logging.warning(f"Gagal menutup driver: {e}")
 
 def load_cache(cache_file):
     """Memuat konten dari file cache."""
