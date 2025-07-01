@@ -56,6 +56,18 @@
       {
         "url": "https://envivo.govoet.my.id/68",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBCA",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBC2",
+        "label": "CH-AR"
       }
     ],
     "is_womens": false
@@ -113,6 +125,18 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-9"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBCA",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBC2",
+        "label": "CH-AR"
       }
     ],
     "is_womens": false
@@ -162,6 +186,10 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br1.html",
         "label": "CH-7"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
+        "label": "CH-PT"
       }
     ],
     "is_womens": false
