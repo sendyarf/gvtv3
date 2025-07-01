@@ -26,11 +26,20 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Setup Chrome and ChromeDriver
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: '138.0.7204.49'
-          install-chromedriver: true
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable=138.0.7204.49-1
+          google-chrome --version
+
+      - name: Install ChromeDriver
+        run: |
+          CHROMEDRIVER_VERSION="138.0.7204.49"
+          wget -N https://storage.googleapis.com/chrome-for-testing-public/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip
+          unzip chromedriver-linux64.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+          chromedriver --version
 
       - name: Verify Chrome and ChromeDriver
         run: |
@@ -47,14 +56,20 @@ jobs:
       - name: Ensure french_dict.json
         run: |
           if [ ! -f french_dict.json ]; then
-            echo '{"leagues": {}, "teams": {"ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
+            echo '{"leagues": {"Coupe Du Monde Des Clubs Fifa": "FIFA Club World Cup", "Liga AUF Uruguaya": "Liga AUF Uruguaya", "Copa Chili": "Copa Chili", "Ecuador Ligapro": "Ecuador Ligapro"}, "teams": {"Inter": "Inter", "Fluminense": "Fluminense", "Manchester City": "Manchester City", "Al-Hilal": "Al Hilal", "Real Madrid": "Real Madrid", "Juventus": "Juventus", "Dortmund": "Dortmund", "Monterrey": "Monterrey", "Palmeiras": "Palmeiras", "Chelsea": "Chelsea", "PSG": "PSG", "Bayern Munich": "Bayern Munich", "ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
           fi
 
       - name: Ensure manual_schedule.json
         run: |
           if [ ! -f manual_schedule.json ]; then
-            echo "[]" > manual_schedule.json
+            echo '[{"id": "inter-fluminense", "league": "FIFA Club World Cup", "team1": {"name": "Inter", "logo": "https://via.placeholder.com/30.png?text=Inter"}, "team2": {"name": "Fluminense", "logo": "https://via.placeholder.com/30.png?text=Fluminense"}, "kickoff_date": "2025-07-01", "kickoff_time": "02:00", "match_date": "2025-07-01", "match_time": "01:50", "duration": "3.5", "icon": "https://via.placeholder.com/30.png?text=Soccer", "servers": [{"url": "https://envivo.govoet.my.id/20", "label": "CH-FR"}, {"url": "https://envivo.govoet.my.id/94", "label": "CH-ES"}], "is_womens": false}]' > manual_schedule.json
           fi
+
+      - name: Verify files
+        run: |
+          ls -l french_dict.json manual_schedule.json
+          cat french_dict.json
+          cat manual_schedule.json
 
       - name: Run Scraper
         run: python scraper/scrape_events.py
@@ -67,8 +82,3 @@ jobs:
           git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
- 
