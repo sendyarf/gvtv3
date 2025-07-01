@@ -68,19 +68,22 @@ jobs:
           echo "Running Chrome/ChromeDriver processes:"
           ps aux | grep -E 'chromedriver|google-chrome' || true
           echo "Temporary directories in /tmp:"
-          ls -l /tmp | grep tmp || true
+          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
+          echo "Files in /tmp:"
+          ls -l /tmp || true
 
-      - name: Clean Up ChromeDriver Processes Before
+      - name: Clean Up ChromeDriver Processes and Temp Dirs Before
         run: |
           echo "Cleaning up ChromeDriver and Chrome processes before running script"
           pkill -9 chromedriver || true
           pkill -9 google-chrome || true
           find /tmp -type d -name '*google*' -exec rm -rf {} + || true
           find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
+          find /tmp -type d -name '.com.google.Chrome*' -exec rm -rf {} + || true
           echo "Processes after cleanup:"
           ps aux | grep -E 'chromedriver|google-chrome' || true
           echo "Temporary directories after cleanup:"
-          ls -l /tmp | grep tmp || true
+          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
         if: always()
 
       - name: Ensure french_dict.json
@@ -113,19 +116,22 @@ jobs:
           echo "Running Chrome/ChromeDriver processes after:"
           ps aux | grep -E 'chromedriver|google-chrome' || true
           echo "Temporary directories in /tmp after:"
-          ls -l /tmp | grep tmp || true
+          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
+          echo "Files in /tmp after:"
+          ls -l /tmp || true
 
-      - name: Clean Up ChromeDriver Processes After
+      - name: Clean Up ChromeDriver Processes and Temp Dirs After
         run: |
           echo "Cleaning up ChromeDriver and Chrome processes after running script"
           pkill -9 chromedriver || true
           pkill -9 google-chrome || true
           find /tmp -type d -name '*google*' -exec rm -rf {} + || true
           find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
+          find /tmp -type d -name '.com.google.Chrome*' -exec rm -rf {} + || true
           echo "Processes after final cleanup:"
           ps aux | grep -E 'chromedriver|google-chrome' || true
           echo "Temporary directories after final cleanup:"
-          ls -l /tmp | grep tmp || true
+          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
         if: always()
 
       - name: Commit Changes
