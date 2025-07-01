@@ -30,7 +30,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz webdrivermanager
+          pip install requests beautifulsoup4 selenium==4.34.0 fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
 
       - name: Install Chrome and ChromeDriver
         run: |
@@ -59,19 +59,28 @@ jobs:
           if ! command -v chromedriver; then exit 1; fi
           if ! command -v google-chrome; then exit 1; fi
 
-      - name: Check System Resources
+      - name: Check System Resources Before
         run: |
+          echo "System Resources Before:"
           free -h
           df -h
           ulimit -a
+          echo "Running Chrome/ChromeDriver processes:"
           ps aux | grep -E 'chromedriver|google-chrome' || true
+          echo "Temporary directories in /tmp:"
           ls -l /tmp | grep tmp || true
 
-      - name: Clean Up ChromeDriver Processes
+      - name: Clean Up ChromeDriver Processes Before
         run: |
+          echo "Cleaning up ChromeDriver and Chrome processes before running script"
           pkill -9 chromedriver || true
           pkill -9 google-chrome || true
-          find /tmp -type d -name 'tmp*' -exec rm -rf {} + || true
+          find /tmp -type d -name '*google*' -exec rm -rf {} + || true
+          find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
+          echo "Processes after cleanup:"
+          ps aux | grep -E 'chromedriver|google-chrome' || true
+          echo "Temporary directories after cleanup:"
+          ls -l /tmp | grep tmp || true
         if: always()
 
       - name: Ensure french_dict.json
@@ -94,6 +103,30 @@ jobs:
 
       - name: Run Scraper
         run: python scraper/scrape_events.py
+
+      - name: Check System Resources After
+        run: |
+          echo "System Resources After:"
+          free -h
+          df -h
+          ulimit -a
+          echo "Running Chrome/ChromeDriver processes after:"
+          ps aux | grep -E 'chromedriver|google-chrome' || true
+          echo "Temporary directories in /tmp after:"
+          ls -l /tmp | grep tmp || true
+
+      - name: Clean Up ChromeDriver Processes After
+        run: |
+          echo "Cleaning up ChromeDriver and Chrome processes after running script"
+          pkill -9 chromedriver || true
+          pkill -9 google-chrome || true
+          find /tmp -type d -name '*google*' -exec rm -rf {} + || true
+          find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
+          echo "Processes after final cleanup:"
+          ps aux | grep -E 'chromedriver|google-chrome' || true
+          echo "Temporary directories after final cleanup:"
+          ls -l /tmp | grep tmp || true
+        if: always()
 
       - name: Commit Changes
         run: |
