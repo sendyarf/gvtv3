@@ -20,6 +20,8 @@ import os
 import time
 import random
 import subprocess
+import tempfile
+import shutil
 
 # Konfigurasi logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -107,6 +109,7 @@ def time_within_window(time1, time2, window_minutes=120):
 @retry(stop=stop_after_attempt(5), wait=wait_fixed(15))
 def scrape_with_selenium(url):
     """Mengambil konten halaman menggunakan Selenium."""
+    user_data_dir = None
     try:
         # Log system state before starting ChromeDriver
         logging.debug("Checking running Chrome/ChromeDriver processes before starting:")
@@ -115,10 +118,14 @@ def scrape_with_selenium(url):
             logging.debug(f"Processes:\n{result.stdout}")
             chrome_processes = subprocess.run(['ps', 'aux', '|', 'grep', '-E', 'chromedriver|google-chrome'], capture_output=True, text=True, shell=True)
             logging.debug(f"Chrome/ChromeDriver processes:\n{chrome_processes.stdout}")
-            tmp_dirs = subprocess.run(['ls', '-l', '/tmp', '|', 'grep', 'tmp'], capture_output=True, text=True, shell=True)
+            tmp_dirs = subprocess.run(['find', '/tmp', '-maxdepth', '1', '-type', 'd', '|', 'grep', '-E', 'tmp|.com.google.Chrome'], capture_output=True, text=True, shell=True)
             logging.debug(f"Temporary directories in /tmp:\n{tmp_dirs.stdout}")
         except Exception as e:
             logging.warning(f"Failed to check system state: {e}")
+
+        # Create a unique temporary directory for user-data-dir
+        user_data_dir = tempfile.mkdtemp(prefix='chrome_user_data_')
+        logging.debug(f"Using temporary user-data-dir: {user_data_dir}")
 
         options = Options()
         options.add_argument('--headless')
@@ -128,13 +135,15 @@ def scrape_with_selenium(url):
         options.add_argument('--window-size=1920,1080')
         options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36')
         options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_argument('--disable-extensions')
+        options.add_argument(f'--user-data-dir={user_data_dir}')
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
 
         # Use a random port to avoid conflicts
         port = random.randint(1024, 65535)
         service = Service('/usr/bin/chromedriver', port=port)
-        logging.debug(f"Starting ChromeDriver on port {port} with default user-data-dir")
+        logging.debug(f"Starting ChromeDriver on port {port} with user-data-dir: {user_data_dir}")
 
         driver = webdriver.Chrome(service=service, options=options)
         logging.debug(f"ChromeDriver started successfully for URL: {url}")
@@ -169,6 +178,14 @@ def scrape_with_selenium(url):
         except Exception as cleanup_e:
             logging.warning(f"Failed to clean up processes: {cleanup_e}")
         raise
+    finally:
+        # Clean up the temporary user-data-dir
+        if user_data_dir and os.path.exists(user_data_dir):
+            try:
+                shutil.rmtree(user_data_dir)
+                logging.debug(f"Cleaned up temporary user-data-dir: {user_data_dir}")
+            except Exception as e:
+                logging.warning(f"Failed to clean up user-data-dir {user_data_dir}: {e}")
 
 def load_cache(cache_file):
     """Memuat konten dari file cache."""
