@@ -56,18 +56,6 @@
       {
         "url": "https://envivo.govoet.my.id/68",
         "label": "CH-ES"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=SPORTVSD",
-        "label": "CH-PT"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=MBCA",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=MBC2",
-        "label": "CH-AR"
       }
     ],
     "is_womens": false
@@ -129,6 +117,10 @@
       {
         "url": "https://hls.govoet.my.id/?id=SPORTVSD",
         "label": "CH-PT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=CANALE5",
+        "label": "CH-IT"
       },
       {
         "url": "https://hls.govoet.my.id/?id=MBCA",
