@@ -1,4 +1,3 @@
-
 name: Scrape Players
 
 on:
@@ -27,30 +26,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 selenium==4.34.0 fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
-
-      - name: Install Chrome and ChromeDriver
-        run: |
-          # Install dependencies untuk Chrome
-          sudo apt-get update
-          sudo apt-get install -y wget unzip fonts-liberation libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2 libcurl4 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libu2f-udev libvulkan1 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 xdg-utils
-          
-          # Install Chrome 138.0.7204.92 dari Chrome for Testing
-          wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chrome-linux64.zip
-          unzip chrome-linux64.zip
-          sudo mv chrome-linux64/chrome /usr/bin/google-chrome
-          sudo chmod +x /usr/bin/google-chrome
-          google-chrome --version
-          
-          # Install ChromeDriver 138.0.7204.92 dari Chrome for Testing
-          wget -N https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip
-          sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
-          sudo chmod +x /usr/bin/chromedriver
-          chromedriver --version
+      - name: Setup Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 'latest'
+          install-chromedriver: true
 
       - name: Verify Chrome and ChromeDriver
         run: |
@@ -59,80 +39,25 @@ jobs:
           if ! command -v chromedriver; then exit 1; fi
           if ! command -v google-chrome; then exit 1; fi
 
-      - name: Check System Resources Before
+      - name: Install Dependencies
         run: |
-          echo "System Resources Before:"
-          free -h
-          df -h
-          ulimit -a
-          echo "Running Chrome/ChromeDriver processes:"
-          ps aux | grep -E 'chromedriver|google-chrome' || true
-          echo "Temporary directories in /tmp:"
-          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
-          echo "Files in /tmp:"
-          ls -l /tmp || true
-
-      - name: Clean Up ChromeDriver Processes and Temp Dirs Before
-        run: |
-          echo "Cleaning up ChromeDriver and Chrome processes before running script"
-          pkill -9 chromedriver || true
-          pkill -9 google-chrome || true
-          find /tmp -type d -name '*google*' -exec rm -rf {} + || true
-          find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
-          find /tmp -type d -name '.com.google.Chrome*' -exec rm -rf {} + || true
-          echo "Processes after cleanup:"
-          ps aux | grep -E 'chromedriver|google-chrome' || true
-          echo "Temporary directories after cleanup:"
-          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
-        if: always()
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 selenium fuzzywuzzy python-Levenshtein python-dateutil tenacity pytz
 
       - name: Ensure french_dict.json
         run: |
           if [ ! -f french_dict.json ]; then
-            echo '{"leagues": {"Coupe Du Monde Des Clubs Fifa": "FIFA Club World Cup", "Liga AUF Uruguaya": "Liga AUF Uruguaya", "Copa Chili": "Copa Chili", "Ecuador Ligapro": "Ecuador Ligapro"}, "teams": {"Inter": "Inter", "Fluminense": "Fluminense", "Manchester City": "Manchester City", "Al-Hilal": "Al Hilal", "Real Madrid": "Real Madrid", "Juventus": "Juventus", "Dortmund": "Dortmund", "Monterrey": "Monterrey", "Palmeiras": "Palmeiras", "Chelsea": "Chelsea", "PSG": "PSG", "Bayern Munich": "Bayern Munich", "ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
+            echo '{"leagues": {}, "teams": {"ES Tunis": "Esperance Tunis", "Esperance Sportive de Tunis": "Esperance Tunis", "Chelsea FC": "Chelsea"}}' > french_dict.json
           fi
 
       - name: Ensure manual_schedule.json
         run: |
           if [ ! -f manual_schedule.json ]; then
-            echo '[{"id": "inter-fluminense", "league": "FIFA Club World Cup", "team1": {"name": "Inter", "logo": "https://via.placeholder.com/30.png?text=Inter"}, "team2": {"name": "Fluminense", "logo": "https://via.placeholder.com/30.png?text=Fluminense"}, "kickoff_date": "2025-07-01", "kickoff_time": "02:00", "match_date": "2025-07-01", "match_time": "01:50", "duration": "3.5", "icon": "https://via.placeholder.com/30.png?text=Soccer", "servers": [{"url": "https://envivo.govoet.my.id/20", "label": "CH-FR"}, {"url": "https://envivo.govoet.my.id/94", "label": "CH-ES"}], "is_womens": false}]' > manual_schedule.json
+            echo "[]" > manual_schedule.json
           fi
-
-      - name: Verify files
-        run: |
-          ls -l french_dict.json manual_schedule.json
-          cat french_dict.json
-          cat manual_schedule.json
 
       - name: Run Scraper
         run: python scraper/scrape_events.py
-
-      - name: Check System Resources After
-        run: |
-          echo "System Resources After:"
-          free -h
-          df -h
-          ulimit -a
-          echo "Running Chrome/ChromeDriver processes after:"
-          ps aux | grep -E 'chromedriver|google-chrome' || true
-          echo "Temporary directories in /tmp after:"
-          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
-          echo "Files in /tmp after:"
-          ls -l /tmp || true
-
-      - name: Clean Up ChromeDriver Processes and Temp Dirs After
-        run: |
-          echo "Cleaning up ChromeDriver and Chrome processes after running script"
-          pkill -9 chromedriver || true
-          pkill -9 google-chrome || true
-          find /tmp -type d -name '*google*' -exec rm -rf {} + || true
-          find /tmp -type d -name '*chrome*' -exec rm -rf {} + || true
-          find /tmp -type d -name '.com.google.Chrome*' -exec rm -rf {} + || true
-          echo "Processes after final cleanup:"
-          ps aux | grep -E 'chromedriver|google-chrome' || true
-          echo "Temporary directories after final cleanup:"
-          find /tmp -maxdepth 1 -type d | grep -E 'tmp|.com.google.Chrome' || true
-        if: always()
 
       - name: Commit Changes
         run: |
@@ -142,3 +67,8 @@ jobs:
           git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+ 
