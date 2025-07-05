@@ -30,40 +30,52 @@
         "label": "CH-AR"
       },
       {
+        "url": "https://envivo.govoet.my.id/20",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/111",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
         "label": "CH-4"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
         "label": "CH-5"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
         "label": "CH-6"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
         "label": "CH-7"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
         "label": "CH-8"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
         "label": "CH-9"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-10"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-11"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br1.html",
+        "label": "CH-12"
       }
     ],
     "is_womens": false
@@ -95,40 +107,52 @@
         "label": "CH-IT"
       },
       {
+        "url": "https://envivo.govoet.my.id/20",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/111",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
         "label": "CH-4"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
         "label": "CH-5"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
         "label": "CH-6"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
         "label": "CH-7"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
         "label": "CH-8"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
         "label": "CH-9"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-10"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-11"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br1.html",
+        "label": "CH-12"
       }
     ],
     "is_womens": false
