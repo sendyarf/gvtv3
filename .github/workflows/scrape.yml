@@ -39,6 +39,19 @@ jobs:
           if ! command -v chromedriver; then exit 1; fi
           if ! command -v google-chrome; then exit 1; fi
 
+      - name: Clean up existing Chrome and ChromeDriver processes
+        run: |
+          pkill -9 chromedriver || true
+          pkill -9 google-chrome || true
+          sleep 2
+          if pgrep chromedriver || pgrep google-chrome; then
+            echo "Warning: Some Chrome/ChromeDriver processes may still be running"
+            pgrep -l chromedriver || true
+            pgrep -l google-chrome || true
+          else
+            echo "Chrome and ChromeDriver processes cleaned up successfully"
+          fi
+
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -67,8 +80,3 @@ jobs:
           git diff --cached --quiet || (git commit -m "Update schedules and caches" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
- 
