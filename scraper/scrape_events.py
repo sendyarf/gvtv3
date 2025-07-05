@@ -664,7 +664,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
     return matches
 
 def merge_manual_schedule(manual_file, auto_schedule):
-    """Menggabungkan jadwal manual dengan jadwal otomatis."""
+    """Menggabungkan jadwal manual dengan jadwal otomatis, menempatkan server manual di awal."""
     try:
         with open(manual_file, 'r', encoding='utf-8') as f:
             manual_schedule = json.load(f)
@@ -692,13 +692,14 @@ def merge_manual_schedule(manual_file, auto_schedule):
         if match_id in merged_schedule:
             existing_servers = merged_schedule[match_id].get('servers', [])
             manual_servers = manual.get('servers', [])
-            merged_servers = existing_servers + [
+            # Prepend manual servers to existing servers to ensure they appear first
+            merged_servers = [
                 server for server in manual_servers
                 if server not in existing_servers
-            ]
+            ] + existing_servers
             merged_schedule[match_id]['servers'] = merged_servers
             merged_schedule[match_id]['is_womens'] = manual.get('is_womens', False)
-            logging.info(f"Server manual untuk {match_id}: {manual_servers}")
+            logging.info(f"Server untuk {match_id}: {merged_servers}")
         else:
             merged_schedule[match_id] = manual
             logging.info(f"Pertandingan manual baru: {match_id}")
@@ -737,17 +738,17 @@ def main():
             logging.error(f"Gagal scraping Flashscore untuk {name}: {type(e).__name__}: {str(e)}")
             continue
     
+    # Scrape Rereyano (before SportsOnline to ensure Rereyano servers come first)
+    try:
+        matches = scrape_rereyano_servers(rereyano_url, matches, dict_file=dict_file)
+    except Exception as e:
+        logging.error(f"Gagal scraping Rereyano: {type(e).__name__}: {str(e)}")
+    
     # Scrape SportsOnline
     try:
         matches = scrape_sportsonline_servers(sportsonline_url, matches, dict_file=dict_file)
     except Exception as e:
         logging.error(f"Gagal scraping SportsOnline: {type(e).__name__}: {str(e)}")
-    
-    # Scrape Rereyano
-    try:
-        matches = scrape_rereyano_servers(rereyano_url, matches, dict_file=dict_file)
-    except Exception as e:
-        logging.error(f"Gagal scraping Rereyano: {type(e).__name__}: {str(e)}")
     
     # Merge manual schedule
     try:
