@@ -18,6 +18,18 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
+        "url": "https://hls.govoet.my.id/?id=CANALE5",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBCA",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=MBC2",
+        "label": "CH-AR"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-1"
       },
