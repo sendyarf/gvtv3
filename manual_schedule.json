@@ -20,6 +20,14 @@
 	{
         "url": "https://kilatpink.blogspot.com/?id=ITV1",
         "label": "CH-EN"
+      },
+	{
+        "url": "https://listsportsembed.blogspot.com/p/hd10.html",
+        "label": "CH-1"
+      },
+	    {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
+        "label": "CH-2"
       }
 	],
     "is_womens": false
