@@ -61,14 +61,14 @@
     "is_womens": false
   },
   {
-    "id": "Preston-Eng-Liverpool-Eng",
+    "id": "Preston-Liverpool",
     "league": "Club Friendly",
     "team1": {
-      "name": "Preston (Eng)",
+      "name": "Preston",
       "logo": "https://static.flashscore.com/res/image/data/vFaP2idM-4UX5t7jk.png"
     },
     "team2": {
-      "name": "Liverpool (Eng)",
+      "name": "Liverpool",
       "logo": "https://static.flashscore.com/res/image/data/Gr0cGteM-KCp4zq5F.png"
     },
     "kickoff_date": "2025-07-13",
