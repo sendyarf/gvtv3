@@ -1,66 +1,58 @@
 [
   {
-    "id": "chelsea-psg",
-    "league": "FIFA Club World Cup",
+    "id": "Malaysia-U23-Philippines-U23",
+    "league": "ASEAN Championship U23 - Round 1",
     "team1": {
-      "name": "Chelsea",
-      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
+      "name": "Malaysia U23",
+      "logo": "https://static.flashscore.com/res/image/data/tbMjnyil-MDAHplpa.png"
     },
     "team2": {
-      "name": "PSG",
-      "logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png"
+      "name": "Philippines U23",
+      "logo": "https://static.flashscore.com/res/image/data/bsFRsFeM-nBMJVzcT.png"
     },
-    "kickoff_date": "2025-07-14",
-    "kickoff_time": "02:00",
-    "match_date": "2025-07-14",
-    "match_time": "01:50",
-    "duration": "3.5",
+    "kickoff_date": "2025-07-15",
+    "kickoff_time": "17:00",
+    "match_date": "2025-07-15",
+    "match_time": "17:00",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
-        "url": "https://hls.govoet.my.id/?id=CANALE5",
-        "label": "CH-IT"
+        "url": "https://librani.govoet.my.id/?id=event1",
+        "label": "CH-VN"
       },
       {
-        "url": "https://hls.govoet.my.id/?id=MBCA",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=MBC2",
-        "label": "CH-AR"
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-VN"
       }
     ],
     "is_womens": false
   },
   {
-    "id": "Preston-Liverpool",
-    "league": "Club Friendly",
+    "id": "Indonesia-U23-Brunei-U23",
+    "league": "ASEAN Championship U23 - Round 1",
     "team1": {
-      "name": "Preston",
-      "logo": "https://static.flashscore.com/res/image/data/vFaP2idM-4UX5t7jk.png"
+      "name": "Indonesia U23",
+      "logo": "https://static.flashscore.com/res/image/data/f5toOQFG-IiA9AZbd.png"
     },
     "team2": {
-      "name": "Liverpool",
-      "logo": "https://static.flashscore.com/res/image/data/Gr0cGteM-KCp4zq5F.png"
+      "name": "Brunei U23",
+      "logo": "https://static.flashscore.com/res/image/data/GGTOFJzB-pvMzCkF4.png"
     },
-    "kickoff_date": "2025-07-13",
-    "kickoff_time": "21:00",
-    "match_date": "2025-07-13",
-    "match_time": "20:50",
-    "duration": "3.5",
+    "kickoff_date": "2025-07-15",
+    "kickoff_time": "20:00",
+    "match_date": "2025-07-15",
+    "match_time": "20:00",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
-        "url": "https://kilatpink.blogspot.com/?id=ITV1",
-        "label": "CH-EN"
+        "url": "https://librani.govoet.my.id/?id=event1",
+        "label": "CH-VN"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd10.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
-        "label": "CH-2"
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-VN"
       }
     ],
     "is_womens": false
