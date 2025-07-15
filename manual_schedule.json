@@ -49,6 +49,10 @@
     "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+	    {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      },
 	     {
         "url": "https://librani.govoet.my.id/?id=timnas",
         "label": "CH-EN"
