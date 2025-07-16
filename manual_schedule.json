@@ -1,66 +1,53 @@
 [
 
-
-
-	{
-    "id": "Malaysia-U23-Philippines-U23",
+  {
+    "id": "Cambodia-U23-Laos-U23",
     "league": "ASEAN Championship U23 - Round 1",
     "team1": {
-      "name": "Malaysia U23",
-      "logo": "https://static.flashscore.com/res/image/data/tbMjnyil-MDAHplpa.png"
+      "name": "Cambodia U23",
+      "logo": "https://static.flashscore.com/res/image/data/CGuCALdM-tjBsFdfE.png"
     },
     "team2": {
-      "name": "Philippines U23",
-      "logo": "https://static.flashscore.com/res/image/data/bsFRsFeM-nBMJVzcT.png"
+      "name": "Laos U23",
+      "logo": "https://static.flashscore.com/res/image/data/YD9CfP9r-dhlpQy5J.png"
     },
-    "kickoff_date": "2025-07-15",
+    "kickoff_date": "2025-07-16",
     "kickoff_time": "17:00",
-    "match_date": "2025-07-15",
+    "match_date": "2025-07-16",
     "match_time": "17:00",
-    "duration": "3",
+    "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-	    {
-        "url": "https://librani.govoet.my.id/?id=event1",
-        "label": "CH-VN"
-      },
-	     {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-VN"
+	       {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
       }
     ],
     "is_womens": false
   },
   {
-    "id": "Indonesia-U23-Brunei-U23",
+    "id": "Myanmar-U23-East-Timor-U23",
     "league": "ASEAN Championship U23 - Round 1",
     "team1": {
-      "name": "Indonesia U23",
-      "logo": "https://static.flashscore.com/res/image/data/f5toOQFG-IiA9AZbd.png"
+      "name": "Myanmar U23",
+      "logo": "https://static.flashscore.com/res/image/data/S85a7FzS-G01LILSk.png"
     },
     "team2": {
-      "name": "Brunei U23",
-      "logo": "https://static.flashscore.com/res/image/data/GGTOFJzB-pvMzCkF4.png"
+      "name": "East Timor U23",
+      "logo": "https://static.flashscore.com/res/image/data/WYc6zmCr-G01LILSk.png"
     },
-    "kickoff_date": "2025-07-15",
+    "kickoff_date": "2025-07-16",
     "kickoff_time": "20:00",
-    "match_date": "2025-07-15",
+    "match_date": "2025-07-16",
     "match_time": "20:00",
-    "duration": "3",
+    "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-	    {
+	       {
         "url": "https://hls.govoet.my.id/?id=MEWATCH",
         "label": "CH-EN"
-      },
-	
-	   
-	     {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-VN"
       }
     ],
     "is_womens": false
   }
-
 ]
