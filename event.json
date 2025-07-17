@@ -16,7 +16,12 @@
     "match_time": "16:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -36,7 +41,12 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -56,7 +66,12 @@
     "match_time": "16:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -76,7 +91,12 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -96,7 +116,12 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -116,7 +141,12 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -136,7 +166,12 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -154,51 +189,6 @@
     "kickoff_time": "20:00",
     "match_date": "2025-07-22",
     "match_time": "19:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
-    "is_womens": false
-  },
-  {
-    "id": "Cambodia-U23-Laos-U23",
-    "league": "ASEAN Championship U23 - Round 1",
-    "team1": {
-      "name": "Cambodia U23",
-      "logo": "https://static.flashscore.com/res/image/data/CGuCALdM-tjBsFdfE.png"
-    },
-    "team2": {
-      "name": "Laos U23",
-      "logo": "https://static.flashscore.com/res/image/data/YD9CfP9r-dhlpQy5J.png"
-    },
-    "kickoff_date": "2025-07-16",
-    "kickoff_time": "17:00",
-    "match_date": "2025-07-16",
-    "match_time": "17:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=MEWATCH",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "Myanmar-U23-East-Timor-U23",
-    "league": "ASEAN Championship U23 - Round 1",
-    "team1": {
-      "name": "Myanmar U23",
-      "logo": "https://static.flashscore.com/res/image/data/S85a7FzS-G01LILSk.png"
-    },
-    "team2": {
-      "name": "East Timor U23",
-      "logo": "https://static.flashscore.com/res/image/data/WYc6zmCr-G01LILSk.png"
-    },
-    "kickoff_date": "2025-07-16",
-    "kickoff_time": "20:00",
-    "match_date": "2025-07-16",
-    "match_time": "20:00",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
