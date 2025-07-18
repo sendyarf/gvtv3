@@ -1,38 +1,5 @@
 [
   {
-    "id": "philippinesu23-indonesiau23",
-    "league": "ASEAN Championship U23",
-    "team1": {
-      "name": "Philippines U23",
-      "logo": "https://static.flashscore.com/res/image/data/jFAF19ne-nBMJVzcT.png"
-    },
-    "team2": {
-      "name": "Indonesia U23",
-      "logo": "https://static.flashscore.com/res/image/data/MgDzVYS0-IiA9AZbd.png"
-    },
-    "kickoff_date": "2025-07-18",
-    "kickoff_time": "20:00",
-    "match_date": "2025-07-18",
-    "match_time": "19:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://librani.govoet.my.id/?id=channel1",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://librani.govoet.my.id/?id=channel2",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "laosu23-vietnamu23",
     "league": "ASEAN Championship U23",
     "team1": {
@@ -177,6 +144,39 @@
     "servers": [
       {
         "url": "https://hls.govoet.my.id/?id=MEWATCH",
+        "label": "CH-EN"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "philippinesu23-indonesiau23",
+    "league": "ASEAN Championship U23",
+    "team1": {
+      "name": "Philippines U23",
+      "logo": "https://static.flashscore.com/res/image/data/jFAF19ne-nBMJVzcT.png"
+    },
+    "team2": {
+      "name": "Indonesia U23",
+      "logo": "https://static.flashscore.com/res/image/data/MgDzVYS0-IiA9AZbd.png"
+    },
+    "kickoff_date": "2025-07-18",
+    "kickoff_time": "20:00",
+    "match_date": "2025-07-18",
+    "match_time": "19:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://librani.govoet.my.id/?id=channel1",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://librani.govoet.my.id/?id=channel2",
         "label": "CH-EN"
       }
     ],
