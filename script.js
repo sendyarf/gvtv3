@@ -46,7 +46,7 @@ function isEventEnded(event) {
 // Loads event data from event.json
 async function loadEvents() {
     try {
-        const response = await fetch('https://govoet.pages.dev/event.json');
+        const response = await fetch('event.json');
         const events = await response.json();
         const liveEventContent = document.querySelector("#live-event #content");
         console.log("Live Event Content Element:", liveEventContent);
@@ -62,6 +62,27 @@ async function loadEvents() {
             }
             return !ended;
         });
+
+        if (validEvents.length === 0) {
+            liveEventContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>No Schedule Available</h3>
+                    <p>Please refresh the page to check for updates.</p>
+                    <button id="refresh-button" class="refresh-button">
+                        <i class="fas fa-sync-alt"></i> Refresh Page
+                    </button>
+                </div>
+            `;
+            
+            // Add event listener for refresh button
+            document.getElementById('refresh-button')?.addEventListener('click', () => {
+                location.reload();
+            });
+            return;
+        }
 
         const sortedEvents = validEvents.slice().sort((a, b) => {
             const dateTimeA = parseEventDateTime(a.match_date, a.match_time);
