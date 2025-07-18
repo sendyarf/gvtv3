@@ -449,6 +449,61 @@ html, body {
     background: transparent;
 }
 
+/* No Events Message Styling */
+.no-events-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #3AAFA9;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-events-message .message-icon {
+    font-size: 48px;
+    color: #FEFFFF;
+    margin-bottom: 20px;
+}
+
+.no-events-message h3 {
+    color: #FEFFFF;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.no-events-message p {
+    color: #DEF2F1;
+    margin: 0 0 20px 0;
+    font-size: 16px;
+}
+
+.refresh-button {
+    background-color: #17252A;
+    color: #FEFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+    background-color: #2B7A78;
+}
+
+.refresh-button i {
+    transition: transform 0.3s ease;
+}
+
+.refresh-button:hover i {
+    transform: rotate(180deg);
+}
+
 /* Mobile Notification Styles */
 .mobile-notification {
     display: none;
