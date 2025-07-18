@@ -26,14 +26,15 @@
         "url": "https://librani.govoet.my.id/?id=channel1",
         "label": "CH-EN"
       },
-	     {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+	       {
+        "url": "https://librani.govoet.my.id/?id=channel2",
         "label": "CH-EN"
       },
 	     {
-        "url": "https://librani.govoet.my.id/?id=channel2",
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
         "label": "CH-EN"
       }
+	  
     ],
     "is_womens": false
   },
