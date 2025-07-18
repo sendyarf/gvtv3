@@ -18,12 +18,13 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-	     {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-EN"
-      },
+	    
 	    {
         "url": "https://librani.govoet.my.id/?id=channel1",
+        "label": "CH-EN"
+      },
+	     {
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
         "label": "CH-EN"
       },
 	     {
