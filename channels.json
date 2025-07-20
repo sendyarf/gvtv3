@@ -68,5 +68,19 @@
         "logo": "",
         "url": "https://librani.govoet.my.id/?id=sctv",
         "status": "Online"
+    },
+    {
+        "id": "indosiar",
+        "name": "Indosiar",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=indosiar",
+        "status": "Online"
+    },
+    {
+        "id": "mdtv",
+        "name": "MDTV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=mdtv",
+        "status": "Online"
     }
 ]
