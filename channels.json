@@ -61,5 +61,12 @@
         "logo": "https://i.ibb.co.com/5LwNH8z/usa.png",
         "url": "https://shakas.govoet.my.id/?id=USANETWORK",
         "status": "Online"
+    },
+    {
+        "id": "sctv",
+        "name": "SCTV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=sctv",
+        "status": "Online"
     }
 ]
