@@ -62,11 +62,18 @@
         "url": "https://shakas.govoet.my.id/?id=USANETWORK",
         "status": "Online"
     },
-    {
+       {
         "id": "sctv",
         "name": "SCTV",
         "logo": "",
         "url": "https://librani.govoet.my.id/?id=sctv",
+        "status": "Online"
+    },
+    {
+        "id": "moji",
+        "name": "Moji",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=moji",
         "status": "Online"
     },
     {
@@ -77,10 +84,108 @@
         "status": "Online"
     },
     {
+        "id": "tvrisports",
+        "name": "TVRI Sports",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=tvrisports",
+        "status": "Online"
+    },
+    {
+        "id": "tvriworld",
+        "name": "TVRI World",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=tvriworld",
+        "status": "Online"
+    },
+    {
+        "id": "jowo",
+        "name": "Jowo",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=jowo",
+        "status": "Online"
+    },
+    {
+        "id": "metrotv",
+        "name": "Metro TV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=metrotv",
+        "status": "Online"
+    },
+    {
+        "id": "tvone",
+        "name": "TV One",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=tvone",
+        "status": "Online"
+    },
+    {
+        "id": "kplus",
+        "name": "K+",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=kplus",
+        "status": "Online"
+    },
+    {
+        "id": "tennistv",
+        "name": "Tennis TV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=tennistv",
+        "status": "Online"
+    },
+    {
+        "id": "tennistv2",
+        "name": "Tennis TV 2",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=tennistv2",
+        "status": "Online"
+    },
+    {
+        "id": "kompas",
+        "name": "KOMPAS",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=kompas",
+        "status": "Online"
+    },
+    {
+        "id": "btv",
+        "name": "BTV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=btv",
+        "status": "Online"
+    },
+    {
+        "id": "rtv",
+        "name": "RTV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=rtv",
+        "status": "Online"
+    },
+    {
+        "id": "antv",
+        "name": "ANTV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=antv",
+        "status": "Online"
+    },
+    {
         "id": "mdtv",
         "name": "MDTV",
         "logo": "",
         "url": "https://librani.govoet.my.id/?id=mdtv",
+        "status": "Online"
+    },
+    {
+        "id": "trans7",
+        "name": "Trans7",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=trans7",
+        "status": "Online"
+    },
+    {
+        "id": "transtv",
+        "name": "Trans TV",
+        "logo": "",
+        "url": "https://librani.govoet.my.id/?id=transtv",
         "status": "Online"
     }
 ]
