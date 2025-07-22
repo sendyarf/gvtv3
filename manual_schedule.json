@@ -1,55 +1,6 @@
 [
 
-  {
-    "id": "thailandu23-myanmaru23",
-    "league": "ASEAN Championship U23",
-    "team1": {
-      "name": "Thailand U23",
-      "logo": "https://static.flashscore.com/res/image/data/ER42r2le-rs2547O2.png"
-    },
-    "team2": {
-      "name": "Myanmar U23",
-      "logo": "https://static.flashscore.com/res/image/data/Yq1mR9R0-G01LILSk.png"
-    },
-    "kickoff_date": "2025-07-22",
-    "kickoff_time": "20:00",
-    "match_date": "2025-07-22",
-    "match_time": "19:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-	    {
-        "url": "https://hls.govoet.my.id/?id=MEWATCH",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "vietnamu23-cambodiau23",
-    "league": "ASEAN Championship U23",
-    "team1": {
-      "name": "Vietnam U23",
-      "logo": "https://static.flashscore.com/res/image/data/KEO8IMR0-A9PcSp30.png"
-    },
-    "team2": {
-      "name": "Cambodia U23",
-      "logo": "https://static.flashscore.com/res/image/data/v5C1HT96-tjBsFdfE.png"
-    },
-    "kickoff_date": "2025-07-22",
-    "kickoff_time": "20:00",
-    "match_date": "2025-07-22",
-    "match_time": "19:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-	    {
-        "url": "https://hls.govoet.my.id/?id=MEWATCH",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
+ 
 
 	  {
     "id": "Alaves-Esp-Ath-Bilbao-Esp",
@@ -135,6 +86,82 @@
 	     {
         "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
         "label": "CH-3"
+      }
+    ],
+    "is_womens": false
+  },
+	  {
+    "id": "Galatasaray-Tur-Cagliari-Ita",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Galatasaray (Tur)",
+      "logo": "https://static.flashscore.com/res/image/data/ziy5KsdM-dEXkR0Wq.png"
+    },
+    "team2": {
+      "name": "Cagliari (Ita)",
+      "logo": "https://static.flashscore.com/res/image/data/IBlLf9f5-McvX4bye.png"
+    },
+    "kickoff_date": "2025-07-24",
+    "kickoff_time": "00:30",
+    "match_date": "2025-07-24",
+    "match_time": "00:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+	    {
+        "url": "https://listsportsembed.blogspot.com/p/hd10.html",
+        "label": "CH-1"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "Valencia-Esp-Leganes-Esp",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Valencia (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/Ioshoye5-MHrRLNUo.png"
+    },
+    "team2": {
+      "name": "Leganes (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/IqhNyYjl-Q3zX1dyT.png"
+    },
+    "kickoff_date": "2025-07-24",
+    "kickoff_time": "01:00",
+    "match_date": "2025-07-24",
+    "match_time": "01:00",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-1"
+      }
+	    
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "Girona-Esp-Espanyol-Esp",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Girona (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/xGkOqFDa-vPm0hQMN.png"
+    },
+    "team2": {
+      "name": "Espanyol (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/SObn7xDr-8GL0cHSF.png"
+    },
+    "kickoff_date": "2025-07-24",
+    "kickoff_time": "01:30",
+    "match_date": "2025-07-24",
+    "match_time": "01:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
+        "label": "CH-1"
       }
     ],
     "is_womens": false
