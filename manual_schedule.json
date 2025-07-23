@@ -20,7 +20,7 @@
     "servers": [
 	    
 	    {
-        "url": "https://shakas.govoet.my.id/?id=SSC5",
+        "url": "https://listcanal.blogspot.com/?id=SSC5",
         "label": "CH-AR"
       },
 	     {
@@ -30,6 +30,10 @@
 	     {
         "url": "https://shakas.govoet.my.id/?id=ADSP1",
         "label": "CH-EN"
+      },
+	    {
+        "url": "https://listcanal.blogspot.com/?id=SSC1",
+        "label": "CH-AR"
       },
 	    {
         "url": "https://shakas.govoet.my.id/?id=SSC1",
