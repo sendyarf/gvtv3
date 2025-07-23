@@ -18,8 +18,16 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+	    {
+        "url": "https://shakas.govoet.my.id/?id=SSC5",
+        "label": "CH-EN"
+      },
 	     {
         "url": "https://shakas.govoet.my.id/?id=ADSP1",
+        "label": "CH-EN"
+      },
+	    {
+        "url": "https://shakas.govoet.my.id/?id=SSC1",
         "label": "CH-EN"
       },
 	     {
@@ -30,7 +38,6 @@
         "url": "https://listsportsembed.blogspot.com/p/hd7.html",
         "label": "CH-2"
       },
-	    
 	     {
         "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
         "label": "CH-3"
