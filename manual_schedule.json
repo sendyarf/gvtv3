@@ -18,9 +18,14 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+	    
 	    {
         "url": "https://shakas.govoet.my.id/?id=SSC5",
         "label": "CH-AR"
+      },
+	     {
+        "url": "https://hls.govoet.my.id/?id=CBSSN",
+        "label": "CH-EN"
       },
 	     {
         "url": "https://shakas.govoet.my.id/?id=ADSP1",
