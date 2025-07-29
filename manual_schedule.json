@@ -78,6 +78,10 @@
 	    {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-EN"
+      },
+	    {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
       }
     ],
     "is_womens": false
@@ -99,29 +103,19 @@
     "match_time": "18:00",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
+        "label": "CH-PT"
+      },
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/br6.html",
+        "label": "CH-PT"
+      }
+    ],
     "is_womens": false
   },
-  {
-    "id": "Alaves-Esp-Girona-Esp",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Alaves (Esp)",
-      "logo": "https://static.flashscore.com/res/image/data/hrI86AzS-4U3vjZKk.png"
-    },
-    "team2": {
-      "name": "Girona (Esp)",
-      "logo": "https://static.flashscore.com/res/image/data/xGkOqFDa-vPm0hQMN.png"
-    },
-    "kickoff_date": "2025-07-30",
-    "kickoff_time": "23:15",
-    "match_date": "2025-07-30",
-    "match_time": "23:15",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
-    "is_womens": false
-  },
+ 
   {
     "id": "Siegen-Ger-Dortmund-Ger",
     "league": "Club Friendly",
@@ -139,7 +133,74 @@
     "match_time": "23:30",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-DE"
+      },
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/br6.html",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+	  {
+    "id": "Al-Nassr-Sau-Toulouse-Fra",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Al Nassr (Sau)",
+      "logo": "https://static.flashscore.com/res/image/data/GfvgLjwS-dr3R7wGl.png"
+    },
+    "team2": {
+      "name": "Toulouse (Fra)",
+      "logo": "https://static.flashscore.com/res/image/data/ImntO9e5-COxgbCEm.png"
+    },
+    "kickoff_date": "2025-07-30",
+    "kickoff_time": "22:30",
+    "match_date": "2025-07-30",
+    "match_time": "22:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
+        "label": "CH-EN"
+      },
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
+        "label": "CH-PT"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "Mallorca-Esp-Lyon-Fra",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Mallorca (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/pSBNl3eM-rmDEjevK.png"
+    },
+    "team2": {
+      "name": "Lyon (Fra)",
+      "logo": "https://static.flashscore.com/res/image/data/rytJfXyS-GU4hlIMk.png"
+    },
+    "kickoff_date": "2025-07-30",
+    "kickoff_time": "22:30",
+    "match_date": "2025-07-30",
+    "match_time": "22:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+	       {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      },
+	     {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
+        "label": "CH-PT"
+      }
+    ],
     "is_womens": false
   }
 
