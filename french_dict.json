@@ -2,7 +2,8 @@
     "leagues": {
       "Coupe Du Monde Des Clubs Fifa": "FIFA Club World Cup",
       "Ligue 1": "Ligue 1",
-      "MLS": "MLS"
+      "MLS": "MLS",
+        "Amical Club": "Club Friendly"
     },
     "teams": {
       "Auckland City": "Auckland City",
