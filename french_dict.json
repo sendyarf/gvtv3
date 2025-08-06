@@ -3,7 +3,9 @@
       "Coupe Du Monde Des Clubs Fifa": "FIFA Club World Cup",
       "Ligue 1": "Ligue 1",
       "MLS": "MLS",
-        "Amical Club": "Club Friendly"
+        "Amical Club": "Club Friendly",
+        "Ligue Europa": "Europa League",
+        "Ligue Des Champions": "Champions League"
     },
     "teams": {
       "Auckland City": "Auckland City",
@@ -31,7 +33,9 @@
         "Los Angeles FC": "Los Angeles FC",
         "Vancouver Whitecaps": "Vancouver Whitecaps",
         "Palmeiras": "Palmeiras",
-        "Preston North End": "Preston"
+        "Preston North End": "Preston",
+        "Barcelone": "Barcelona",
+        "AS Rome": "AS Roma"
 
     }
   }
