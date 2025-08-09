@@ -1,25 +1,5 @@
 [
   {
-    "id": "nijmegen-excelsior",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "Nijmegen",
-      "logo": "https://static.flashscore.com/res/image/data/C8FCtESq-4vob7cTR.png"
-    },
-    "team2": {
-      "name": "Excelsior",
-      "logo": "https://static.flashscore.com/res/image/data/82r5rXU0-GOuuvzfL.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "21:30",
-    "match_date": "2025-08-09",
-    "match_time": "21:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
-    "is_womens": false
-  },
-  {
     "id": "feyenoord-nacbreda",
     "league": "Eredivisie",
     "team1": {
@@ -36,7 +16,16 @@
     "match_time": "23:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/142",
+        "label": "CH-NL"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/61",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -56,7 +45,12 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/141",
+        "label": "CH-NL"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -76,7 +70,12 @@
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/142",
+        "label": "CH-NL"
+      }
+    ],
     "is_womens": false
   },
   {
