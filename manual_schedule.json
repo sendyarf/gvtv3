@@ -2,200 +2,6 @@
 
 
   {
-    "id": "Manchester-Utd-Eng-Fiorentina-Ita",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Manchester Utd (Eng)",
-      "logo": "https://static.flashscore.com/res/image/data/nwSRlyWg-h2pPXz3k.png"
-    },
-    "team2": {
-      "name": "Fiorentina (Ita)",
-      "logo": "https://static.flashscore.com/res/image/data/nPTphRh5-6XKdgOM6.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "18:45",
-    "match_date": "2025-08-09",
-    "match_time": "18:45",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		 {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-EN"
-      }
-	],
-    "is_womens": false
-  },
-  {
-    "id": "Newcastle-Eng-Atl-Madrid-Esp",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Newcastle (Eng)",
-      "logo": "https://static.flashscore.com/res/image/data/fojwJwZA-ImMEe0UF.png"
-    },
-    "team2": {
-      "name": "Atl. Madrid (Esp)",
-      "logo": "https://static.flashscore.com/res/image/data/CjfjIsYg-nLBjwR1F.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "22:00",
-    "match_date": "2025-08-09",
-    "match_time": "22:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		 {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-EN"
-      },
-		 {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-EN"
-      },
-		 {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-PT"
-      }
-	],
-    "is_womens": false
-  },
-  {
-    "id": "Everton-Eng-AS-Roma-Ita",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Everton (Eng)",
-      "logo": "https://static.flashscore.com/res/image/data/EwJqZUZA-bRmKmISE.png"
-    },
-    "team2": {
-      "name": "AS Roma (Ita)",
-      "logo": "https://static.flashscore.com/res/image/data/QPgsexZA-GtNb9h2q.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-09",
-    "match_time": "21:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://listsportsembed.blogspot.com/p/sporttv4.html",
-        "label": "CH-PT"
-      }
-	],
-    "is_womens": false
-  },
-  {
-    "id": "Leeds-Eng-AC-Milan-Ita",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Leeds (Eng)",
-      "logo": "https://static.flashscore.com/res/image/data/rsvCPOh5-O4P6Zhap.png"
-    },
-    "team2": {
-      "name": "AC Milan (Ita)",
-      "logo": "https://static.flashscore.com/res/image/data/htYjIjFa-KtCfnbWp.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-09",
-    "match_time": "21:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-EN"
-      },
-		{
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-IT"
-      }
-	],
-    "is_womens": false
-  },
-	{
-    "id": "Persib-Bandung-Semen-Padang",
-    "league": "Liga 1 - Round 1",
-    "team1": {
-      "name": "Persib Bandung",
-      "logo": "https://static.flashscore.com/res/image/data/QuGrSijl-fXN2TGqm.png"
-    },
-    "team2": {
-      "name": "Semen Padang",
-      "logo": "https://static.flashscore.com/res/image/data/GCMr4XCr-K4Cn0tro.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-09",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-VN"
-      },
-		{
-        "url": "https://list-govoet.blogspot.com/p/embed4.html",
-        "label": "CH-ID"
-      },
-		{
-        "url": "https://list-govoet.blogspot.com/p/embed5.html",
-        "label": "CH-ID"
-      }
-	],
-    "is_womens": false
-  },
-  {
-    "id": "Dewa-United-Malut-United",
-    "league": "Liga 1 - Round 1",
-    "team1": {
-      "name": "Dewa United",
-      "logo": "https://static.flashscore.com/res/image/data/nmnoOY9r-lrspFRA0.png"
-    },
-    "team2": {
-      "name": "Malut United",
-      "logo": "https://static.flashscore.com/res/image/data/CzyPAuZA-IijC3nOP.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-09",
-    "match_time": "19:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-VN"
-      }
-	],
-    "is_womens": false
-  },
-  {
-    "id": "Madura-United-Persis-Solo",
-    "league": "Liga 1 - Round 1",
-    "team1": {
-      "name": "Madura United",
-      "logo": "https://static.flashscore.com/res/image/data/8rLZRaFa-dEkqbGa9.png"
-    },
-    "team2": {
-      "name": "Persis Solo",
-      "logo": "https://static.flashscore.com/res/image/data/j3lsUVCa-UHp0ZgHn.png"
-    },
-    "kickoff_date": "2025-08-09",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-09",
-    "match_time": "19:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://list-govoet.blogspot.com/p/embed3.html",
-        "label": "CH-VN"
-      }
-	],
-    "is_womens": false
-  },
   {
     "id": "Crystal-Palace-Liverpool",
     "league": "FA Community Shield - Final",
@@ -229,39 +35,7 @@
 	],
     "is_womens": false
   },
-  {
-    "id": "Palermo-Ita-Manchester-City-Eng",
-    "league": "Club Friendly",
-    "team1": {
-      "name": "Palermo (Ita)",
-      "logo": "https://static.flashscore.com/res/image/data/hEujOFil-fL3dmxxd.png"
-    },
-    "team2": {
-      "name": "Manchester City (Eng)",
-      "logo": "https://static.flashscore.com/res/image/data/UXcqj7HG-lQuhqN8N.png"
-    },
-    "kickoff_date": "2025-08-10",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-10",
-    "match_time": "02:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-		{
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-EN"
-      },
-		{
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-IT"
-      },
-		{
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-PT"
-      }
-	],
-    "is_womens": false
-  },
+  
   {
     "id": "Chelsea-Eng-AC-Milan-Ita",
     "league": "Club Friendly",
@@ -320,6 +94,149 @@
 		{
         "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
         "label": "CH-PT"
+      }
+	],
+    "is_womens": false
+  },
+
+	  {
+    "id": "Bali-United-Persik-Kediri",
+    "league": "Liga 1 - Round 1",
+    "team1": {
+      "name": "Bali United",
+      "logo": "https://static.flashscore.com/res/image/data/tInTP6zB-pdceGY5b.png"
+    },
+    "team2": {
+      "name": "Persik Kediri",
+      "logo": "https://static.flashscore.com/res/image/data/IgemUgg5-fudV7NWp.png"
+    },
+    "kickoff_date": "2025-08-10",
+    "kickoff_time": "15:30",
+    "match_date": "2025-08-10",
+    "match_time": "15:30",
+    "duration": "2.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+		
+		{
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-ID"
+      }
+	],
+    "is_womens": false
+  },
+  {
+    "id": "Persija-Jakarta-Persita",
+    "league": "Liga 1 - Round 1",
+    "team1": {
+      "name": "Persija Jakarta",
+      "logo": "https://static.flashscore.com/res/image/data/2uyZBddM-65biHEjh.png"
+    },
+    "team2": {
+      "name": "Persita",
+      "logo": "https://static.flashscore.com/res/image/data/IefKuzwS-Mw6HAN8i.png"
+    },
+    "kickoff_date": "2025-08-10",
+    "kickoff_time": "19:00",
+    "match_date": "2025-08-10",
+    "match_time": "19:00",
+    "duration": "2.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+		{
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-ID"
+      }
+	],
+    "is_womens": false
+  },
+  {
+    "id": "Toulouse-Fra-Sevilla-Esp",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Toulouse (Fra)",
+      "logo": "https://static.flashscore.com/res/image/data/ImntO9e5-COxgbCEm.png"
+    },
+    "team2": {
+      "name": "Sevilla (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/G2BgO5Ar-tIT0KyhE.png"
+    },
+    "kickoff_date": "2025-08-11",
+    "kickoff_time": "00:00",
+    "match_date": "2025-08-11",
+    "match_time": "00:00",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+		{
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-EN"
+      },
+		{
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      }
+	],
+    "is_womens": false
+  },
+  {
+    "id": "Barcelona-Esp-Como-Ita",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Barcelona (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/8dhw5vxS-fcDVLdrL.png"
+    },
+    "team2": {
+      "name": "Como (Ita)",
+      "logo": "https://static.flashscore.com/res/image/data/Cf5pQNyS-hpmw8K1h.png"
+    },
+    "kickoff_date": "2025-08-11",
+    "kickoff_time": "02:00",
+    "match_date": "2025-08-11",
+    "match_time": "02:00",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+		{
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-EN"
+      },
+		{
+        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
+        "label": "CH-EN"
+      },
+		{
+        "url": "https://envivo.govoet.my.id/162",
+        "label": "CH-ES"
+      }
+	],
+    "is_womens": false
+  },
+  {
+    "id": "Villarreal-Esp-Aston-Villa-Eng",
+    "league": "Club Friendly",
+    "team1": {
+      "name": "Villarreal (Esp)",
+      "logo": "https://static.flashscore.com/res/image/data/65Z85Uh5-GSuwY3p9.png"
+    },
+    "team2": {
+      "name": "Aston Villa (Eng)",
+      "logo": "https://static.flashscore.com/res/image/data/QsnteKXg-jwz95gs0.png"
+    },
+    "kickoff_date": "2025-08-11",
+    "kickoff_time": "02:00",
+    "match_date": "2025-08-11",
+    "match_time": "02:00",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+		{
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-ES"
+      },
+		{
+        "url": "https://envivo.govoet.my.id/71",
+        "label": "CH-ES"
       }
 	],
     "is_womens": false
