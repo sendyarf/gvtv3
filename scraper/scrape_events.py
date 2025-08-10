@@ -722,7 +722,7 @@ def main():
         ("https://www.flashscore.com/football/asia/asean-championship-u23/fixtures/", "ASEAN Championship U23"),
         ("https://www.flashscore.com/football/netherlands/eredivisie/fixtures/", "Eredivisie")
     ]
-    sportsonline_url = "https://sportsonline.ci/prog.txt"
+    sportsonline_url = "https://sportsonline.pk/prog.txt"
     rereyano_url = "https://rereyano.ru/"
     manual_schedule_file = "manual_schedule.json"
     dict_file = "french_dict.json"
