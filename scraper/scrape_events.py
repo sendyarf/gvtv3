@@ -718,9 +718,12 @@ def compute_json_hash(data):
 def main():
     """Fungsi utama untuk menjalankan scraping dan menyimpan ke event.json."""
     flashscore_urls = [
-        ("https://www.flashscore.com/football/world/fifa-club-world-cup/fixtures/", "FIFA Club World Cup"),
-        ("https://www.flashscore.com/football/asia/asean-championship-u23/fixtures/", "ASEAN Championship U23"),
-        ("https://www.flashscore.com/football/netherlands/eredivisie/fixtures/", "Eredivisie")
+        ("https://www.flashscore.com/football/netherlands/eredivisie/fixtures/", "Eredivisie"),
+        ("https://www.flashscore.com/football/england/premier-league/fixtures/", "Premier League"),
+        ("https://www.flashscore.com/football/france/ligue-1/fixtures/", "Ligue 1"),
+        ("https://www.flashscore.com/football/germany/bundesliga/fixtures/", "Bundesliga"),
+        ("https://www.flashscore.com/football/italy/serie-a/fixtures/", "Serie A"),
+        ("https://www.flashscore.com/football/spain/laliga/fixtures/", "LaLiga")
     ]
     sportsonline_url = "https://sportsonline.pk/prog.txt"
     rereyano_url = "https://rereyano.ru/"
