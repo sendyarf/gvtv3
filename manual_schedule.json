@@ -17,6 +17,10 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+      {
+          "url": "https://list-govoet.blogspot.com/p/embed1.html",
+          "label": "CH-VN"
+        },
 {
           "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3RyZDAydzg=",
           "label": "CH-VN"
