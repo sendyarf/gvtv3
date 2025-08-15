@@ -1,95 +1,61 @@
 [
-  {
-    "id": "Persib-Bandung-Ina-Manila-Digger-Phl",
-    "league": "AFC Champions League 2 - Qualification - Final",
+ {
+    "id": "liverpool-bournemouth",
+    "league": "Premier League",
     "team1": {
-      "name": "Persib Bandung (Ina)",
-      "logo": "https://static.flashscore.com/res/image/data/QuGrSijl-fXN2TGqm.png"
+      "name": "Liverpool",
+      "logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png"
     },
     "team2": {
-      "name": "Manila Digger (Phl)",
-      "logo": "https://static.flashscore.com/res/image/data/0WZVIQYA-GjMnLEuj.png"
+      "name": "Bournemouth",
+      "logo": "https://static.flashscore.com/res/image/data/C60HMWTH-tCGtX12c.png"
     },
-    "kickoff_date": "2025-08-13",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-13",
-    "match_time": "19:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-          "url": "https://list-govoet.blogspot.com/p/embed1.html",
-          "label": "CH-VN"
-        },
-{
-          "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3RyZDAydzg=",
-          "label": "CH-VN"
-        },
-{
-          "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly93d3cuOTU3MDAxLnR2L2xpdmUvMTEyNg==",
-          "label": "CH-ID"
-        }
-
-],
-    "is_womens": false
-  },
-
-
-    {
-    "id": "PSG-Tottenham",
-    "league": "UEFA Super Cup",
-    "team1": {
-      "name": "PSG",
-      "logo": "https://static.flashscore.com/res/image/data/EskJufg5-A7UDDuOO.png"
-    },
-    "team2": {
-      "name": "Tottenham",
-      "logo": "https://static.flashscore.com/res/image/data/ARC62UAr-Ig5FKJZ5.png"
-    },
-    "kickoff_date": "2025-08-14",
+    "kickoff_date": "2025-08-16",
     "kickoff_time": "02:00",
-    "match_date": "2025-08-14",
-    "match_time": "02:00",
+    "match_date": "2025-08-16",
+    "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
-          "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-          "label": "CH-EN"
-        },
+        "url": "https://envivo.govoet.my.id/11",
+        "label": "CH-FR"
+      },
       {
-          "url": "https://multi.govoet.my.id/?ss=hd1",
-          "label": "CH-EN"
-        },
+        "url": "https://envivo.govoet.my.id/127",
+        "label": "CH-GB"
+      },
       {
-          "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-          "label": "CH-FR"
-        },
+        "url": "https://envivo.govoet.my.id/56",
+        "label": "CH-ES"
+      },
       {
-          "url": "https://multi.govoet.my.id/?ss=hd6",
-          "label": "CH-ES"
-        },
+        "url": "https://envivo.govoet.my.id/120",
+        "label": "CH-DE"
+      },
       {
-          "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-          "label": "CH-IT"
-        },
+        "url": "https://envivo.govoet.my.id/87",
+        "label": "CH-ES"
+      },
       {
-          "url": "https://multi.govoet.my.id/?ss=hd10",
-          "label": "CH-TR"
-        },
+        "url": "https://envivo.govoet.my.id/72",
+        "label": "CH-ES"
+      },
       {
-          "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-          "label": "CH-EN"
-        },
+        "url": "https://multi.govoet.my.id/?jw=usanetwork",
+        "label": "CH-EN"
+      },
       {
-          "url": "https://multi.govoet.my.id/?ss=sporttv5",
-          "label": "CH-PT"
-        }
-      
+        "url": "https://multi.govoet.my.id/?shaka=universo",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      }
     ],
     "is_womens": false
   }
-
    
   ]
   
