@@ -6,7 +6,8 @@
         "Amical Club": "Club Friendly",
         "Ligue Europa": "Europa League",
         "Ligue Des Champions": "Champions League",
-        "Super Coupe de UEFA": "UEFA Super Cup"
+        "Super Coupe de UEFA": "UEFA Super Cup",
+        "Laliga": "LaLiga"
     },
     "teams": {
       "Auckland City": "Auckland City",
@@ -39,7 +40,13 @@
         "AS Rome": "AS Roma",
         "Paris PSG": "PSG",
         "AFC Bournemouth": "Bournemouth",
-        "Liverpool": "Liverpool"
+        "Liverpool": "Liverpool",
+        "Girona": "Girona",
+        "Gérone": "Girona",
+        "Rayo Vallecano": "Vallecano",
+        "Rayo Vallecano": "Rayo Vallecano",
+        "Villarreal": "Villarreal",
+        "Real Oviedo": "R. Oviedo"
 
     }
   }
