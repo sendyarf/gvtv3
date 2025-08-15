@@ -631,7 +631,28 @@
     "match_time": "23:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/9",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/49",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/123",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/71",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
