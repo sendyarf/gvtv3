@@ -576,10 +576,8 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             french_dict['teams'].get(away_team.strip(), '').endswith(' Women')
         )
         
-        league_name = league_name.strip(':').strip() if league_name else 'Unknown League'
+        league_name = league_name.strip(':').strip() if league_name else 'Unknown'
         league_name_translated = french_dict['leagues'].get(league_name.strip(), league_name.strip())
-        if league_name_translated == 'Unknown League':
-            league_name_translated = 'FIFA Club World Cup' if not is_womens_sportsonline else 'Women’s International'
         
         logging.debug(f"Hasil ekstrak SportsOnline: Time={time_str}, League={league_name_translated}, Home={home_team.strip()}, Away={away_team.strip()}, Womens={is_womens_sportsonline}, URL={server_url}")
         
@@ -612,7 +610,6 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
                         logging.debug(f"Melewati pertandingan Flashscore: {existing_id}, is_womens Flashscore={match.get('is_womens', False)}, is_womens SportsOnline={is_womens_sportsonline}")
                         continue
                     
-                    league_match = match_league(league_name_translated, match['league'], threshold=30)
                     time_match = time_within_window(wib_time, match['kickoff_time'], window_minutes=120)
                     
                     home_match1 = match_name_sportsonline(home_team_translated, match['team1']['name'], threshold=70)
@@ -620,34 +617,33 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
                     home_match2 = match_name_sportsonline(home_team_translated, match['team2']['name'], threshold=70)
                     away_match2 = match_name_sportsonline(away_team_translated, match['team1']['name'], threshold=70)
                     
-                    logging.debug(f"Pencocokan untuk {existing_id}: league_match={league_match}, time_match={time_match}, "
+                    logging.debug(f"Pencocokan untuk {existing_id}: time_match={time_match}, "
                                  f"home_match1={home_match1}, away_match1={away_match1}, home_match2={home_match2}, away_match2={away_match2}, "
                                  f"home_score1={fuzz.ratio(clean_team_name(home_team_translated), clean_team_name(match['team1']['name']))}, "
                                  f"away_score1={fuzz.ratio(clean_team_name(away_team_translated), clean_team_name(match['team2']['name']))}")
                     
-                    if league_match and time_match:
-                        if (home_match1 and away_match1) or (home_match2 and away_match2):
-                            match_found = True
-                            logging.info(f"Pertandingan SportsOnline cocok: {existing_id}, home={home_team_translated}, away={away_team_translated}, is_womens={is_womens_sportsonline}")
-                            
-                            channel = server_url.split('/')[-1].replace('.php', '')
-                            normalized_url = f'https://listsportsembed.blogspot.com/p/{channel}.html'
-                            server_exists = any(
-                                s['url'].lower().rstrip('/') == normalized_url.lower().rstrip('/')
-                                for s in match['servers']
-                            )
-                            
-                            if not server_exists and normalized_url not in added_servers:
-                                mobile_count = len([s for s in match['servers'] if s['label'].startswith('CH-')])
-                                label = f'CH-{mobile_count + 1}'
-                                match['servers'].append({
-                                    'url': normalized_url,
-                                    'label': label
-                                })
-                                added_servers.append(normalized_url)
-                                logging.info(f"Menambahkan server SportsOnline: {label} - {normalized_url} untuk {existing_id}")
-                            else:
-                                logging.debug(f"Server SportsOnline dilewati (sudah ada): {normalized_url}")
+                    if time_match and ((home_match1 and away_match1) or (home_match2 and away_match2)):
+                        match_found = True
+                        logging.info(f"Pertandingan SportsOnline cocok: {existing_id}, home={home_team_translated}, away={away_team_translated}, is_womens={is_womens_sportsonline}")
+                        
+                        channel = server_url.split('/')[-1].replace('.php', '')
+                        normalized_url = f'https://listsportsembed.blogspot.com/p/{channel}.html'
+                        server_exists = any(
+                            s['url'].lower().rstrip('/') == normalized_url.lower().rstrip('/')
+                            for s in match['servers']
+                        )
+                        
+                        if not server_exists and normalized_url not in added_servers:
+                            mobile_count = len([s for s in match['servers'] if s['label'].startswith('CH-')])
+                            label = f'CH-{mobile_count + 1}'
+                            match['servers'].append({
+                                'url': normalized_url,
+                                'label': label
+                            })
+                            added_servers.append(normalized_url)
+                            logging.info(f"Menambahkan server SportsOnline: {label} - {normalized_url} untuk {existing_id}")
+                        else:
+                            logging.debug(f"Server SportsOnline dilewati (sudah ada): {normalized_url}")
                     
                 except Exception as e:
                     logging.error(f"Error memproses pertandingan SportsOnline {existing_id}: {e}")
@@ -655,7 +651,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             
             if not match_found:
                 logging.info(f"Tidak ada pertandingan yang cocok untuk SportsOnline: {home_team_translated} vs {away_team_translated}, "
-                            f"league={league_name_translated}, time={wib_time}, is_womens={is_womens_sportsonline}. Tidak menambahkan server.")
+                            f"time={wib_time}, is_womens={is_womens_sportsonline}. Tidak menambahkan server.")
                             
         except ValueError as e:
             logging.error(f"Error mem-parsing tanggal/waktu SportsOnline {time_str}: {e}")
