@@ -248,206 +248,6 @@
     "is_womens": false
   },
   {
-    "id": "brighton-fulham",
-    "league": "Premier League",
-    "team1": {
-      "name": "Brighton",
-      "logo": "https://static.flashscore.com/res/image/data/G0q9xjRq-b92lfEJC.png"
-    },
-    "team2": {
-      "name": "Fulham",
-      "logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-16",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/34",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/129",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/59",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/72",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-7"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "sunderland-westham",
-    "league": "Premier League",
-    "team1": {
-      "name": "Sunderland",
-      "logo": "https://static.flashscore.com/res/image/data/rPPdotBN-0d34NJCO.png"
-    },
-    "team2": {
-      "name": "West Ham",
-      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-16",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/33",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/130",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/58",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-5"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "tottenham-burnley",
-    "league": "Premier League",
-    "team1": {
-      "name": "Tottenham",
-      "logo": "https://static.flashscore.com/res/image/data/v3SzDxVH-Ig5FKJZ5.png"
-    },
-    "team2": {
-      "name": "Burnley",
-      "logo": "https://static.flashscore.com/res/image/data/xO3nES96-6PhTI7J6.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-16",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/12",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/131",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/57",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "CH-6"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "wolves-manchestercity",
-    "league": "Premier League",
-    "team1": {
-      "name": "Wolves",
-      "logo": "https://static.flashscore.com/res/image/data/OMUzjDkC-CjV6Eptm.png"
-    },
-    "team2": {
-      "name": "Manchester City",
-      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-16",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://hls.govoet.my.id/?id=TV3",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=nbc",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=telemundo",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/12",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/127",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/57",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "CH-7"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "chelsea-crystalpalace",
     "league": "Premier League",
     "team1": {
@@ -639,51 +439,18 @@
       {
         "url": "https://envivo.govoet.my.id/120",
         "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "lens-lyon",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Lens",
-      "logo": "https://static.flashscore.com/res/image/data/tAec9KQq-rTEFAmVL.png"
-    },
-    "team2": {
-      "name": "Lyon",
-      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "22:00",
-    "match_date": "2025-08-16",
-    "match_time": "21:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
       },
       {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/89",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-5"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
         "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br6.html",
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -1262,6 +1029,18 @@
       {
         "url": "https://envivo.govoet.my.id/87",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-8"
       }
     ],
     "is_womens": false
@@ -1283,7 +1062,69 @@
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-1"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-2"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-3"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
+        "label": "CH-4"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br5.html",
+        "label": "CH-6"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "wolves-manchestercity",
+    "league": "Premier League",
+    "team1": {
+      "name": "Wolves",
+      "logo": "https://static.flashscore.com/res/image/data/OMUzjDkC-CjV6Eptm.png"
+    },
+    "team2": {
+      "name": "Manchester City",
+      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
+    },
+    "kickoff_date": "2025-08-16",
+    "kickoff_time": "23:30",
+    "match_date": "2025-08-16",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=TV3",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=nbc",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=telemundo",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   }
 ]
