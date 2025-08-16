@@ -7,7 +7,8 @@
         "Ligue Europa": "Europa League",
         "Ligue Des Champions": "Champions League",
         "Super Coupe de UEFA": "UEFA Super Cup",
-        "Laliga": "LaLiga"
+        "Laliga": "LaLiga",
+        "Premier League": "Premier League"
     },
     "teams": {
       "Auckland City": "Auckland City",
@@ -46,7 +47,9 @@
         "Rayo Vallecano": "Vallecano",
         "Rayo Vallecano": "Rayo Vallecano",
         "Villarreal": "Villarreal",
-        "Real Oviedo": "R. Oviedo"
+        "Real Oviedo": "R. Oviedo",
+        "Brighton": "Brighton",
+        "Fulham": "Fulham"
 
     }
   }
