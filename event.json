@@ -431,6 +431,18 @@
       {
         "url": "https://envivo.govoet.my.id/120",
         "label": "CH-DE"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br3.html",
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -664,6 +676,14 @@
       {
         "url": "https://envivo.govoet.my.id/124",
         "label": "CH-DE"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
+        "label": "CH-6"
       }
     ],
     "is_womens": false
