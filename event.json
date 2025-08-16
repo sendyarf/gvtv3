@@ -248,63 +248,6 @@
     "is_womens": false
   },
   {
-    "id": "astonvilla-newcastle",
-    "league": "Premier League",
-    "team1": {
-      "name": "Aston Villa",
-      "logo": "https://static.flashscore.com/res/image/data/UHchCEVH-jwz95gs0.png"
-    },
-    "team2": {
-      "name": "Newcastle",
-      "logo": "https://static.flashscore.com/res/image/data/UXo7VXPq-ImMEe0UF.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "18:30",
-    "match_date": "2025-08-16",
-    "match_time": "18:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/11",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/126",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/57",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/72",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-7"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-8"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-9"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "brighton-fulham",
     "league": "Premier League",
     "team1": {
@@ -457,6 +400,22 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+      {
+        "url": "https://hls.govoet.my.id/?id=TV3",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=nbc",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=telemundo",
+        "label": "CH-ES"
+      },
       {
         "url": "https://envivo.govoet.my.id/12",
         "label": "CH-FR"
@@ -991,6 +950,14 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
+        "url": "https://shakas.govoet.my.id/?id=BEIN3AUS",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listcanal.blogspot.com/?id=ZIGGOSP",
+        "label": "CH-NL"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd2.html",
         "label": "CH-1"
       },
@@ -1297,63 +1264,6 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
-    "is_womens": false
-  },
-  {
-    "id": "liverpool-bournemouth",
-    "league": "Premier League",
-    "team1": {
-      "name": "Liverpool",
-      "logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png"
-    },
-    "team2": {
-      "name": "Bournemouth",
-      "logo": "https://static.flashscore.com/res/image/data/C60HMWTH-tCGtX12c.png"
-    },
-    "kickoff_date": "2025-08-16",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-16",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/11",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/127",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/56",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/72",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?jw=usanetwork",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=universo",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      }
-    ],
     "is_womens": false
   }
 ]
