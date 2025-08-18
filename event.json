@@ -593,8 +593,12 @@
         "label": "CH-VN"
       },
       {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "url": "https://list-govoet.blogspot.com/p/channel1.html",
         "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-ID"
       }
     ],
     "is_womens": false
