@@ -20,11 +20,11 @@
     "servers": [
          {
         "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-10"
+        "label": "CH-VN"
       },
          {
         "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-10"
+        "label": "CH-VN"
       }
     ],
     "is_womens": false
@@ -49,11 +49,11 @@
     "servers": [
          {
         "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-10"
+        "label": "CH-VN"
       },
          {
         "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-10"
+        "label": "CH-VN"
       }
     ],
     "is_womens": false
