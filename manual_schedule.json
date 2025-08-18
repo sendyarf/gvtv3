@@ -1,38 +1,6 @@
 [
 
-      {
-    "id": "PSBS-Biak-Numfor-Borneo",
-    "league": "Super League - Round 2",
-    "team1": {
-      "name": "PSBS Biak Numfor",
-      "logo": "https://static.flashscore.com/res/image/data/YTyuYOfM-phR6Gnck.png"
-    },
-    "team2": {
-      "name": "Borneo",
-      "logo": "https://static.flashscore.com/res/image/data/WtXOUJEG-lSvymcJg.png"
-    },
-    "kickoff_date": "2025-08-18",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-18",
-    "match_time": "15:20",
-    "duration": "3",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-         {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-VN"
-      },
-          {
-        "url": "https://list-govoet.blogspot.com/p/channel1.html",
-        "label": "CH-VN"
-      },
-         {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-ID"
-      }
-    ],
-    "is_womens": false
-  },
+ 
   {
     "id": "Persijap-Jepara-Persib-Bandung",
     "league": "Super League - Round 2",
@@ -51,13 +19,17 @@
     "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-         {
+          {
         "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-VN"
+      },
+          {
+        "url": "https://list-govoet.blogspot.com/p/channel1.html",
         "label": "CH-VN"
       },
          {
         "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-VN"
+        "label": "CH-ID"
       }
     ],
     "is_womens": false
