@@ -584,8 +584,8 @@
     "kickoff_date": "2025-08-18",
     "kickoff_time": "15:30",
     "match_date": "2025-08-18",
-    "match_time": "15:30",
-    "duration": "3.5",
+    "match_time": "15:20",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
@@ -617,8 +617,8 @@
     "kickoff_date": "2025-08-18",
     "kickoff_time": "18:30",
     "match_date": "2025-08-18",
-    "match_time": "18:30",
-    "duration": "3.5",
+    "match_time": "18:20",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
