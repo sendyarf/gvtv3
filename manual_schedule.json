@@ -160,20 +160,46 @@
         "label": "CH-AR"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-2"
+        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
+        "label": "CH-EN"
       },
       {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-4"
+        "url": "https://kilatpink.blogspot.com/?id=SKYME",
+        "label": "CH-EN"
       }
     ],
     "is_womens": false
   },
+  {
+    "id": "acmilan-cremonese",
+    "league": "Serie A",
+    "team1": {
+      "name": "AC Milan",
+      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
+    },
+    "team2": {
+      "name": "Cremonese",
+      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
+    },
+    "kickoff_date": "2025-08-24",
+    "kickoff_time": "01:45",
+    "match_date": "2025-08-24",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=espn4arg",
+        "label": "CH-ES"
+      },
+       {
+        "url": "https://multi.govoet.my.id/?shaka=arena2p",
+        "label": "CH-HR"
+      }
+    ],
+    "is_womens": false
+  }
+ 
 
   ]
   
