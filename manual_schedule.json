@@ -157,6 +157,107 @@
       }
     ],
     "is_womens": false
+  },
+    {
+    "id": "Arema-FC-FC-Bhayangkara",
+    "league": "Super League - Round 3",
+    "team1": {
+      "name": "Arema FC",
+      "logo": "https://static.flashscore.com/res/image/data/CnpWgcCa-nm2W7Uxp.png"
+    },
+    "team2": {
+      "name": "FC Bhayangkara",
+      "logo": "https://static.flashscore.com/res/image/data/8jnKBPkl-UBTLvuxH.png"
+    },
+    "kickoff_date": "2025-08-22",
+    "kickoff_time": "15:30",
+    "match_date": "2025-08-22",
+    "match_time": "15:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw2",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzkzODQubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-ID"
+      }
+      
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "Semen-Padang-PSM-Makassar",
+    "league": "Super League - Round 3",
+    "team1": {
+      "name": "Semen Padang",
+      "logo": "https://static.flashscore.com/res/image/data/GCMr4XCr-K4Cn0tro.png"
+    },
+    "team2": {
+      "name": "PSM Makassar",
+      "logo": "https://static.flashscore.com/res/image/data/825RIjg5-jNkiROW3.png"
+    },
+    "kickoff_date": "2025-08-22",
+    "kickoff_time": "15:30",
+    "match_date": "2025-08-22",
+    "match_time": "15:30",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw1",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS81MTEzNjcubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-VN"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "Dewa-United-Persik-Kediri",
+    "league": "Super League - Round 3",
+    "team1": {
+      "name": "Dewa United",
+      "logo": "https://static.flashscore.com/res/image/data/nmnoOY9r-lrspFRA0.png"
+    },
+    "team2": {
+      "name": "Persik Kediri",
+      "logo": "https://static.flashscore.com/res/image/data/IgemUgg5-fudV7NWp.png"
+    },
+    "kickoff_date": "2025-08-22",
+    "kickoff_time": "19:00",
+    "match_date": "2025-08-22",
+    "match_time": "19:00",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+       {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL2dtcG1iOTU=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzIzNDMubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed3.html",
+        "label": "CH-ID"
+      }
+      
+    ],
+    "is_womens": false
   }
  
   ]
