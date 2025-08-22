@@ -178,6 +178,22 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
+        "url": "https://multi.govoet.my.id/?shaka=arena1",
+        "label": "CH-HR"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYME",
+        "label": "CH-EN"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-1"
       },
@@ -210,6 +226,18 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=arena1p",
+        "label": "CH-HR"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=TNT1",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=espn1arg",
+        "label": "CH-ES"
+      },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-1"
@@ -330,6 +358,18 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=arena1p",
+        "label": "CH-HR"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYME",
+        "label": "CH-EN"
+      },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd1.html",
         "label": "CH-1"
@@ -735,6 +775,14 @@
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
+        "url": "https://multi.govoet.my.id/?shaka=espn3arg",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=bein1aus",
+        "label": "CH-EN"
+      },
+      {
         "url": "https://listsportsembed.blogspot.com/p/hd5.html",
         "label": "CH-1"
       },
@@ -771,6 +819,10 @@
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=bein2aus",
+        "label": "CH-EN"
+      },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd3.html",
         "label": "CH-1"
@@ -1593,59 +1645,6 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
         "label": "CH-3"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "realmadrid-osasuna",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Real Madrid",
-      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
-    },
-    "team2": {
-      "name": "Osasuna",
-      "logo": "https://static.flashscore.com/res/image/data/UTfY3r86-xQnxBzcF.png"
-    },
-    "kickoff_date": "2025-08-20",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-20",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein3aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=TV3",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br5.html",
-        "label": "CH-6"
       }
     ],
     "is_womens": false
