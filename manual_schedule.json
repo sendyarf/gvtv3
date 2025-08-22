@@ -104,161 +104,76 @@
     ],
     "is_womens": false
   },
-  {
-    "id": "bayernmunich-rbleipzig",
-    "league": "Bundesliga",
+   {
+    "id": "levante-barcelona",
+    "league": "LaLiga",
     "team1": {
-      "name": "Bayern Munich",
-      "logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png"
+      "name": "Levante",
+      "logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-8toS1iya.png"
     },
     "team2": {
-      "name": "RB Leipzig",
-      "logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png"
+      "name": "Barcelona",
+      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
     },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "01:30",
-    "match_date": "2025-08-23",
-    "match_time": "01:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=espn3arg",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein1aus",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "bayerleverkusen-hoffenheim",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Bayer Leverkusen",
-      "logo": "https://static.flashscore.com/res/image/data/dWZYQIPq-WrjrBuU2.png"
-    },
-    "team2": {
-      "name": "Hoffenheim",
-      "logo": "https://static.flashscore.com/res/image/data/IyZBMF7k-n7lWn9DL.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
+    "kickoff_date": "2025-08-24",
+    "kickoff_time": "02:30",
+    "match_date": "2025-08-24",
+    "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
       {
         "url": "https://multi.govoet.my.id/?shaka=bein2aus",
         "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-    {
-    "id": "Arema-FC-FC-Bhayangkara",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Arema FC",
-      "logo": "https://static.flashscore.com/res/image/data/CnpWgcCa-nm2W7Uxp.png"
-    },
-    "team2": {
-      "name": "FC Bhayangkara",
-      "logo": "https://static.flashscore.com/res/image/data/8jnKBPkl-UBTLvuxH.png"
-    },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-22",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-       {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw2",
-        "label": "CH-VN"
       },
       {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzkzODQubTN1OA==",
-        "label": "CH-VN"
+        "url": "https://multi.govoet.my.id/?shaka=ziggo5",
+        "label": "CH-NL"
       },
       {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-ID"
-      }
-      
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "Semen-Padang-PSM-Makassar",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Semen Padang",
-      "logo": "https://static.flashscore.com/res/image/data/GCMr4XCr-K4Cn0tro.png"
-    },
-    "team2": {
-      "name": "PSM Makassar",
-      "logo": "https://static.flashscore.com/res/image/data/825RIjg5-jNkiROW3.png"
-    },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-22",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-       {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw1",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS81MTEzNjcubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-VN"
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
       }
     ],
     "is_womens": false
   },
   {
-    "id": "Dewa-United-Persik-Kediri",
-    "league": "Super League - Round 3",
+    "id": "fulham-manchesterutd",
+    "league": "Premier League",
     "team1": {
-      "name": "Dewa United",
-      "logo": "https://static.flashscore.com/res/image/data/nmnoOY9r-lrspFRA0.png"
+      "name": "Fulham",
+      "logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png"
     },
     "team2": {
-      "name": "Persik Kediri",
-      "logo": "https://static.flashscore.com/res/image/data/IgemUgg5-fudV7NWp.png"
+      "name": "Manchester Utd",
+      "logo": "https://static.flashscore.com/res/image/data/GhGV3qjT-h2pPXz3k.png"
     },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-22",
-    "match_time": "19:00",
+    "kickoff_date": "2025-08-24",
+    "kickoff_time": "22:30",
+    "match_date": "2025-08-24",
+    "match_time": "22:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [
-       {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL2dtcG1iOTU=",
-        "label": "CH-VN"
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
       },
       {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzIzNDMubTN1OA==",
-        "label": "CH-VN"
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-2"
       },
       {
-        "url": "https://list-govoet.blogspot.com/p/embed3.html",
-        "label": "CH-ID"
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-3"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br2.html",
+        "label": "CH-4"
       }
-      
     ],
     "is_womens": false
-  }
- 
+  },
+
   ]
   
