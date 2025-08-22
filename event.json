@@ -36,12 +36,7 @@
     "match_time": "23:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -61,12 +56,7 @@
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -86,12 +76,7 @@
     "match_time": "17:05",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -151,81 +136,7 @@
     "match_time": "21:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-1"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "westham-chelsea",
-    "league": "Premier League",
-    "team1": {
-      "name": "West Ham",
-      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
-    },
-    "team2": {
-      "name": "Chelsea",
-      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-23",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/12",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/127",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/56",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/155",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-7"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-8"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -245,32 +156,7 @@
     "match_time": "18:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1p",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=TNT1",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=espn1arg",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -290,16 +176,7 @@
     "match_time": "20:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -319,20 +196,7 @@
     "match_time": "20:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -352,12 +216,7 @@
     "match_time": "20:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -377,32 +236,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1p",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br5.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -422,20 +256,7 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -455,20 +276,7 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -488,24 +296,7 @@
     "match_time": "22:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-4"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -525,65 +316,7 @@
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br5.html",
-        "label": "CH-3"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "psg-angers",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "PSG",
-      "logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png"
-    },
-    "team2": {
-      "name": "Angers",
-      "logo": "https://static.flashscore.com/res/image/data/IN9Ib7jT-z9nPuk2r.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "01:45",
-    "match_date": "2025-08-23",
-    "match_time": "01:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/91",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-6"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -603,16 +336,7 @@
     "match_time": "21:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -632,16 +356,7 @@
     "match_time": "23:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -661,16 +376,7 @@
     "match_time": "01:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -690,16 +396,7 @@
     "match_time": "19:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -739,12 +436,7 @@
     "match_time": "22:05",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -784,69 +476,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-1"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "bayernmunich-rbleipzig",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Bayern Munich",
-      "logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png"
-    },
-    "team2": {
-      "name": "RB Leipzig",
-      "logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "01:30",
-    "match_date": "2025-08-23",
-    "match_time": "01:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=espn3arg",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein1aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/2",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/111",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-7"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -866,24 +496,7 @@
     "match_time": "20:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein2aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br1.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -963,12 +576,7 @@
     "match_time": "20:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -988,16 +596,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1017,16 +616,7 @@
     "match_time": "20:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1046,16 +636,7 @@
     "match_time": "22:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1075,16 +656,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1104,24 +676,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv4.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-4"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1141,20 +696,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv4.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br6.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1174,16 +716,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv5.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1203,12 +736,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-1"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1228,16 +756,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1257,16 +776,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1286,24 +796,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br5.html",
-        "label": "CH-4"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1323,16 +816,7 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1352,65 +836,7 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br4.html",
-        "label": "CH-4"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "betis-alaves",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Betis",
-      "logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png"
-    },
-    "team2": {
-      "name": "Alaves",
-      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "02:30",
-    "match_date": "2025-08-23",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/107",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1430,16 +856,7 @@
     "match_time": "21:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br6.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1459,20 +876,7 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1492,24 +896,7 @@
     "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br5.html",
-        "label": "CH-4"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1529,20 +916,7 @@
     "match_time": "21:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br6.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1562,16 +936,7 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
-        "label": "CH-2"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1591,20 +956,7 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1624,28 +976,7 @@
     "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-5"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1665,24 +996,7 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br6.html",
-        "label": "CH-4"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1702,119 +1016,27 @@
     "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
-    "id": "Arema-FC-FC-Bhayangkara",
-    "league": "Super League - Round 3",
+    "id": "celtavigo-betis",
+    "league": "LaLiga",
     "team1": {
-      "name": "Arema FC",
-      "logo": "https://static.flashscore.com/res/image/data/CnpWgcCa-nm2W7Uxp.png"
+      "name": "Celta Vigo",
+      "logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png"
     },
     "team2": {
-      "name": "FC Bhayangkara",
-      "logo": "https://static.flashscore.com/res/image/data/8jnKBPkl-UBTLvuxH.png"
+      "name": "Betis",
+      "logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png"
     },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-22",
-    "match_time": "15:30",
+    "kickoff_date": "2025-08-28",
+    "kickoff_time": "02:00",
+    "match_date": "2025-08-28",
+    "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw2",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzkzODQubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-ID"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "Semen-Padang-PSM-Makassar",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Semen Padang",
-      "logo": "https://static.flashscore.com/res/image/data/GCMr4XCr-K4Cn0tro.png"
-    },
-    "team2": {
-      "name": "PSM Makassar",
-      "logo": "https://static.flashscore.com/res/image/data/825RIjg5-jNkiROW3.png"
-    },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-22",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNy9saW5rL2NoYW5uZWw1",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS81MTEzNjcubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-VN"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "Dewa-United-Persik-Kediri",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Dewa United",
-      "logo": "https://static.flashscore.com/res/image/data/nmnoOY9r-lrspFRA0.png"
-    },
-    "team2": {
-      "name": "Persik Kediri",
-      "logo": "https://static.flashscore.com/res/image/data/IgemUgg5-fudV7NWp.png"
-    },
-    "kickoff_date": "2025-08-22",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-22",
-    "match_time": "19:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL2dtcG1iOTU=",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMzIzNDMubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed3.html",
-        "label": "CH-ID"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   }
 ]
