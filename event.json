@@ -1,30 +1,5 @@
 [
   {
-    "id": "gaeagles-spartarotterdam",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "G.A. Eagles",
-      "logo": "https://static.flashscore.com/res/image/data/4IPDw4ne-x4Xh4Pu0.png"
-    },
-    "team2": {
-      "name": "Sparta Rotterdam",
-      "logo": "https://static.flashscore.com/res/image/data/MHUzob96-rTjpk23j.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "21:30",
-    "match_date": "2025-08-23",
-    "match_time": "21:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/142",
-        "label": "CH-NL"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "psv-groningen",
     "league": "Eredivisie",
     "team1": {
@@ -185,174 +160,6 @@
       },
       {
         "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "bournemouth-wolves",
-    "league": "Premier League",
-    "team1": {
-      "name": "Bournemouth",
-      "logo": "https://static.flashscore.com/res/image/data/C60HMWTH-tCGtX12c.png"
-    },
-    "team2": {
-      "name": "Wolves",
-      "logo": "https://static.flashscore.com/res/image/data/OMUzjDkC-CjV6Eptm.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-23",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/33",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/129",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/58",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/88",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "brentford-astonvilla",
-    "league": "Premier League",
-    "team1": {
-      "name": "Brentford",
-      "logo": "https://static.flashscore.com/res/image/data/SjSCLv86-r9Mudk7j.png"
-    },
-    "team2": {
-      "name": "Aston Villa",
-      "logo": "https://static.flashscore.com/res/image/data/UHchCEVH-jwz95gs0.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-23",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/32",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/130",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/57",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "burnley-sunderland",
-    "league": "Premier League",
-    "team1": {
-      "name": "Burnley",
-      "logo": "https://static.flashscore.com/res/image/data/xO3nES96-6PhTI7J6.png"
-    },
-    "team2": {
-      "name": "Sunderland",
-      "logo": "https://static.flashscore.com/res/image/data/rPPdotBN-0d34NJCO.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "21:00",
-    "match_date": "2025-08-23",
-    "match_time": "20:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/34",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/131",
-        "label": "CH-US"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/59",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/155",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "arsenal-leeds",
-    "league": "Premier League",
-    "team1": {
-      "name": "Arsenal",
-      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
-    },
-    "team2": {
-      "name": "Leeds",
-      "logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-O4P6Zhap.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-23",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1p",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/12",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/127",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/57",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/72",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/155",
         "label": "CH-ES"
       }
     ],
@@ -530,39 +337,6 @@
       {
         "url": "https://envivo.govoet.my.id/72",
         "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "marseille-parisfc",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Marseille",
-      "logo": "https://static.flashscore.com/res/image/data/t6Kb5X76-voNnDKJK.png"
-    },
-    "team2": {
-      "name": "Paris FC",
-      "logo": "https://static.flashscore.com/res/image/data/S85qoCiT-AelKXger.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "22:00",
-    "match_date": "2025-08-23",
-    "match_time": "21:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
       }
     ],
     "is_womens": false
@@ -771,188 +545,6 @@
     "is_womens": false
   },
   {
-    "id": "bayerleverkusen-hoffenheim",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Bayer Leverkusen",
-      "logo": "https://static.flashscore.com/res/image/data/dWZYQIPq-WrjrBuU2.png"
-    },
-    "team2": {
-      "name": "Hoffenheim",
-      "logo": "https://static.flashscore.com/res/image/data/IyZBMF7k-n7lWn9DL.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/3",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/113",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/91",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "eintrachtfrankfurt-werderbremen",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Eintracht Frankfurt",
-      "logo": "https://static.flashscore.com/res/image/data/2aegVtQq-86lnAaq9.png"
-    },
-    "team2": {
-      "name": "Werder Bremen",
-      "logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/4",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/111",
-        "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "freiburg-augsburg",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Freiburg",
-      "logo": "https://static.flashscore.com/res/image/data/0pdxCFiT-86lnAaq9.png"
-    },
-    "team2": {
-      "name": "Augsburg",
-      "logo": "https://static.flashscore.com/res/image/data/Qgbz4piC-Qmnf8wEL.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/7",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/114",
-        "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "heidenheim-wolfsburg",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Heidenheim",
-      "logo": "https://static.flashscore.com/res/image/data/UH4XQKBN-ncNaLxYl.png"
-    },
-    "team2": {
-      "name": "Wolfsburg",
-      "logo": "https://static.flashscore.com/res/image/data/2cDrWAS0-KjF1j4v3.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/6",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/115",
-        "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "unionberlin-stuttgart",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Union Berlin",
-      "logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png"
-    },
-    "team2": {
-      "name": "Stuttgart",
-      "logo": "https://static.flashscore.com/res/image/data/fgQWGn86-f1Z3XxZa.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "20:30",
-    "match_date": "2025-08-23",
-    "match_time": "20:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/5",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/112",
-        "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "stpauli-dortmund",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "St. Pauli",
-      "logo": "https://static.flashscore.com/res/image/data/QHdIUX96-ncmj9JbF.png"
-    },
-    "team2": {
-      "name": "Dortmund",
-      "logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-23",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/2",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/111",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/159",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "mainz-fckoln",
     "league": "Bundesliga",
     "team1": {
@@ -999,59 +591,6 @@
         "label": "CH-DE"
       }
     ],
-    "is_womens": false
-  },
-  {
-    "id": "genoa-lecce",
-    "league": "Serie A",
-    "team1": {
-      "name": "Genoa",
-      "logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png"
-    },
-    "team2": {
-      "name": "Lecce",
-      "logo": "https://static.flashscore.com/res/image/data/fPabg0DN-McvX4bye.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-23",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/139",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/99",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/70",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "sassuolo-napoli",
-    "league": "Serie A",
-    "team1": {
-      "name": "Sassuolo",
-      "logo": "https://static.flashscore.com/res/image/data/QckzxM7k-0lwy4Ij1.png"
-    },
-    "team2": {
-      "name": "Napoli",
-      "logo": "https://static.flashscore.com/res/image/data/tSuMfRjT-vTT58gae.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-23",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
     "is_womens": false
   },
   {
@@ -1312,39 +851,6 @@
       },
       {
         "url": "https://envivo.govoet.my.id/70",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "mallorca-celtavigo",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Mallorca",
-      "logo": "https://static.flashscore.com/res/image/data/WKsw8cne-rmDEjevK.png"
-    },
-    "team2": {
-      "name": "Celta Vigo",
-      "logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "22:00",
-    "match_date": "2025-08-23",
-    "match_time": "21:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
         "label": "CH-ES"
       }
     ],
@@ -1739,6 +1245,39 @@
       {
         "url": "https://multi.govoet.my.id/?shaka=espn1arg",
         "label": "CH-ES"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "arsenal-leeds",
+    "league": "Premier League",
+    "team1": {
+      "name": "Arsenal",
+      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
+    },
+    "team2": {
+      "name": "Leeds",
+      "logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-O4P6Zhap.png"
+    },
+    "kickoff_date": "2025-08-23",
+    "kickoff_time": "23:30",
+    "match_date": "2025-08-23",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=arena1p",
+        "label": "CH-HR"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYME",
+        "label": "CH-EN"
       }
     ],
     "is_womens": false
