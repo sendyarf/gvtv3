@@ -220,6 +220,14 @@
       {
         "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS80OTk3NjUubTN1OA==",
         "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3I4enRhdDY=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-ID"
       }
     ],
     "is_womens": false
@@ -245,6 +253,14 @@
       {
         "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMTgyMDYubTN1OA==",
         "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3RyZDAydzg=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-ID"
       }
     ],
     "is_womens": false
@@ -270,6 +286,14 @@
       {
         "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMTgyMDYubTN1OA==",
         "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3I4enRhdDY=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed3.html",
+        "label": "CH-ID"
       }
     ],
     "is_womens": false
