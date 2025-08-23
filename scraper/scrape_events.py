@@ -539,7 +539,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             with open(cache_file, 'w', encoding='utf-8') as f:
                 f.write(text)
         lines = text.split('\n')
-        schedule_lines = [line for line in lines if re.match(r'\d{2}:\d{2}\s+.*?\s*x\s*.*?\s*\|.*sport[zs]online\.si.*', line, re.IGNORECASE)]
+        schedule_lines = [line for line in lines if re.match(r'\d{2}:\d{2}\s+.*?\s*x\s*.*?\s*\|.*sport[zs]online\.site.*', line, re.IGNORECASE)]
         logging.info(f"Isi SportsOnline prog.txt (semua baris jadwal, {len(schedule_lines)} baris):\n" + '\n'.join(schedule_lines))
     except Exception as e:
         logging.warning(f"Gagal mengambil {url}, mencoba cache: {type(e).__name__}: {str(e)}")
