@@ -560,7 +560,7 @@ def scrape_sportsonline_servers(url, matches, days=5, cache_file='sportsonline_c
             continue
         
         match = re.match(
-            r'(\d{2}:\d{2})\s+((?:[^:]+?\s*:\s*)?)(.*?)(?:\s*W)?\sx\s*(.*?)(?:\s*W)?(?:\s*\((W)\))?\s*\|\s*(https?://sport[zs]online\.si/channels/[^\s]+)', 
+            r'(\d{2}:\d{2})\s+((?:[^:]+?\s*:\s*)?)(.*?)(?:\s*W)?\sx\s*(.*?)(?:\s*W)?(?:\s*\((W)\))?\s*\|\s*(https?://sport[zs]online\.site/channels/[^\s]+)', 
             line, re.IGNORECASE
         )
         if not match:
