@@ -1,142 +1,6 @@
 [
 
-  {
-    "id": "westham-chelsea",
-    "league": "Premier League",
-    "team1": {
-      "name": "West Ham",
-      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
-    },
-    "team2": {
-      "name": "Chelsea",
-      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-23",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1",
-        "label": "CH-HR"
-      },
-     {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-     {
-    "id": "manchestercity-tottenham",
-    "league": "Premier League",
-    "team1": {
-      "name": "Manchester City",
-      "logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png"
-    },
-    "team2": {
-      "name": "Tottenham",
-      "logo": "https://static.flashscore.com/res/image/data/v3SzDxVH-Ig5FKJZ5.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "18:30",
-    "match_date": "2025-08-23",
-    "match_time": "18:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1p",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=TNT1",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=espn1arg",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
  
-  {
-    "id": "arsenal-leeds",
-    "league": "Premier League",
-    "team1": {
-      "name": "Arsenal",
-      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
-    },
-    "team2": {
-      "name": "Leeds",
-      "logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-O4P6Zhap.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-23",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=arena1p",
-        "label": "CH-HR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      }
-    ],
-    "is_womens": false
-  },
-   {
-    "id": "levante-barcelona",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Levante",
-      "logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-8toS1iya.png"
-    },
-    "team2": {
-      "name": "Barcelona",
-      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "02:30",
-    "match_date": "2025-08-24",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein2aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=ziggo5",
-        "label": "CH-NL"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      }
-    ],
-    "is_womens": false
-  },
   {
     "id": "fulham-manchesterutd",
     "league": "Premier League",
@@ -199,105 +63,7 @@
     ],
     "is_womens": false
   },
-    {
-    "id": "Persija-Jakarta-Malut-United",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Persija Jakarta",
-      "logo": "https://static.flashscore.com/res/image/data/2uyZBddM-65biHEjh.png"
-    },
-    "team2": {
-      "name": "Malut United",
-      "logo": "https://static.flashscore.com/res/image/data/CzyPAuZA-IijC3nOP.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-23",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS80OTk3NjUubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3I4enRhdDY=",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed1.html",
-        "label": "CH-ID"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "PSBS-Biak-Numfor-Persis-Solo",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "PSBS Biak Numfor",
-      "logo": "https://static.flashscore.com/res/image/data/YTyuYOfM-phR6Gnck.png"
-    },
-    "team2": {
-      "name": "Persis Solo",
-      "logo": "https://static.flashscore.com/res/image/data/j3lsUVCa-UHp0ZgHn.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "15:30",
-    "match_date": "2025-08-23",
-    "match_time": "15:30",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMTgyMDYubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3RyZDAydzg=",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed2.html",
-        "label": "CH-ID"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "Persebaya-Bali-United",
-    "league": "Super League - Round 3",
-    "team1": {
-      "name": "Persebaya",
-      "logo": "https://static.flashscore.com/res/image/data/8MQJKwvS-jaJfGoOS.png"
-    },
-    "team2": {
-      "name": "Bali United",
-      "logo": "https://static.flashscore.com/res/image/data/tInTP6zB-pdceGY5b.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "19:00",
-    "match_date": "2025-08-23",
-    "match_time": "19:00",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMTgyMDYubTN1OA==",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL3I4enRhdDY=",
-        "label": "CH-VN"
-      },
-      {
-        "url": "https://list-govoet.blogspot.com/p/embed3.html",
-        "label": "CH-ID"
-      }
-    ],
-    "is_womens": false
-  },
+
   {
     "id": "Borneo-Persijap-Jepara",
     "league": "Super League - Round 3",
@@ -313,9 +79,22 @@
     "kickoff_time": "15:30",
     "match_date": "2025-08-24",
     "match_time": "15:30",
-    "duration": "3.5",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8xMTgyMDYubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL2VuN2hmNnI=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed1.html",
+        "label": "CH-ID"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -333,9 +112,26 @@
     "kickoff_time": "15:30",
     "match_date": "2025-08-24",
     "match_time": "15:30",
-    "duration": "3.5",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+        {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8yNTA4NzQubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvMS9saW5rL2dtcG1iOTU=",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/channel1.html",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed2.html",
+        "label": "CH-ID"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -353,9 +149,22 @@
     "kickoff_time": "19:00",
     "match_date": "2025-08-24",
     "match_time": "19:00",
-    "duration": "3.5",
+    "duration": "3",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+       {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS8yNTA4NzQubTN1OA==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly94bHoucGxjZG4ueHl6L2FqYXgvY2hhbmVsL3R5cGUvNS9saW5rL2NoYW5uZWw2NQ==",
+        "label": "CH-VN"
+      },
+      {
+        "url": "https://list-govoet.blogspot.com/p/embed3.html",
+        "label": "CH-ID"
+      }
+    ],
     "is_womens": false
   }
  
