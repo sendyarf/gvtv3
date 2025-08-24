@@ -1,63 +1,5 @@
 [
   {
-    "id": "psv-groningen",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "PSV",
-      "logo": "https://static.flashscore.com/res/image/data/fefX7RQq-j5zA1baQ.png"
-    },
-    "team2": {
-      "name": "Groningen",
-      "logo": "https://static.flashscore.com/res/image/data/AJOIh8jT-E5fitKGe.png"
-    },
-    "kickoff_date": "2025-08-23",
-    "kickoff_time": "23:45",
-    "match_date": "2025-08-23",
-    "match_time": "23:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/141",
-        "label": "CH-NL"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/61",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/100",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "telstar-fcvolendam",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "Telstar",
-      "logo": "https://static.flashscore.com/res/image/data/d46y71iT-xxe4Fem8.png"
-    },
-    "team2": {
-      "name": "FC Volendam",
-      "logo": "https://static.flashscore.com/res/image/data/8tDUPO86-WYtEUtB2.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "02:00",
-    "match_date": "2025-08-24",
-    "match_time": "01:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/141",
-        "label": "CH-NL"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "heerenveen-twente",
     "league": "Eredivisie",
     "team1": {
@@ -78,6 +20,10 @@
       {
         "url": "https://envivo.govoet.my.id/142",
         "label": "CH-NL"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
+        "label": "CH-2"
       }
     ],
     "is_womens": false
@@ -161,6 +107,10 @@
       {
         "url": "https://envivo.govoet.my.id/97",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
+        "label": "CH-4"
       }
     ],
     "is_womens": false
@@ -198,6 +148,18 @@
       {
         "url": "https://envivo.govoet.my.id/91",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br2.html",
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -239,6 +201,18 @@
       {
         "url": "https://envivo.govoet.my.id/73",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-8"
       }
     ],
     "is_womens": false
@@ -296,6 +270,22 @@
       {
         "url": "https://envivo.govoet.my.id/73",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-8"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-9"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br2.html",
+        "label": "CH-10"
       }
     ],
     "is_womens": false
@@ -337,64 +327,18 @@
       {
         "url": "https://envivo.govoet.my.id/72",
         "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "nice-auxerre",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Nice",
-      "logo": "https://static.flashscore.com/res/image/data/bJCGymle-00sqJmg8.png"
-    },
-    "team2": {
-      "name": "Auxerre",
-      "logo": "https://static.flashscore.com/res/image/data/4tdLdYlC-tY3UBVrm.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "00:00",
-    "match_date": "2025-08-24",
-    "match_time": "23:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
       },
       {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "lyon-metz",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Lyon",
-      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
-    },
-    "team2": {
-      "name": "Metz",
-      "logo": "https://static.flashscore.com/res/image/data/SCdF7fjT-pztT5vMl.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "02:05",
-    "match_date": "2025-08-24",
-    "match_time": "01:55",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
+        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
+        "label": "CH-6"
       },
       {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br5.html",
+        "label": "CH-8"
       }
     ],
     "is_womens": false
@@ -428,6 +372,14 @@
       {
         "url": "https://envivo.govoet.my.id/90",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-4"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv1.html",
+        "label": "CH-5"
       }
     ],
     "is_womens": false
@@ -486,6 +438,10 @@
       {
         "url": "https://envivo.govoet.my.id/90",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-4"
       }
     ],
     "is_womens": false
@@ -540,6 +496,10 @@
       {
         "url": "https://envivo.govoet.my.id/69",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
+        "label": "CH-3"
       }
     ],
     "is_womens": false
@@ -561,7 +521,16 @@
     "match_time": "20:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-1"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
+        "label": "CH-2"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -589,84 +558,14 @@
       {
         "url": "https://envivo.govoet.my.id/124",
         "label": "CH-DE"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "acmilan-cremonese",
-    "league": "Serie A",
-    "team1": {
-      "name": "AC Milan",
-      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
-    },
-    "team2": {
-      "name": "Cremonese",
-      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "01:45",
-    "match_date": "2025-08-24",
-    "match_time": "01:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=espn4arg",
-        "label": "CH-ES"
       },
       {
-        "url": "https://multi.govoet.my.id/?shaka=arena2p",
-        "label": "CH-HR"
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-3"
       },
       {
-        "url": "https://envivo.govoet.my.id/46",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/137",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/70",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "asroma-bologna",
-    "league": "Serie A",
-    "team1": {
-      "name": "AS Roma",
-      "logo": "https://static.flashscore.com/res/image/data/j31Z1pne-GtNb9h2q.png"
-    },
-    "team2": {
-      "name": "Bologna",
-      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "01:45",
-    "match_date": "2025-08-24",
-    "match_time": "01:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/138",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/100",
-        "label": "CH-ES"
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-4"
       }
     ],
     "is_womens": false
@@ -692,6 +591,10 @@
       {
         "url": "https://envivo.govoet.my.id/137",
         "label": "CH-IT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "label": "CH-2"
       }
     ],
     "is_womens": false
@@ -725,6 +628,14 @@
       {
         "url": "https://envivo.govoet.my.id/70",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-4"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
+        "label": "CH-5"
       }
     ],
     "is_womens": false
@@ -750,6 +661,14 @@
       {
         "url": "https://envivo.govoet.my.id/139",
         "label": "CH-IT"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-2"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
+        "label": "CH-3"
       }
     ],
     "is_womens": false
@@ -787,6 +706,22 @@
       {
         "url": "https://envivo.govoet.my.id/61",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br5.html",
+        "label": "CH-8"
       }
     ],
     "is_womens": false
@@ -808,7 +743,16 @@
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
+        "label": "CH-1"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
+        "label": "CH-2"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -852,102 +796,44 @@
       {
         "url": "https://envivo.govoet.my.id/70",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
+        "label": "CH-8"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
+        "label": "CH-9"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br4.html",
+        "label": "CH-10"
       }
     ],
     "is_womens": false
   },
   {
-    "id": "atlmadrid-elche",
-    "league": "LaLiga",
+    "id": "cremonese-sassuolo",
+    "league": "Serie A",
     "team1": {
-      "name": "Atl. Madrid",
-      "logo": "https://static.flashscore.com/res/image/data/Kv2QSkhT-nLBjwR1F.png"
+      "name": "Cremonese",
+      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
     },
     "team2": {
-      "name": "Elche",
-      "logo": "https://static.flashscore.com/res/image/data/EVxB82BN-YmCZKGcR.png"
+      "name": "Sassuolo",
+      "logo": "https://static.flashscore.com/res/image/data/QckzxM7k-0lwy4Ij1.png"
     },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "00:30",
-    "match_date": "2025-08-24",
-    "match_time": "00:20",
+    "kickoff_date": "2025-08-29",
+    "kickoff_time": "23:30",
+    "match_date": "2025-08-29",
+    "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/3",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/51",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "levante-barcelona",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Levante",
-      "logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-8toS1iya.png"
-    },
-    "team2": {
-      "name": "Barcelona",
-      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
-    },
-    "kickoff_date": "2025-08-24",
-    "kickoff_time": "02:30",
-    "match_date": "2025-08-24",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein2aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?shaka=ziggo5",
-        "label": "CH-NL"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/2",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -983,6 +869,18 @@
       {
         "url": "https://envivo.govoet.my.id/71",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br6.html",
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -1016,6 +914,14 @@
       {
         "url": "https://envivo.govoet.my.id/90",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd11.html",
+        "label": "CH-4"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
+        "label": "CH-5"
       }
     ],
     "is_womens": false
@@ -1053,6 +959,18 @@
       {
         "url": "https://envivo.govoet.my.id/71",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-5"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-7"
       }
     ],
     "is_womens": false
@@ -1094,6 +1012,26 @@
       {
         "url": "https://envivo.govoet.my.id/71",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
+        "label": "CH-8"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
+        "label": "CH-9"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br2.html",
+        "label": "CH-10"
       }
     ],
     "is_womens": false
@@ -1135,6 +1073,22 @@
       {
         "url": "https://envivo.govoet.my.id/71",
         "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-6"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-7"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-8"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/br6.html",
+        "label": "CH-9"
       }
     ],
     "is_womens": false
@@ -1156,7 +1110,20 @@
     "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
+        "label": "CH-1"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
+        "label": "CH-2"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
+        "label": "CH-3"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1278,6 +1245,68 @@
       {
         "url": "https://kilatpink.blogspot.com/?id=SKYME",
         "label": "CH-EN"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "levante-barcelona",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Levante",
+      "logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-8toS1iya.png"
+    },
+    "team2": {
+      "name": "Barcelona",
+      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
+    },
+    "kickoff_date": "2025-08-24",
+    "kickoff_time": "02:30",
+    "match_date": "2025-08-24",
+    "match_time": "02:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=bein2aus",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=ziggo5",
+        "label": "CH-NL"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "acmilan-cremonese",
+    "league": "Serie A",
+    "team1": {
+      "name": "AC Milan",
+      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
+    },
+    "team2": {
+      "name": "Cremonese",
+      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
+    },
+    "kickoff_date": "2025-08-24",
+    "kickoff_time": "01:45",
+    "match_date": "2025-08-24",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=espn4arg",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?shaka=arena2p",
+        "label": "CH-HR"
       }
     ],
     "is_womens": false
