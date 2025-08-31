@@ -1,148 +1,5 @@
 [
   {
-    "id": "spartarotterdam-feyenoord",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "Sparta Rotterdam",
-      "logo": "https://static.flashscore.com/res/image/data/MHUzob96-rTjpk23j.png"
-    },
-    "team2": {
-      "name": "Feyenoord",
-      "logo": "https://static.flashscore.com/res/image/data/Ag6J0jT0-Wz6bfhxO.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "19:30",
-    "match_date": "2025-08-31",
-    "match_time": "19:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/142",
-        "label": "CH-NL"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/61",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
-        "label": "CH-4"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "nacbreda-azalkmaar",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "NAC Breda",
-      "logo": "https://static.flashscore.com/res/image/data/IVhDS6UH-voRxy8ml.png"
-    },
-    "team2": {
-      "name": "AZ Alkmaar",
-      "logo": "https://static.flashscore.com/res/image/data/v9zOEImC-4vob7cTR.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "21:45",
-    "match_date": "2025-08-31",
-    "match_time": "21:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/143",
-        "label": "CH-NL"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "liverpool-arsenal",
-    "league": "Premier League",
-    "team1": {
-      "name": "Liverpool",
-      "logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png"
-    },
-    "team2": {
-      "name": "Arsenal",
-      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:30",
-    "match_date": "2025-08-31",
-    "match_time": "22:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?jw=usanetwork",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://multi.govoet.my.id/?jw=telemundo",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://hls.govoet.my.id/?id=BEIN1",
-        "label": "CH-AR"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYME",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/11",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/127",
-        "label": "CH-GB"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/56",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/120",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/73",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/157",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-8"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-9"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-10"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "astonvilla-crystalpalace",
     "league": "Premier League",
     "team1": {
@@ -191,93 +48,6 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br3.html",
         "label": "CH-8"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "lehavre-nice",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Le Havre",
-      "logo": "https://static.flashscore.com/res/image/data/SdQTDNR0-W0g3UmAF.png"
-    },
-    "team2": {
-      "name": "Nice",
-      "logo": "https://static.flashscore.com/res/image/data/bJCGymle-00sqJmg8.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:15",
-    "match_date": "2025-08-31",
-    "match_time": "22:05",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/21",
-        "label": "CH-FR"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "monaco-strasbourg",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Monaco",
-      "logo": "https://static.flashscore.com/res/image/data/n3jLkyne-44KQTmnj.png"
-    },
-    "team2": {
-      "name": "Strasbourg",
-      "logo": "https://static.flashscore.com/res/image/data/2XOhzSQq-lAc5wKNp.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:15",
-    "match_date": "2025-08-31",
-    "match_time": "22:05",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/22",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-4"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "parisfc-metz",
-    "league": "Ligue 1",
-    "team1": {
-      "name": "Paris FC",
-      "logo": "https://static.flashscore.com/res/image/data/S85qoCiT-AelKXger.png"
-    },
-    "team2": {
-      "name": "Metz",
-      "logo": "https://static.flashscore.com/res/image/data/SCdF7fjT-pztT5vMl.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:15",
-    "match_date": "2025-08-31",
-    "match_time": "22:05",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/40",
-        "label": "CH-FR"
       }
     ],
     "is_womens": false
@@ -332,43 +102,6 @@
     "is_womens": false
   },
   {
-    "id": "dortmund-unionberlin",
-    "league": "Bundesliga",
-    "team1": {
-      "name": "Dortmund",
-      "logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png"
-    },
-    "team2": {
-      "name": "Union Berlin",
-      "logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:30",
-    "match_date": "2025-08-31",
-    "match_time": "22:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/2",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/124",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-3"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven3.html",
-        "label": "CH-4"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "fckoln-freiburg",
     "league": "Bundesliga",
     "team1": {
@@ -396,96 +129,6 @@
       },
       {
         "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-3"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "genoa-juventus",
-    "league": "Serie A",
-    "team1": {
-      "name": "Genoa",
-      "logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png"
-    },
-    "team2": {
-      "name": "Juventus",
-      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-31",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://multi.govoet.my.id/?shaka=bein3aus",
-        "label": "CH-EN"
-      },
-      {
-        "url": "https://listcanal.blogspot.com/?id=SPORT1CZ",
-        "label": "CH-CZ"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/137",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/70",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd5.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br6.html",
-        "label": "CH-7"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "torino-fiorentina",
-    "league": "Serie A",
-    "team1": {
-      "name": "Torino",
-      "logo": "https://static.flashscore.com/res/image/data/dhGobOA6-0lwy4Ij1.png"
-    },
-    "team2": {
-      "name": "Fiorentina",
-      "logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "23:30",
-    "match_date": "2025-08-31",
-    "match_time": "23:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/138",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/155",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd8.html",
         "label": "CH-3"
       }
     ],
@@ -545,51 +188,6 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/hd8.html",
         "label": "CH-1"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "celtavigo-villarreal",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Celta Vigo",
-      "logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png"
-    },
-    "team2": {
-      "name": "Villarreal",
-      "logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png"
-    },
-    "kickoff_date": "2025-08-31",
-    "kickoff_time": "22:00",
-    "match_date": "2025-08-31",
-    "match_time": "21:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/4",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven2.html",
-        "label": "CH-6"
       }
     ],
     "is_womens": false
@@ -733,6 +331,35 @@
       {
         "url": "https://listsportsembed.blogspot.com/p/br2.html",
         "label": "CH-9"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "genoa-juventus",
+    "league": "Serie A",
+    "team1": {
+      "name": "Genoa",
+      "logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png"
+    },
+    "team2": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+    },
+    "kickoff_date": "2025-08-31",
+    "kickoff_time": "23:30",
+    "match_date": "2025-08-31",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?shaka=bein3aus",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://listcanal.blogspot.com/?id=SPORT1CZ",
+        "label": "CH-CZ"
       }
     ],
     "is_womens": false
@@ -886,6 +513,47 @@
     "is_womens": false
   },
   {
+    "id": "liverpool-arsenal",
+    "league": "Premier League",
+    "team1": {
+      "name": "Liverpool",
+      "logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png"
+    },
+    "team2": {
+      "name": "Arsenal",
+      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
+    },
+    "kickoff_date": "2025-08-31",
+    "kickoff_time": "22:30",
+    "match_date": "2025-08-31",
+    "match_time": "22:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://multi.govoet.my.id/?jw=usanetwork",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://multi.govoet.my.id/?jw=telemundo",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://hls.govoet.my.id/?id=BEIN1",
+        "label": "CH-AR"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYME",
+        "label": "CH-EN"
+      },
+      {
+        "url": "https://kilatpink.blogspot.com/?id=SKYPL",
+        "label": "CH-EN"
+      }
+    ],
+    "is_womens": false
+  },
+  {
     "id": "Persijap-Jepara-Arema-FC",
     "league": "Super League - Round 4",
     "team1": {
@@ -910,6 +578,43 @@
       {
         "url": "https://list-govoet.blogspot.com/p/embed1.html",
         "label": "CH-ID"
+      }
+    ],
+    "is_womens": false
+  },
+  {
+    "id": "spartarotterdam-feyenoord",
+    "league": "Eredivisie",
+    "team1": {
+      "name": "Sparta Rotterdam",
+      "logo": "https://static.flashscore.com/res/image/data/MHUzob96-rTjpk23j.png"
+    },
+    "team2": {
+      "name": "Feyenoord",
+      "logo": "https://static.flashscore.com/res/image/data/Ag6J0jT0-Wz6bfhxO.png"
+    },
+    "kickoff_date": "2025-08-31",
+    "kickoff_time": "19:30",
+    "match_date": "2025-08-31",
+    "match_time": "19:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/142",
+        "label": "CH-NL"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/61",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/97",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://listsportsembed.blogspot.com/p/hd9.html",
+        "label": "CH-4"
       }
     ],
     "is_womens": false
