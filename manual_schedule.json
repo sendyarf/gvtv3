@@ -47,6 +47,10 @@
               {
         "url": "https://multi.govoet.my.id/?iframe=aHR0cHM6Ly9iaWtpbmJhcnU5Ni5ibG9nc3BvdC5jb20vcC9wbGF5ZXJtcGQuaHRtbD9jaGFubmVsPXNvY2NlcmNoYW5uZWw=",
         "label": "CH-ID"
+      },
+             {
+        "url": "https://multi.govoet.my.id/?hls=aHR0cHM6Ly9saXZlLmlucGx5ci5jb20vcm9vbS81MjEyOTgubTN1OA==",
+        "label": "CH-VN"
       }
     ],
     "is_womens": false
