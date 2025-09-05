@@ -46,7 +46,7 @@ function isEventEnded(event) {
 // Loads event data from event.json
 async function loadEvents() {
     try {
-        const response = await fetch('https://govoet.pages.dev/event.json');
+        const response = await fetch('https://weekendsch.pages.dev/sch/schedulegvt.json');
         const events = await response.json();
         const liveEventContent = document.querySelector("#live-event #content");
         console.log("Live Event Content Element:", liveEventContent);
