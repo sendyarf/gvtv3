@@ -43,24 +43,31 @@ function isEventEnded(event) {
     return now >= endTime;
 }
 
-// Loads event data from event.json
+// Loads event data from event.json with new filtering and sorting
 async function loadEvents() {
     try {
         const response = await fetch('https://weekendsch.pages.dev/sch/schedulegvt.json');
         const events = await response.json();
         const liveEventContent = document.querySelector("#live-event #content");
-        console.log("Live Event Content Element:", liveEventContent);
         if (!liveEventContent) throw new Error("Live event content element not found");
-        console.log("Events:", events);
         liveEventContent.innerHTML = '';
 
+        // Filter out events with "live" in date/time fields or that have ended
         const validEvents = events.filter(event => {
-            const ended = isEventEnded(event);
-            if (ended) {
-                console.log(`Event ${event.id} has ended and will not be rendered`);
-                sessionStorage.setItem(`eventStatus_${event.id}`, 'ended');
+            const isInvalid = event.kickoff_date === 'live' ||
+                              event.kickoff_time === 'live' ||
+                              event.match_date === 'live' ||
+                              event.match_time === 'live' ||
+                              event.duration === 'live' ||
+                              isEventEnded(event); // Keep your existing check for ended events
+
+            if (isInvalid) {
+                console.log(`Event ${event.id} is invalid or has ended and will not be rendered`);
+                if (isEventEnded(event)) {
+                    sessionStorage.setItem(`eventStatus_${event.id}`, 'ended');
+                }
             }
-            return !ended;
+            return !isInvalid;
         });
 
         if (validEvents.length === 0) {
@@ -77,16 +84,28 @@ async function loadEvents() {
                 </div>
             `;
             
-            // Add event listener for refresh button
             document.getElementById('refresh-button')?.addEventListener('click', () => {
                 location.reload();
             });
             return;
         }
 
+        // Sort events: live first, then by the nearest start time
         const sortedEvents = validEvents.slice().sort((a, b) => {
+            const now = new Date();
             const dateTimeA = parseEventDateTime(a.match_date, a.match_time);
             const dateTimeB = parseEventDateTime(b.match_date, b.match_time);
+            const isLiveA = dateTimeA <= now;
+            const isLiveB = dateTimeB <= now;
+
+            if (isLiveA && !isLiveB) {
+                return -1; // a is live, b is not, so a comes first
+            }
+            if (!isLiveA && isLiveB) {
+                return 1; // b is live, a is not, so b comes first
+            }
+
+            // Both are live or both are not, sort by time
             return dateTimeA.getTime() - dateTimeB.getTime();
         });
 
@@ -99,7 +118,7 @@ async function loadEvents() {
                 <div class="event-container" data-id="${event.id}" data-url="${defaultServerUrl}" data-servers="${serverListJson}" data-duration="${event.duration}">
                     <div class="event-header">
                         <div class="league-info">
-                            <img src="${event.icon}" class="sport-icon" onerror="this.src='https://placehold.co/30x30/png?text=Icon';">
+                            <img src="${event.icon}" class="sport-icon" onerror="this.src='https.placehold.co/30x30/png?text=Icon';">
                             <span class="league-name">${event.league}</span>
                         </div>
                         <button class="copy-url-button" data-id="${event.id}" title="Copy event URL">
@@ -108,7 +127,7 @@ async function loadEvents() {
                     </div>
                     <div class="event-details">
                         <div class="team-left">
-                            <img src="${event.team1.logo}" class="team-logo" alt="${event.team1.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team';">
+                            <img src="${event.team1.logo}" class="team-logo" alt="${event.team1.name}" onerror="this.src='https.placehold.co/50x50/png?text=Team';">
                             <span class="team-name">${event.team1.name}</span>
                         </div>
                         <div class="match-info">
@@ -119,7 +138,7 @@ async function loadEvents() {
                             <div class="match-time" data-original-time="${event.match_time}" style="display:none;">${event.match_time}</div>
                         </div>
                         <div class="team-right">
-                            <img src="${event.team2.logo}" class="team-logo" alt="${event.team2.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team';">
+                            <img src="${event.team2.logo}" class="team-logo" alt="${event.team2.name}" onerror="this.src='https.placehold.co/50x50/png?text=Team';">
                             <span class="team-name">${event.team2.name}</span>
                         </div>
                     </div>
@@ -728,7 +747,6 @@ function checkAndHandleEndedEvents() {
     }
 }
 
-
 // Mobile notification functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Only show on desktop
@@ -775,7 +793,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', async () => {
