@@ -20,122 +20,343 @@
     "is_womens": false
   },
   {
-    "id": "rennes-lyon",
-    "league": "Ligue 1",
+    "id": "spartarotterdam-twente",
+    "league": "Eredivisie",
     "team1": {
-      "name": "Rennes",
-      "logo": "https://static.flashscore.com/res/image/data/pnrF2X76-Y5eozcI6.png"
+      "name": "Sparta Rotterdam",
+      "logo": "https://static.flashscore.com/res/image/data/MHUzob96-rTjpk23j.png"
     },
     "team2": {
-      "name": "Lyon",
-      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
+      "name": "Twente",
+      "logo": "https://static.flashscore.com/res/image/data/Uo9lu6le-4vob7cTR.png"
     },
-    "kickoff_date": "2025-09-15",
-    "kickoff_time": "01:45",
-    "match_date": "2025-09-15",
-    "match_time": "01:35",
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "01:00",
+    "match_date": "2025-09-20",
+    "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/88",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd4.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv3.html",
-        "label": "CH-5"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
-    "id": "acmilan-bologna",
-    "league": "Serie A",
+    "id": "fcvolendam-excelsior",
+    "league": "Eredivisie",
     "team1": {
-      "name": "AC Milan",
-      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
+      "name": "FC Volendam",
+      "logo": "https://static.flashscore.com/res/image/data/8tDUPO86-WYtEUtB2.png"
     },
     "team2": {
-      "name": "Bologna",
-      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
+      "name": "Excelsior",
+      "logo": "https://static.flashscore.com/res/image/data/82r5rXU0-GOuuvzfL.png"
     },
-    "kickoff_date": "2025-09-15",
-    "kickoff_time": "01:45",
-    "match_date": "2025-09-15",
-    "match_time": "01:35",
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:30",
+    "match_date": "2025-09-20",
+    "match_time": "21:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/45",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/137",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/98",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd1.html",
-        "label": "CH-4"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-5"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-6"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
-    "id": "verona-cremonese",
-    "league": "Serie A",
+    "id": "groningen-telstar",
+    "league": "Eredivisie",
     "team1": {
-      "name": "Verona",
-      "logo": "https://static.flashscore.com/res/image/data/YDLnjflC-Kxh373f3.png"
+      "name": "Groningen",
+      "logo": "https://static.flashscore.com/res/image/data/AJOIh8jT-E5fitKGe.png"
     },
     "team2": {
-      "name": "Cremonese",
-      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
+      "name": "Telstar",
+      "logo": "https://static.flashscore.com/res/image/data/d46y71iT-xxe4Fem8.png"
     },
-    "kickoff_date": "2025-09-15",
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "23:45",
+    "match_date": "2025-09-20",
+    "match_time": "23:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "liverpool-everton",
+    "league": "Premier League",
+    "team1": {
+      "name": "Liverpool",
+      "logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png"
+    },
+    "team2": {
+      "name": "Everton",
+      "logo": "https://static.flashscore.com/res/image/data/EBfZuwme-bRmKmISE.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "18:30",
+    "match_date": "2025-09-20",
+    "match_time": "18:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "brighton-tottenham",
+    "league": "Premier League",
+    "team1": {
+      "name": "Brighton",
+      "logo": "https://static.flashscore.com/res/image/data/G0q9xjRq-b92lfEJC.png"
+    },
+    "team2": {
+      "name": "Tottenham",
+      "logo": "https://static.flashscore.com/res/image/data/v3SzDxVH-Ig5FKJZ5.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:00",
+    "match_date": "2025-09-20",
+    "match_time": "20:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "burnley-nottingham",
+    "league": "Premier League",
+    "team1": {
+      "name": "Burnley",
+      "logo": "https://static.flashscore.com/res/image/data/xO3nES96-6PhTI7J6.png"
+    },
+    "team2": {
+      "name": "Nottingham",
+      "logo": "https://static.flashscore.com/res/image/data/86ODdyle-ImKwLTtA.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:00",
+    "match_date": "2025-09-20",
+    "match_time": "20:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "westham-crystalpalace",
+    "league": "Premier League",
+    "team1": {
+      "name": "West Ham",
+      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
+    },
+    "team2": {
+      "name": "Crystal Palace",
+      "logo": "https://static.flashscore.com/res/image/data/GfkvlLmC-pzMOQXRe.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:00",
+    "match_date": "2025-09-20",
+    "match_time": "20:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "wolves-leeds",
+    "league": "Premier League",
+    "team1": {
+      "name": "Wolves",
+      "logo": "https://static.flashscore.com/res/image/data/OMUzjDkC-CjV6Eptm.png"
+    },
+    "team2": {
+      "name": "Leeds",
+      "logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-O4P6Zhap.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:00",
+    "match_date": "2025-09-20",
+    "match_time": "20:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "manchesterutd-chelsea",
+    "league": "Premier League",
+    "team1": {
+      "name": "Manchester Utd",
+      "logo": "https://static.flashscore.com/res/image/data/GhGV3qjT-h2pPXz3k.png"
+    },
+    "team2": {
+      "name": "Chelsea",
+      "logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png"
+    },
+    "kickoff_date": "2025-09-20",
     "kickoff_time": "23:30",
-    "match_date": "2025-09-15",
+    "match_date": "2025-09-20",
     "match_time": "23:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd7.html",
-        "label": "CH-1"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/sporttv2.html",
-        "label": "CH-2"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br3.html",
-        "label": "CH-3"
-      }
-    ],
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "lyon-angers",
+    "league": "Ligue 1",
+    "team1": {
+      "name": "Lyon",
+      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
+    },
+    "team2": {
+      "name": "Angers",
+      "logo": "https://static.flashscore.com/res/image/data/IN9Ib7jT-z9nPuk2r.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "01:45",
+    "match_date": "2025-09-20",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "nantes-rennes",
+    "league": "Ligue 1",
+    "team1": {
+      "name": "Nantes",
+      "logo": "https://static.flashscore.com/res/image/data/vTVURLne-YBWLmubi.png"
+    },
+    "team2": {
+      "name": "Rennes",
+      "logo": "https://static.flashscore.com/res/image/data/pnrF2X76-Y5eozcI6.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "22:00",
+    "match_date": "2025-09-20",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "stuttgart-stpauli",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Stuttgart",
+      "logo": "https://static.flashscore.com/res/image/data/fgQWGn86-f1Z3XxZa.png"
+    },
+    "team2": {
+      "name": "St. Pauli",
+      "logo": "https://static.flashscore.com/res/image/data/QHdIUX96-ncmj9JbF.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "01:30",
+    "match_date": "2025-09-20",
+    "match_time": "01:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "augsburg-mainz",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Augsburg",
+      "logo": "https://static.flashscore.com/res/image/data/Qgbz4piC-Qmnf8wEL.png"
+    },
+    "team2": {
+      "name": "Mainz",
+      "logo": "https://static.flashscore.com/res/image/data/tbR3gUTH-bsE5kOg9.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "20:30",
+    "match_date": "2025-09-20",
+    "match_time": "20:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "hamburgersv-heidenheim",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Hamburger SV",
+      "logo": "https://static.flashscore.com/res/image/data/dWB5gKjC-86lnAaq9.png"
+    },
+    "team2": {
+      "name": "Heidenheim",
+      "logo": "https://static.flashscore.com/res/image/data/UH4XQKBN-ncNaLxYl.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "20:30",
+    "match_date": "2025-09-20",
+    "match_time": "20:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "hoffenheim-bayernmunich",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Hoffenheim",
+      "logo": "https://static.flashscore.com/res/image/data/IyZBMF7k-n7lWn9DL.png"
+    },
+    "team2": {
+      "name": "Bayern Munich",
+      "logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "20:30",
+    "match_date": "2025-09-20",
+    "match_time": "20:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "werderbremen-freiburg",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Werder Bremen",
+      "logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png"
+    },
+    "team2": {
+      "name": "Freiburg",
+      "logo": "https://static.flashscore.com/res/image/data/0pdxCFiT-86lnAaq9.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "20:30",
+    "match_date": "2025-09-20",
+    "match_time": "20:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "rbleipzig-fckoln",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "RB Leipzig",
+      "logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png"
+    },
+    "team2": {
+      "name": "FC Koln",
+      "logo": "https://static.flashscore.com/res/image/data/KMphsCCN-86lnAaq9.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "23:30",
+    "match_date": "2025-09-20",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
@@ -184,64 +405,63 @@
     "is_womens": false
   },
   {
-    "id": "barcelona-valencia",
-    "league": "LaLiga",
+    "id": "lecce-cagliari",
+    "league": "Serie A",
     "team1": {
-      "name": "Barcelona",
-      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
+      "name": "Lecce",
+      "logo": "https://static.flashscore.com/res/image/data/fPabg0DN-McvX4bye.png"
     },
     "team2": {
-      "name": "Valencia",
-      "logo": "https://static.flashscore.com/res/image/data/8Cqphq8k-MHrRLNUo.png"
+      "name": "Cagliari",
+      "logo": "https://static.flashscore.com/res/image/data/tSQII3hT-McvX4bye.png"
     },
-    "kickoff_date": "2025-09-15",
-    "kickoff_time": "02:00",
-    "match_date": "2025-09-15",
-    "match_time": "01:50",
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "01:45",
+    "match_date": "2025-09-20",
+    "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd2.html",
-        "label": "CH-6"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd6.html",
-        "label": "CH-7"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/hd3.html",
-        "label": "CH-8"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/eleven1.html",
-        "label": "CH-9"
-      },
-      {
-        "url": "https://listsportsembed.blogspot.com/p/br2.html",
-        "label": "CH-10"
-      }
-    ],
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "bologna-genoa",
+    "league": "Serie A",
+    "team1": {
+      "name": "Bologna",
+      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
+    },
+    "team2": {
+      "name": "Genoa",
+      "logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "20:00",
+    "match_date": "2025-09-20",
+    "match_time": "19:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "verona-juventus",
+    "league": "Serie A",
+    "team1": {
+      "name": "Verona",
+      "logo": "https://static.flashscore.com/res/image/data/YDLnjflC-Kxh373f3.png"
+    },
+    "team2": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "23:00",
+    "match_date": "2025-09-20",
+    "match_time": "22:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
@@ -299,6 +519,106 @@
         "label": "CH-9"
       }
     ],
+    "is_womens": false
+  },
+  {
+    "id": "betis-realsociedad",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Betis",
+      "logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png"
+    },
+    "team2": {
+      "name": "Real Sociedad",
+      "logo": "https://static.flashscore.com/res/image/data/rcAkl5le-vJb36ZBF.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "02:00",
+    "match_date": "2025-09-20",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "girona-levante",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Girona",
+      "logo": "https://static.flashscore.com/res/image/data/6mZj79BN-vPm0hQMN.png"
+    },
+    "team2": {
+      "name": "Levante",
+      "logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-8toS1iya.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "19:00",
+    "match_date": "2025-09-20",
+    "match_time": "18:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "realmadrid-espanyol",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Real Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
+    },
+    "team2": {
+      "name": "Espanyol",
+      "logo": "https://static.flashscore.com/res/image/data/QeCoIpXH-8GL0cHSF.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "21:15",
+    "match_date": "2025-09-20",
+    "match_time": "21:05",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "alaves-sevilla",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Alaves",
+      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
+    },
+    "team2": {
+      "name": "Sevilla",
+      "logo": "https://static.flashscore.com/res/image/data/EcTGi086-tIT0KyhE.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "23:30",
+    "match_date": "2025-09-20",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "villarreal-osasuna",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Villarreal",
+      "logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png"
+    },
+    "team2": {
+      "name": "Osasuna",
+      "logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png"
+    },
+    "kickoff_date": "2025-09-20",
+    "kickoff_time": "23:30",
+    "match_date": "2025-09-20",
+    "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
