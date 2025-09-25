@@ -1,34 +1,5 @@
 [
   {
-    "id": "azalkmaar-zwolle",
-    "league": "Eredivisie",
-    "team1": {
-      "name": "AZ Alkmaar",
-      "logo": "https://static.flashscore.com/res/image/data/v9zOEImC-4vob7cTR.png"
-    },
-    "team2": {
-      "name": "Zwolle",
-      "logo": "https://static.flashscore.com/res/image/data/jDtO0Y5k-vFbzuVd5.png"
-    },
-    "kickoff_date": "2025-09-25",
-    "kickoff_time": "01:00",
-    "match_date": "2025-09-25",
-    "match_time": "00:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/141",
-        "label": "CH-NL"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "twente-sittard",
     "league": "Eredivisie",
     "team1": {
@@ -383,6 +354,26 @@
     "kickoff_time": "22:30",
     "match_date": "2025-09-28",
     "match_time": "22:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "everton-westham",
+    "league": "Premier League",
+    "team1": {
+      "name": "Everton",
+      "logo": "https://static.flashscore.com/res/image/data/EBfZuwme-bRmKmISE.png"
+    },
+    "team2": {
+      "name": "West Ham",
+      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
+    },
+    "kickoff_date": "2025-09-30",
+    "kickoff_time": "02:00",
+    "match_date": "2025-09-30",
+    "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
@@ -929,114 +920,23 @@
     "is_womens": false
   },
   {
-    "id": "getafe-alaves",
-    "league": "LaLiga",
+    "id": "genoa-lazio",
+    "league": "Serie A",
     "team1": {
-      "name": "Getafe",
-      "logo": "https://static.flashscore.com/res/image/data/hGMWMdT0-YmCZKGcR.png"
+      "name": "Genoa",
+      "logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png"
     },
     "team2": {
-      "name": "Alaves",
-      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
+      "name": "Lazio",
+      "logo": "https://static.flashscore.com/res/image/data/4CLpo27k-fL3dmxxd.png"
     },
-    "kickoff_date": "2025-09-25",
-    "kickoff_time": "00:00",
-    "match_date": "2025-09-25",
-    "match_time": "23:50",
+    "kickoff_date": "2025-09-30",
+    "kickoff_time": "01:45",
+    "match_date": "2025-09-30",
+    "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/51",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "atlmadrid-rayovallecano",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Atl. Madrid",
-      "logo": "https://static.flashscore.com/res/image/data/Kv2QSkhT-nLBjwR1F.png"
-    },
-    "team2": {
-      "name": "Rayo Vallecano",
-      "logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png"
-    },
-    "kickoff_date": "2025-09-25",
-    "kickoff_time": "02:30",
-    "match_date": "2025-09-25",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "realsociedad-mallorca",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Real Sociedad",
-      "logo": "https://static.flashscore.com/res/image/data/rcAkl5le-vJb36ZBF.png"
-    },
-    "team2": {
-      "name": "Mallorca",
-      "logo": "https://static.flashscore.com/res/image/data/WKsw8cne-rmDEjevK.png"
-    },
-    "kickoff_date": "2025-09-25",
-    "kickoff_time": "02:30",
-    "match_date": "2025-09-25",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/7",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/52",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -1056,7 +956,24 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/1",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/49",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/71",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/90",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1076,7 +993,28 @@
     "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/1",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/51",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/123",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/71",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1253,6 +1191,26 @@
     "kickoff_date": "2025-09-29",
     "kickoff_time": "02:00",
     "match_date": "2025-09-29",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "valencia-roviedo",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Valencia",
+      "logo": "https://static.flashscore.com/res/image/data/8Cqphq8k-MHrRLNUo.png"
+    },
+    "team2": {
+      "name": "R. Oviedo",
+      "logo": "https://static.flashscore.com/res/image/data/8CuFFxlC-Y7pkY0PJ.png"
+    },
+    "kickoff_date": "2025-09-30",
+    "kickoff_time": "02:00",
+    "match_date": "2025-09-30",
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
