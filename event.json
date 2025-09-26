@@ -16,7 +16,12 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/142",
+        "label": "CH-NL"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -396,7 +401,20 @@
     "match_time": "01:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/20",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/89",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/69",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -576,7 +594,24 @@
     "match_time": "01:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/2",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/111",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/155",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/71",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -940,84 +975,6 @@
     "is_womens": false
   },
   {
-    "id": "osasuna-elche",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Osasuna",
-      "logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png"
-    },
-    "team2": {
-      "name": "Elche",
-      "logo": "https://static.flashscore.com/res/image/data/EVxB82BN-YmCZKGcR.png"
-    },
-    "kickoff_date": "2025-09-26",
-    "kickoff_time": "00:30",
-    "match_date": "2025-09-26",
-    "match_time": "00:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/90",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "roviedo-barcelona",
-    "league": "LaLiga",
-    "team1": {
-      "name": "R. Oviedo",
-      "logo": "https://static.flashscore.com/res/image/data/8CuFFxlC-Y7pkY0PJ.png"
-    },
-    "team2": {
-      "name": "Barcelona",
-      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
-    },
-    "kickoff_date": "2025-09-26",
-    "kickoff_time": "02:30",
-    "match_date": "2025-09-26",
-    "match_time": "02:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/1",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/51",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/71",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "girona-espanyol",
     "league": "LaLiga",
     "team1": {
@@ -1034,7 +991,16 @@
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/49",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/94",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
