@@ -520,6 +520,26 @@
     "is_womens": false
   },
   {
+    "id": "nantes-lille",
+    "league": "Ligue 1",
+    "team1": {
+      "name": "Nantes",
+      "logo": "https://static.flashscore.com/res/image/data/vTVURLne-YBWLmubi.png"
+    },
+    "team2": {
+      "name": "Lille",
+      "logo": "https://static.flashscore.com/res/image/data/Q34pXImC-UDticXKP.png"
+    },
+    "kickoff_date": "2025-10-20",
+    "kickoff_time": "01:45",
+    "match_date": "2025-10-20",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "unionberlin-bmonchengladbach",
     "league": "Bundesliga",
     "team1": {
@@ -860,6 +880,26 @@
     "is_womens": false
   },
   {
+    "id": "acmilan-fiorentina",
+    "league": "Serie A",
+    "team1": {
+      "name": "AC Milan",
+      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
+    },
+    "team2": {
+      "name": "Fiorentina",
+      "logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png"
+    },
+    "kickoff_date": "2025-10-20",
+    "kickoff_time": "01:45",
+    "match_date": "2025-10-20",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "roviedo-espanyol",
     "league": "LaLiga",
     "team1": {
@@ -1014,6 +1054,26 @@
     "kickoff_time": "23:30",
     "match_date": "2025-10-19",
     "match_time": "23:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "getafe-realmadrid",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Getafe",
+      "logo": "https://static.flashscore.com/res/image/data/hGMWMdT0-YmCZKGcR.png"
+    },
+    "team2": {
+      "name": "Real Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/CGPhnpne-fcDVLdrL.png"
+    },
+    "kickoff_date": "2025-10-20",
+    "kickoff_time": "02:00",
+    "match_date": "2025-10-20",
+    "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
