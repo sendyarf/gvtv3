@@ -360,6 +360,26 @@
     "is_womens": false
   },
   {
+    "id": "westham-brentford",
+    "league": "Premier League",
+    "team1": {
+      "name": "West Ham",
+      "logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png"
+    },
+    "team2": {
+      "name": "Brentford",
+      "logo": "https://static.flashscore.com/res/image/data/SjSCLv86-r9Mudk7j.png"
+    },
+    "kickoff_date": "2025-10-21",
+    "kickoff_time": "02:00",
+    "match_date": "2025-10-21",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "psg-strasbourg",
     "league": "Ligue 1",
     "team1": {
@@ -900,6 +920,26 @@
     "is_womens": false
   },
   {
+    "id": "cremonese-udinese",
+    "league": "Serie A",
+    "team1": {
+      "name": "Cremonese",
+      "logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-t4GQxEM5.png"
+    },
+    "team2": {
+      "name": "Udinese",
+      "logo": "https://static.flashscore.com/res/image/data/277EtfPq-SYw7EcY6.png"
+    },
+    "kickoff_date": "2025-10-21",
+    "kickoff_time": "01:45",
+    "match_date": "2025-10-21",
+    "match_time": "01:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "roviedo-espanyol",
     "league": "LaLiga",
     "team1": {
@@ -1073,6 +1113,26 @@
     "kickoff_date": "2025-10-20",
     "kickoff_time": "02:00",
     "match_date": "2025-10-20",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "alaves-valencia",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Alaves",
+      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
+    },
+    "team2": {
+      "name": "Valencia",
+      "logo": "https://static.flashscore.com/res/image/data/8Cqphq8k-MHrRLNUo.png"
+    },
+    "kickoff_date": "2025-10-21",
+    "kickoff_time": "02:00",
+    "match_date": "2025-10-21",
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
