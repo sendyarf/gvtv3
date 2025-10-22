@@ -160,6 +160,26 @@
     "is_womens": false
   },
   {
+    "id": "gaeagles-excelsior",
+    "league": "Eredivisie",
+    "team1": {
+      "name": "G.A. Eagles",
+      "logo": "https://static.flashscore.com/res/image/data/4IPDw4ne-x4Xh4Pu0.png"
+    },
+    "team2": {
+      "name": "Excelsior",
+      "logo": "https://static.flashscore.com/res/image/data/82r5rXU0-GOuuvzfL.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "02:00",
+    "match_date": "2025-10-27",
+    "match_time": "01:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "leeds-westham",
     "league": "Premier League",
     "team1": {
@@ -520,6 +540,26 @@
     "is_womens": false
   },
   {
+    "id": "lyon-strasbourg",
+    "league": "Ligue 1",
+    "team1": {
+      "name": "Lyon",
+      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
+    },
+    "team2": {
+      "name": "Strasbourg",
+      "logo": "https://static.flashscore.com/res/image/data/2XOhzSQq-lAc5wKNp.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "02:45",
+    "match_date": "2025-10-27",
+    "match_time": "02:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "werderbremen-unionberlin",
     "league": "Bundesliga",
     "team1": {
@@ -860,6 +900,46 @@
     "is_womens": false
   },
   {
+    "id": "fiorentina-bologna",
+    "league": "Serie A",
+    "team1": {
+      "name": "Fiorentina",
+      "logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png"
+    },
+    "team2": {
+      "name": "Bologna",
+      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "00:00",
+    "match_date": "2025-10-27",
+    "match_time": "23:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "lazio-juventus",
+    "league": "Serie A",
+    "team1": {
+      "name": "Lazio",
+      "logo": "https://static.flashscore.com/res/image/data/4CLpo27k-fL3dmxxd.png"
+    },
+    "team2": {
+      "name": "Juventus",
+      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "02:45",
+    "match_date": "2025-10-27",
+    "match_time": "02:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "realsociedad-sevilla",
     "league": "LaLiga",
     "team1": {
@@ -994,6 +1074,46 @@
     "kickoff_time": "22:15",
     "match_date": "2025-10-26",
     "match_time": "22:05",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "osasuna-celtavigo",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Osasuna",
+      "logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png"
+    },
+    "team2": {
+      "name": "Celta Vigo",
+      "logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "00:30",
+    "match_date": "2025-10-27",
+    "match_time": "00:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "rayovallecano-alaves",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Rayo Vallecano",
+      "logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png"
+    },
+    "team2": {
+      "name": "Alaves",
+      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
+    },
+    "kickoff_date": "2025-10-27",
+    "kickoff_time": "03:00",
+    "match_date": "2025-10-27",
+    "match_time": "02:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
