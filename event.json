@@ -1120,6 +1120,26 @@
     "is_womens": false
   },
   {
+    "id": "betis-atlmadrid",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Betis",
+      "logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png"
+    },
+    "team2": {
+      "name": "Atl. Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/Kv2QSkhT-nLBjwR1F.png"
+    },
+    "kickoff_date": "2025-10-28",
+    "kickoff_time": "03:00",
+    "match_date": "2025-10-28",
+    "match_time": "02:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "Bulgaria-Spain",
     "league": "World Championship - Qualification",
     "team1": {
