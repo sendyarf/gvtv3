@@ -1,56 +1,142 @@
 [
   {
-    "id": "gaeagles-excelsior",
+    "id": "psv-sittard",
     "league": "Eredivisie",
     "team1": {
-      "name": "G.A. Eagles",
-      "logo": "https://static.flashscore.com/res/image/data/4IPDw4ne-x4Xh4Pu0.png"
+      "name": "PSV",
+      "logo": "https://static.flashscore.com/res/image/data/fefX7RQq-j5zA1baQ.png"
     },
     "team2": {
-      "name": "Excelsior",
-      "logo": "https://static.flashscore.com/res/image/data/82r5rXU0-GOuuvzfL.png"
+      "name": "Sittard",
+      "logo": "https://static.flashscore.com/res/image/data/2Z2jcUT0-EFoqxv3t.png"
     },
-    "kickoff_date": "2025-10-27",
+    "kickoff_date": "2025-11-01",
     "kickoff_time": "02:00",
-    "match_date": "2025-10-27",
+    "match_date": "2025-11-01",
     "match_time": "01:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/141",
-        "label": "CH-NL"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
-    "id": "lyon-strasbourg",
-    "league": "Ligue 1",
+    "id": "ajax-heerenveen",
+    "league": "Eredivisie",
     "team1": {
-      "name": "Lyon",
-      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
+      "name": "Ajax",
+      "logo": "https://static.flashscore.com/res/image/data/hEQxyYA6-bZZPiwAI.png"
     },
     "team2": {
-      "name": "Strasbourg",
-      "logo": "https://static.flashscore.com/res/image/data/2XOhzSQq-lAc5wKNp.png"
+      "name": "Heerenveen",
+      "logo": "https://static.flashscore.com/res/image/data/lIIfTBWH-4vob7cTR.png"
     },
-    "kickoff_date": "2025-10-27",
-    "kickoff_time": "02:45",
-    "match_date": "2025-10-27",
-    "match_time": "02:35",
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:30",
+    "match_date": "2025-11-01",
+    "match_time": "22:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/20",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/69",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "brighton-leeds",
+    "league": "Premier League",
+    "team1": {
+      "name": "Brighton",
+      "logo": "https://static.flashscore.com/res/image/data/G0q9xjRq-b92lfEJC.png"
+    },
+    "team2": {
+      "name": "Leeds",
+      "logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-O4P6Zhap.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:00",
+    "match_date": "2025-11-01",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "burnley-arsenal",
+    "league": "Premier League",
+    "team1": {
+      "name": "Burnley",
+      "logo": "https://static.flashscore.com/res/image/data/xO3nES96-6PhTI7J6.png"
+    },
+    "team2": {
+      "name": "Arsenal",
+      "logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:00",
+    "match_date": "2025-11-01",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "crystalpalace-brentford",
+    "league": "Premier League",
+    "team1": {
+      "name": "Crystal Palace",
+      "logo": "https://static.flashscore.com/res/image/data/GfkvlLmC-pzMOQXRe.png"
+    },
+    "team2": {
+      "name": "Brentford",
+      "logo": "https://static.flashscore.com/res/image/data/SjSCLv86-r9Mudk7j.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:00",
+    "match_date": "2025-11-01",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "fulham-wolves",
+    "league": "Premier League",
+    "team1": {
+      "name": "Fulham",
+      "logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png"
+    },
+    "team2": {
+      "name": "Wolves",
+      "logo": "https://static.flashscore.com/res/image/data/OMUzjDkC-CjV6Eptm.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:00",
+    "match_date": "2025-11-01",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "nottingham-manchesterutd",
+    "league": "Premier League",
+    "team1": {
+      "name": "Nottingham",
+      "logo": "https://static.flashscore.com/res/image/data/86ODdyle-ImKwLTtA.png"
+    },
+    "team2": {
+      "name": "Manchester Utd",
+      "logo": "https://static.flashscore.com/res/image/data/GhGV3qjT-h2pPXz3k.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:00",
+    "match_date": "2025-11-01",
+    "match_time": "21:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
@@ -234,77 +320,143 @@
     "is_womens": false
   },
   {
-    "id": "fiorentina-bologna",
-    "league": "Serie A",
+    "id": "psg-nice",
+    "league": "Ligue 1",
     "team1": {
-      "name": "Fiorentina",
-      "logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png"
+      "name": "PSG",
+      "logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png"
     },
     "team2": {
-      "name": "Bologna",
-      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
+      "name": "Nice",
+      "logo": "https://static.flashscore.com/res/image/data/bJCGymle-00sqJmg8.png"
     },
-    "kickoff_date": "2025-10-27",
-    "kickoff_time": "00:00",
-    "match_date": "2025-10-27",
-    "match_time": "23:50",
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "23:00",
+    "match_date": "2025-11-01",
+    "match_time": "22:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/138",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
-    "id": "lazio-juventus",
-    "league": "Serie A",
+    "id": "augsburg-dortmund",
+    "league": "Bundesliga",
     "team1": {
-      "name": "Lazio",
-      "logo": "https://static.flashscore.com/res/image/data/4CLpo27k-fL3dmxxd.png"
+      "name": "Augsburg",
+      "logo": "https://static.flashscore.com/res/image/data/Qgbz4piC-Qmnf8wEL.png"
     },
     "team2": {
-      "name": "Juventus",
-      "logo": "https://static.flashscore.com/res/image/data/xxLGMOlC-EXzXDYgS.png"
+      "name": "Dortmund",
+      "logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png"
     },
-    "kickoff_date": "2025-10-27",
-    "kickoff_time": "02:45",
-    "match_date": "2025-10-27",
-    "match_time": "02:35",
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "02:30",
+    "match_date": "2025-11-01",
+    "match_time": "02:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/45",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/137",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/88",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/70",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "heidenheim-eintrachtfrankfurt",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Heidenheim",
+      "logo": "https://static.flashscore.com/res/image/data/UH4XQKBN-ncNaLxYl.png"
+    },
+    "team2": {
+      "name": "Eintracht Frankfurt",
+      "logo": "https://static.flashscore.com/res/image/data/2aegVtQq-86lnAaq9.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:30",
+    "match_date": "2025-11-01",
+    "match_time": "21:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "mainz-werderbremen",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Mainz",
+      "logo": "https://static.flashscore.com/res/image/data/tbR3gUTH-EoYxhN5r.png"
+    },
+    "team2": {
+      "name": "Werder Bremen",
+      "logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:30",
+    "match_date": "2025-11-01",
+    "match_time": "21:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "rbleipzig-stuttgart",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "RB Leipzig",
+      "logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png"
+    },
+    "team2": {
+      "name": "Stuttgart",
+      "logo": "https://static.flashscore.com/res/image/data/fgQWGn86-f1Z3XxZa.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:30",
+    "match_date": "2025-11-01",
+    "match_time": "21:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "stpauli-bmonchengladbach",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "St. Pauli",
+      "logo": "https://static.flashscore.com/res/image/data/QHdIUX96-ncmj9JbF.png"
+    },
+    "team2": {
+      "name": "B. Monchengladbach",
+      "logo": "https://static.flashscore.com/res/image/data/tjlAHwhT-ncmj9JbF.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:30",
+    "match_date": "2025-11-01",
+    "match_time": "21:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "unionberlin-freiburg",
+    "league": "Bundesliga",
+    "team1": {
+      "name": "Union Berlin",
+      "logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png"
+    },
+    "team2": {
+      "name": "Freiburg",
+      "logo": "https://static.flashscore.com/res/image/data/0pdxCFiT-86lnAaq9.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:30",
+    "match_date": "2025-11-01",
+    "match_time": "21:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
@@ -508,69 +660,23 @@
     "is_womens": false
   },
   {
-    "id": "osasuna-celtavigo",
-    "league": "LaLiga",
+    "id": "udinese-atalanta",
+    "league": "Serie A",
     "team1": {
-      "name": "Osasuna",
-      "logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png"
+      "name": "Udinese",
+      "logo": "https://static.flashscore.com/res/image/data/277EtfPq-SYw7EcY6.png"
     },
     "team2": {
-      "name": "Celta Vigo",
-      "logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png"
+      "name": "Atalanta",
+      "logo": "https://static.flashscore.com/res/image/data/z3aHqFBN-rg6usZns.png"
     },
-    "kickoff_date": "2025-10-27",
-    "kickoff_time": "00:30",
-    "match_date": "2025-10-27",
-    "match_time": "00:20",
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "21:00",
+    "match_date": "2025-11-01",
+    "match_time": "20:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/5",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/49",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/89",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
-    "id": "rayovallecano-alaves",
-    "league": "LaLiga",
-    "team1": {
-      "name": "Rayo Vallecano",
-      "logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png"
-    },
-    "team2": {
-      "name": "Alaves",
-      "logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png"
-    },
-    "kickoff_date": "2025-10-27",
-    "kickoff_time": "03:00",
-    "match_date": "2025-10-27",
-    "match_time": "02:50",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/3",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/51",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/94",
-        "label": "CH-ES"
-      }
-    ],
+    "servers": [],
     "is_womens": false
   },
   {
@@ -608,6 +714,66 @@
         "label": "CH-ES"
       }
     ],
+    "is_womens": false
+  },
+  {
+    "id": "getafe-girona",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Getafe",
+      "logo": "https://static.flashscore.com/res/image/data/hGMWMdT0-YmCZKGcR.png"
+    },
+    "team2": {
+      "name": "Girona",
+      "logo": "https://static.flashscore.com/res/image/data/6mZj79BN-vPm0hQMN.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "03:00",
+    "match_date": "2025-11-01",
+    "match_time": "02:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "villarreal-rayovallecano",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Villarreal",
+      "logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png"
+    },
+    "team2": {
+      "name": "Rayo Vallecano",
+      "logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "20:00",
+    "match_date": "2025-11-01",
+    "match_time": "19:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "atlmadrid-sevilla",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Atl. Madrid",
+      "logo": "https://static.flashscore.com/res/image/data/Kv2QSkhT-nLBjwR1F.png"
+    },
+    "team2": {
+      "name": "Sevilla",
+      "logo": "https://static.flashscore.com/res/image/data/EcTGi086-tIT0KyhE.png"
+    },
+    "kickoff_date": "2025-11-01",
+    "kickoff_time": "22:15",
+    "match_date": "2025-11-01",
+    "match_time": "22:05",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
     "is_womens": false
   },
   {
