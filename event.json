@@ -376,7 +376,12 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/40",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -396,7 +401,24 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/21",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/124",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/69",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/88",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -416,7 +438,12 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/39",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -436,7 +463,12 @@
     "match_time": "00:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/22",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -456,7 +488,20 @@
     "match_time": "02:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/41",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/69",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/156",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -476,7 +521,20 @@
     "match_time": "02:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/1",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/124",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/88",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -496,7 +554,12 @@
     "match_time": "02:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/42",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -516,7 +579,12 @@
     "match_time": "02:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/43",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -536,7 +604,12 @@
     "match_time": "02:55",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/44",
+        "label": "CH-FR"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -694,6 +767,26 @@
     "kickoff_time": "23:15",
     "match_date": "2025-11-02",
     "match_time": "23:05",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "brest-lyon",
+    "league": "Ligue 1",
+    "team1": {
+      "name": "Brest",
+      "logo": "https://static.flashscore.com/res/image/data/lWu2w4ne-Q15G9lAm.png"
+    },
+    "team2": {
+      "name": "Lyon",
+      "logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png"
+    },
+    "kickoff_date": "2025-11-03",
+    "kickoff_time": "02:45",
+    "match_date": "2025-11-03",
+    "match_time": "02:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
@@ -880,67 +973,6 @@
     "is_womens": false
   },
   {
-    "id": "lecce-napoli",
-    "league": "Serie A",
-    "team1": {
-      "name": "Lecce",
-      "logo": "https://static.flashscore.com/res/image/data/fPabg0DN-McvX4bye.png"
-    },
-    "team2": {
-      "name": "Napoli",
-      "logo": "https://static.flashscore.com/res/image/data/tSuMfRjT-vTT58gae.png"
-    },
-    "kickoff_date": "2025-10-29",
-    "kickoff_time": "00:30",
-    "match_date": "2025-10-29",
-    "match_time": "00:20",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
-    "is_womens": false
-  },
-  {
-    "id": "atalanta-acmilan",
-    "league": "Serie A",
-    "team1": {
-      "name": "Atalanta",
-      "logo": "https://static.flashscore.com/res/image/data/z3aHqFBN-rg6usZns.png"
-    },
-    "team2": {
-      "name": "AC Milan",
-      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
-    },
-    "kickoff_date": "2025-10-29",
-    "kickoff_time": "02:45",
-    "match_date": "2025-10-29",
-    "match_time": "02:35",
-    "duration": "3.5",
-    "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [
-      {
-        "url": "https://envivo.govoet.my.id/45",
-        "label": "CH-FR"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/137",
-        "label": "CH-IT"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/123",
-        "label": "CH-DE"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/97",
-        "label": "CH-ES"
-      },
-      {
-        "url": "https://envivo.govoet.my.id/87",
-        "label": "CH-ES"
-      }
-    ],
-    "is_womens": false
-  },
-  {
     "id": "asroma-parma",
     "league": "Serie A",
     "team1": {
@@ -957,7 +989,16 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/138",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/190",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -997,7 +1038,20 @@
     "match_time": "00:20",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/45",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/137",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/97",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1017,7 +1071,16 @@
     "match_time": "02:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/137",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/192",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1037,7 +1100,16 @@
     "match_time": "02:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/139",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/193",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1057,7 +1129,28 @@
     "match_time": "02:35",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
-    "servers": [],
+    "servers": [
+      {
+        "url": "https://envivo.govoet.my.id/45",
+        "label": "CH-FR"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/138",
+        "label": "CH-IT"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/123",
+        "label": "CH-DE"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/87",
+        "label": "CH-ES"
+      },
+      {
+        "url": "https://envivo.govoet.my.id/70",
+        "label": "CH-ES"
+      }
+    ],
     "is_womens": false
   },
   {
@@ -1221,6 +1314,46 @@
     "is_womens": false
   },
   {
+    "id": "parma-bologna",
+    "league": "Serie A",
+    "team1": {
+      "name": "Parma",
+      "logo": "https://static.flashscore.com/res/image/data/WI9nVggT-fydXzLY6.png"
+    },
+    "team2": {
+      "name": "Bologna",
+      "logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png"
+    },
+    "kickoff_date": "2025-11-03",
+    "kickoff_time": "00:00",
+    "match_date": "2025-11-03",
+    "match_time": "23:50",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "acmilan-asroma",
+    "league": "Serie A",
+    "team1": {
+      "name": "AC Milan",
+      "logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png"
+    },
+    "team2": {
+      "name": "AS Roma",
+      "logo": "https://static.flashscore.com/res/image/data/j31Z1pne-GtNb9h2q.png"
+    },
+    "kickoff_date": "2025-11-03",
+    "kickoff_time": "02:45",
+    "match_date": "2025-11-03",
+    "match_time": "02:35",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
     "id": "getafe-girona",
     "league": "LaLiga",
     "team1": {
@@ -1355,6 +1488,46 @@
     "kickoff_time": "22:15",
     "match_date": "2025-11-02",
     "match_time": "22:05",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "barcelona-elche",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Barcelona",
+      "logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png"
+    },
+    "team2": {
+      "name": "Elche",
+      "logo": "https://static.flashscore.com/res/image/data/EVxB82BN-YmCZKGcR.png"
+    },
+    "kickoff_date": "2025-11-03",
+    "kickoff_time": "00:30",
+    "match_date": "2025-11-03",
+    "match_time": "00:20",
+    "duration": "3.5",
+    "icon": "https://via.placeholder.com/30.png?text=Soccer",
+    "servers": [],
+    "is_womens": false
+  },
+  {
+    "id": "betis-mallorca",
+    "league": "LaLiga",
+    "team1": {
+      "name": "Betis",
+      "logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png"
+    },
+    "team2": {
+      "name": "Mallorca",
+      "logo": "https://static.flashscore.com/res/image/data/WKsw8cne-rmDEjevK.png"
+    },
+    "kickoff_date": "2025-11-03",
+    "kickoff_time": "03:00",
+    "match_date": "2025-11-03",
+    "match_time": "02:50",
     "duration": "3.5",
     "icon": "https://via.placeholder.com/30.png?text=Soccer",
     "servers": [],
