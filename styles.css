@@ -1,3 +1,51 @@
+/* Loading Overlay Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #17252A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+    text-align: center;
+    color: #FEFFFF;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #3AAFA9;
+    border-top: 4px solid #FEFFFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loading-spinner p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide loading overlay when page is loaded */
+body.loaded .loading-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Main Styles */
 html, body {
     margin: 0;
     height: 100%;
@@ -71,7 +119,6 @@ html, body {
     margin-bottom: 12px;
     font-size: 28px;
     font-weight: 500;
-
 }
 
 .countdown-timer {
@@ -339,7 +386,9 @@ html, body {
 .server-button:hover {
     background-color: #3AAFA9;
     border: 1px solid #2B7A78;
-}.copy-url-button {
+}
+
+.copy-url-button {
     background: none;
     border: none;
     color: #17252A;
@@ -504,83 +553,6 @@ html, body {
     transform: rotate(180deg);
 }
 
-/* Mobile Notification Styles */
-.mobile-notification {
-    display: none;
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    max-width: 280px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: slideIn 0.5s ease-out;
-}
-
-.notification-content {
-    position: relative;
-    padding-right: 20px;
-}
-
-.close-notification {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 20px;
-    cursor: pointer;
-    background: #ff4444;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-}
-
-.notification-timer {
-    height: 3px;
-    background: #4CAF50;
-    width: 100%;
-    margin-top: 10px;
-    animation: timer 10s linear forwards;
-}
-
-.mobile-notification.closing {
-    animation: slideOut 0.5s ease-in forwards;
-}
-
-@keyframes slideOut {
-    from { 
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to { 
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes timer {
-    from { width: 100%; }
-    to { width: 0%; }
-}
-
-/* Hide notification on mobile devices */
-@media (max-width: 768px) {
-    .mobile-notification {
-        display: none !important;
-    }
-}
-
 /* Tablet Mode (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     #main-content {
@@ -653,20 +625,6 @@ html, body {
 
     .countdown-timer {
         font-size: 34px;
-    }
-}
-
-/* Tablet: Portrait Orientation */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-    .sidebar {
-        flex: 0 0 300px;
-    }
-}
-
-/* Tablet: Landscape Orientation */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-    .sidebar {
-        flex: 0 0 340px;
     }
 }
 

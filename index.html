@@ -12,8 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="main-content">
+<body class="loading">
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading GOVOET Streaming...</p>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
         <div class="video-container">
             <div class="video-wrapper">
                 <img id="video-placeholder" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQHlYCMkGbsmQFT79kQEAPt1LrAmLMmJ4ZT3softqWN3D0-94SlVJVhTiZTXzAGxk-z4Zy9CDKIeyfswpxVPjfq2xhLrl5H6m9_6aURrPxtzoRmhHXi5Ritm2XOJRIa9rFCwBGufJkkAXL98fToa8oYbqH9MX0u_qkwCQ4bHBm_fAGr2fdFqZOroqjSoRd/s16000/govoet-bg.png" alt="Hosted Image" style="display: block;">
@@ -60,15 +68,6 @@
             </div>
         </div>
     </div>
-<!--    <div id="mobile-notification" class="mobile-notification">
-        <div class="notification-content">
-            <span class="close-notification">&times;</span>
-            <h3>📱 Better Experience on Mobile!</h3>
-            <p>We recommend opening this page on your mobile device.</p>
-            <p>Channels with numbers can be accessed via mobile.</p>
-            <div class="notification-timer"></div>
-        </div>
-    </div>-->
 
     <script src="script.js"></script>
 </body>
