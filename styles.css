@@ -1,50 +1,3 @@
-/* Loading Overlay Styles */
-.loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #17252A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
-
-.loading-spinner {
-    text-align: center;
-    color: #FEFFFF;
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid #3AAFA9;
-    border-top: 4px solid #FEFFFF;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-}
-
-.loading-spinner p {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Hide loading overlay when page is loaded */
-body.loaded .loading-overlay {
-    opacity: 0;
-    pointer-events: none;
-}
-
 /* Main Styles */
 html, body {
     margin: 0;
@@ -129,7 +82,7 @@ html, body {
 .channel-container {
     display: flex;
     align-items: center;
-    background-color: #DEF2F1;
+    background-color: #DEF2F1; /* DIUBAH: dari #2B7A78 ke #DEF2F1 */
     padding: 12px;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -165,31 +118,31 @@ html, body {
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #17252A;
+    color: #17252A; /* Tetap gelap untuk kontras dengan background terang */
 }
 
 .status {
     margin: 0;
     font-size: 14px;
     font-weight: 400;
-    color: #2B7A78;
+    color: #2B7A78; /* Tetap hijau tua untuk status */
 }
 
 .channel-container:hover,
 .channel-container.selected {
-    background-color: #3AAFA9;
+    background-color: #3AAFA9; /* Hijau medium saat hover/selected */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
 
 .channel-container:hover .channel-name,
 .channel-container.selected .channel-name {
-    color: #FEFFFF;
+    color: #FEFFFF; /* Putih saat hover/selected */
 }
 
 .channel-container:hover .status,
 .channel-container.selected .status {
-    color: #DEF2F1;
+    color: #DEF2F1; /* Hijau muda saat hover/selected */
 }
 
 .sidebar {
@@ -574,7 +527,6 @@ html, body {
 
     .channel-container {
         padding: 11px;
-        
     }
 
     .logo-container {
@@ -756,5 +708,161 @@ html, body {
     .league-name {
         font-size: 1em;
         font-weight: 600;
+    }
+}
+
+/* Small Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 2px;
+    }
+
+    .menu-button {
+        padding: 8px 0;
+        font-size: 15px;
+    }
+
+    .channel-container {
+        padding: 8px;
+    }
+
+    .logo-container {
+        width: 70px;
+        height: 45px;
+    }
+
+    .channel-name {
+        font-size: 15px;
+    }
+
+    .status {
+        font-size: 12px;
+    }
+
+    .event-container {
+        padding: 10px;
+    }
+
+    .team-logo {
+        width: 30px;
+    }
+
+    .team-name {
+        font-size: 0.8em;
+    }
+
+    .kickoff-match-date, .kickoff-match-time {
+        font-size: 0.8em;
+    }
+
+    .server-button {
+        font-size: 0.7em;
+        padding: 4px 8px;
+        min-width: 55px;
+        max-width: 100px;
+    }
+
+    .countdown-wrapper {
+        font-size: 22px;
+        padding: 12px;
+    }
+
+    .countdown-title {
+        font-size: 18px;
+    }
+
+    .countdown-timer {
+        font-size: 26px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .channel-container {
+        background-color: #DEF2F1; /* Tetap #DEF2F1 di dark mode */
+    }
+
+    .channel-container .channel-name,
+    .channel-container .status {
+        color: #17252A; /* Tetap gelap untuk kontras */
+    }
+
+    .channel-container:hover {
+        background-color: #3AAFA9;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .channel-container {
+        border: 2px solid #FEFFFF;
+    }
+
+    .event-container {
+        border: 2px solid #FEFFFF;
+    }
+
+    .server-button {
+        border: 1px solid #FEFFFF;
+    }
+
+    .menu-button {
+        border: 1px solid #FEFFFF;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .channel-container,
+    .event-container,
+    .server-button,
+    .menu-button,
+    .refresh-button {
+        transition: none;
+    }
+
+    .countdown-wrapper {
+        animation: none;
+    }
+
+    .refresh-button i {
+        transition: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .video-container,
+    .menu-wrapper-bottom,
+    .server-buttons,
+    .copy-url-button {
+        display: none !important;
+    }
+
+    .sidebar {
+        flex: 1;
+        height: auto;
+        overflow: visible;
+    }
+
+    .sidebar-content {
+        display: block !important;
+        break-inside: avoid;
+    }
+
+    .channel-container,
+    .event-container {
+        break-inside: avoid;
+        background: white !important;
+        color: black !important;
+        border: 1px solid #000;
+    }
+
+    .channel-name,
+    .league-name,
+    .team-name,
+    .kickoff-match-date,
+    .kickoff-match-time {
+        color: black !important;
     }
 }

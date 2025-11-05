@@ -2,92 +2,210 @@
 let countdownIntervals = {};
 // Tracks the currently active event ID
 let activeEventId = null;
-// Global loading state
-let pageIsLoaded = false;
+// Store event end timers
+let eventEndTimers = {};
 
-// Function to mark page as fully loaded
-function markPageAsLoaded() {
-    if (pageIsLoaded) return;
-    
-    pageIsLoaded = true;
-    document.body.classList.remove('loading');
-    document.body.classList.add('loaded');
-    
-    // Show main content
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.style.display = 'flex';
+// Improved timezone conversion function
+function parseEventDateTime(dateStr, timeStr) {
+    if (!dateStr || !timeStr) {
+        console.error('Invalid date or time:', dateStr, timeStr);
+        return new Date();
     }
     
-    // Hide loading overlay
-    const loadingOverlay = document.getElementById('loading-overlay');
-    if (loadingOverlay) {
-        loadingOverlay.style.display = 'none';
-    }
+    // Parse as Jakarta time (UTC+7)
+    const jakartaTimeString = `${dateStr}T${timeStr}:00+07:00`;
+    const jakartaTime = new Date(jakartaTimeString);
     
-    // Hide any visible loading indicators
-    const videoCountdown = document.getElementById('video-countdown');
-    if (videoCountdown && videoCountdown.style.display !== 'none') {
-        videoCountdown.style.display = 'none';
-    }
+    // Convert to user's local time
+    const userTime = new Date(jakartaTime.getTime());
     
-    console.log("✅ Page fully loaded and initialized");
+    console.log(`Timezone conversion - Jakarta: ${jakartaTimeString}, Local: ${userTime}`);
+    return userTime;
 }
 
-// Fallback: Force mark as loaded after 10 seconds
-setTimeout(markPageAsLoaded, 10000);
+// Improved function to check event status
+function getEventStatus(event) {
+    if (!event.match_date || !event.match_time) {
+        return { isEnded: true };
+    }
+    
+    try {
+        const matchDateTime = parseEventDateTime(event.match_date, event.match_time);
+        const duration = parseFloat(event.duration) || 3.5;
+        const durationMs = duration * 60 * 60 * 1000;
+        const endTime = new Date(matchDateTime.getTime() + durationMs);
+        const now = new Date();
+        
+        return {
+            isLive: now >= matchDateTime && now < endTime,
+            isEnded: now >= endTime,
+            isFuture: now < matchDateTime,
+            matchDateTime: matchDateTime,
+            endTime: endTime,
+            timeUntilStart: matchDateTime - now,
+            timeUntilEnd: endTime - now
+        };
+    } catch (error) {
+        console.error('Error checking event status:', error);
+        return { isEnded: true };
+    }
+}
+
+// Function to hide event when duration is completed
+function hideEvent(eventId) {
+    const eventContainer = document.querySelector(`.event-container[data-id="${eventId}"]`);
+    if (eventContainer) {
+        // Add fade out animation
+        eventContainer.style.transition = 'opacity 0.5s ease, max-height 0.5s ease, margin 0.5s ease, padding 0.5s ease';
+        eventContainer.style.opacity = '0';
+        eventContainer.style.maxHeight = '0';
+        eventContainer.style.overflow = 'hidden';
+        eventContainer.style.margin = '0';
+        eventContainer.style.padding = '0';
+        
+        setTimeout(() => {
+            if (eventContainer.parentNode) {
+                eventContainer.parentNode.removeChild(eventContainer);
+            }
+            sessionStorage.setItem(`eventStatus_${eventId}`, 'ended');
+            console.log(`🗑️ Event ${eventId} hidden after duration completed`);
+            
+            // Check if no events left
+            checkNoEventsMessage();
+        }, 500);
+    }
+}
+
+// Check and show no events message
+function checkNoEventsMessage() {
+    const liveEventContent = document.querySelector("#live-event #content");
+    if (!liveEventContent) return;
+    
+    const visibleEvents = liveEventContent.querySelectorAll('.event-container[style*="display: block"], .event-container:not([style])');
+    
+    if (visibleEvents.length === 0) {
+        if (!liveEventContent.querySelector('.no-events-message')) {
+            liveEventContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>No Schedule Available</h3>
+                    <p>All events have ended. Please check back later for new schedules.</p>
+                    <button id="refresh-button" class="refresh-button">
+                        <i class="fas fa-sync-alt"></i> Refresh Page
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('refresh-button')?.addEventListener('click', () => {
+                location.reload();
+            });
+        }
+    }
+}
 
 // Loads channel data from channels.json
 async function loadChannels() {
     try {
         console.log("🔄 Loading channels...");
+        
         const response = await fetch('https://govoet.pages.dev/channels.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const channels = await response.json();
         const liveTvContent = document.querySelector("#live-tv #content");
-        console.log("Live TV Content Element:", liveTvContent);
         
         if (!liveTvContent) throw new Error("Live TV content element not found");
         
         liveTvContent.innerHTML = '';
-        channels.forEach(channel => {
-            const channelHtml = `
-                <div class="channel-container" data-id="${channel.id}" data-url="${channel.url}">
-                    <div class="logo-container">
-                        <img src="${channel.logo}" alt="Channel Logo" class="logo">
+        
+        if (channels && channels.length > 0) {
+            channels.forEach(channel => {
+                const channelHtml = `
+                    <div class="channel-container" data-id="${channel.id}" data-url="${channel.url}">
+                        <div class="logo-container">
+                            <img src="${channel.logo}" alt="Channel Logo" class="logo" onerror="this.src='https://placehold.co/50x50/png?text=Channel'">
+                        </div>
+                        <div class="info-container">
+                            <h3 class="channel-name">${channel.name}</h3>
+                            <p class="status">${channel.status}</p>
+                        </div>
                     </div>
-                    <div class="info-container">
-                        <h3 class="channel-name">${channel.name}</h3>
-                        <p class="status">${channel.status}</p>
+                `;
+                liveTvContent.insertAdjacentHTML('beforeend', channelHtml);
+            });
+            liveTvContent.insertAdjacentHTML('beforeend', '<div class="spacer"></div>');
+            
+            setupChannels();
+            console.log(`✅ ${channels.length} channels loaded successfully`);
+        } else {
+            liveTvContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-tv"></i>
                     </div>
+                    <h3>No Channels Available</h3>
+                    <p>Please check back later for channel updates.</p>
                 </div>
             `;
-            liveTvContent.insertAdjacentHTML('beforeend', channelHtml);
-        });
-        liveTvContent.insertAdjacentHTML('beforeend', '<div class="spacer"></div>');
-        setupChannels();
-        console.log("✅ Channels loaded successfully");
+            console.log("ℹ️ No channels available");
+        }
+        
     } catch (error) {
         console.error("❌ Error loading channels:", error);
+        
+        // Tampilkan error message
+        const liveTvContent = document.querySelector("#live-tv #content");
+        if (liveTvContent) {
+            liveTvContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Failed to Load Channels</h3>
+                    <p>Please check your connection and refresh the page.</p>
+                    <button class="refresh-button" onclick="location.reload()">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            `;
+        }
     }
 }
 
-// Checks if event has ended based on match_date, match_time, and duration
-function isEventEnded(event) {
-    const matchDateTime = parseEventDateTime(event.match_date, event.match_time);
-    const duration = parseFloat(event.duration) || 3.5;
-    const durationMs = duration * 60 * 60 * 1000;
-    const endTime = new Date(matchDateTime.getTime() + durationMs);
-    const now = new Date();
-    return now >= endTime;
+// Format date and time for display in user's timezone
+function formatDateTimeForDisplay(dateStr, timeStr) {
+    try {
+        const eventDateTime = parseEventDateTime(dateStr, timeStr);
+        
+        return {
+            date: eventDateTime.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            }),
+            time: eventDateTime.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: false 
+            })
+        };
+    } catch (error) {
+        console.error('Error formatting date/time:', error);
+        return {
+            date: dateStr,
+            time: timeStr
+        };
+    }
 }
 
-// Loads event data from event.json with new filtering and sorting
+// Loads event data from event.json with improved filtering and sorting
 async function loadEvents() {
     try {
         console.log("🔄 Loading events...");
+        
         const response = await fetch('https://weekendsch.pages.dev/sch/schedulegvt.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -99,23 +217,29 @@ async function loadEvents() {
         
         liveEventContent.innerHTML = '';
 
-        // Filter out events with "live" in date/time fields or that have ended
+        // Filter out invalid events
         const validEvents = events.filter(event => {
-            const isInvalid = event.kickoff_date === 'live' ||
-                              event.kickoff_time === 'live' ||
-                              event.match_date === 'live' ||
-                              event.match_time === 'live' ||
-                              event.duration === 'live' ||
-                              isEventEnded(event);
-
-            if (isInvalid) {
-                console.log(`Event ${event.id} is invalid or has ended and will not be rendered`);
-                if (isEventEnded(event)) {
-                    sessionStorage.setItem(`eventStatus_${event.id}`, 'ended');
-                }
+            // Skip events with invalid fields
+            if (!event.id || !event.league || !event.team1 || !event.team2) {
+                console.log(`🚫 Event skipped - missing required fields:`, event.id);
+                return false;
             }
-            return !isInvalid;
+            
+            const hasInvalidFields = event.kickoff_date === 'live' ||
+                                   event.kickoff_time === 'live' ||
+                                   event.match_date === 'live' ||
+                                   event.match_time === 'live' ||
+                                   event.duration === 'live';
+            
+            if (hasInvalidFields) {
+                console.log(`🚫 Event ${event.id} has invalid fields and will not be rendered`);
+                return false;
+            }
+            
+            return true;
         });
+
+        console.log(`📊 Total events: ${events.length}, Valid events: ${validEvents.length}`);
 
         if (validEvents.length === 0) {
             liveEventContent.innerHTML = `
@@ -125,158 +249,249 @@ async function loadEvents() {
                     </div>
                     <h3>No Schedule Available</h3>
                     <p>Please refresh the page to check for updates.</p>
-                    <button id="refresh-button" class="refresh-button">
+                    <button class="refresh-button" onclick="location.reload()">
                         <i class="fas fa-sync-alt"></i> Refresh Page
                     </button>
                 </div>
             `;
-            
-            document.getElementById('refresh-button')?.addEventListener('click', () => {
-                location.reload();
-            });
             return;
         }
 
         // Sort events: live first, then by the nearest start time
         const sortedEvents = validEvents.slice().sort((a, b) => {
-            const now = new Date();
-            const dateTimeA = parseEventDateTime(a.match_date, a.match_time);
-            const dateTimeB = parseEventDateTime(b.match_date, b.match_time);
-            const isLiveA = dateTimeA <= now;
-            const isLiveB = dateTimeB <= now;
+            try {
+                const statusA = getEventStatus(a);
+                const statusB = getEventStatus(b);
 
-            if (isLiveA && !isLiveB) {
-                return -1;
+                // Live events first
+                if (statusA.isLive && !statusB.isLive) return -1;
+                if (!statusA.isLive && statusB.isLive) return 1;
+                
+                // Then by start time (soonest first)
+                return statusA.matchDateTime - statusB.matchDateTime;
+            } catch (error) {
+                console.error('Error sorting events:', error);
+                return 0;
             }
-            if (!isLiveA && isLiveB) {
-                return 1;
-            }
-
-            return dateTimeA.getTime() - dateTimeB.getTime();
         });
 
+        let renderedEvents = 0;
+        
         sortedEvents.forEach(event => {
-            const validServers = event.servers.filter(server => server.url && server.label && server.label.trim() !== '');
-            const defaultServerUrl = validServers[0]?.url || '';
-            const serverListJson = encodeURIComponent(JSON.stringify(validServers));
+            try {
+                const eventStatus = getEventStatus(event);
+                
+                // Skip ended events immediately
+                if (eventStatus.isEnded) {
+                    console.log(`⏹️ Event ${event.id} has ended and will not be rendered`);
+                    sessionStorage.setItem(`eventStatus_${event.id}`, 'ended');
+                    return;
+                }
 
-            const eventHtml = `
-                <div class="event-container" data-id="${event.id}" data-url="${defaultServerUrl}" data-servers="${serverListJson}" data-duration="${event.duration}">
-                    <div class="event-header">
-                        <div class="league-info">
-                            <img src="${event.icon}" class="sport-icon" onerror="this.src='https://placehold.co/30x30/png?text=Icon';">
-                            <span class="league-name">${event.league}</span>
+                const validServers = event.servers?.filter(server => server.url && server.label && server.label.trim() !== '') || [];
+                const defaultServerUrl = validServers[0]?.url || '';
+                const serverListJson = encodeURIComponent(JSON.stringify(validServers));
+
+                const formattedKickoff = formatDateTimeForDisplay(event.kickoff_date, event.kickoff_time);
+
+                const eventHtml = `
+                    <div class="event-container" data-id="${event.id}" data-url="${defaultServerUrl}" data-servers="${serverListJson}" data-duration="${event.duration}">
+                        <div class="event-header">
+                            <div class="league-info">
+                                <img src="${event.icon}" class="sport-icon" onerror="this.style.display='none'">
+                                <span class="league-name">${event.league}</span>
+                            </div>
+                            <button class="copy-url-button" data-id="${event.id}" title="Copy event URL">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
                         </div>
-                        <button class="copy-url-button" data-id="${event.id}" title="Copy event URL">
-                            <i class="fa-solid fa-copy"></i>
-                        </button>
+                        <div class="event-details">
+                            <div class="team-left">
+                                <img src="${event.team1.logo}" class="team-logo" alt="${event.team1.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team'">
+                                <span class="team-name">${event.team1.name}</span>
+                            </div>
+                            <div class="match-info">
+                                <div class="kickoff-match-date">${formattedKickoff.date}</div>
+                                <div class="kickoff-match-time">${formattedKickoff.time}</div>
+                                <div class="live-label" style="display:none;">LIVE</div>
+                                <div class="match-date" data-original-date="${event.match_date}" style="display:none;">${event.match_date}</div>
+                                <div class="match-time" data-original-time="${event.match_time}" style="display:none;">${event.match_time}</div>
+                            </div>
+                            <div class="team-right">
+                                <img src="${event.team2.logo}" class="team-logo" alt="${event.team2.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team'">
+                                <span class="team-name">${event.team2.name}</span>
+                            </div>
+                        </div>
+                        <div class="server-buttons" style="display:none;">
+                            <div class="buttons-container"></div>
+                        </div>
                     </div>
-                    <div class="event-details">
-                        <div class="team-left">
-                            <img src="${event.team1.logo}" class="team-logo" alt="${event.team1.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team';">
-                            <span class="team-name">${event.team1.name}</span>
-                        </div>
-                        <div class="match-info">
-                            <div class="kickoff-match-date">${event.kickoff_date}</div>
-                            <div class="kickoff-match-time">${event.kickoff_time}</div>
-                            <div class="live-label" style="display:none;">Live</div>
-                            <div class="match-date" data-original-date="${event.match_date}" style="display:none;">${event.match_date}</div>
-                            <div class="match-time" data-original-time="${event.match_time}" style="display:none;">${event.match_time}</div>
-                        </div>
-                        <div class="team-right">
-                            <img src="${event.team2.logo}" class="team-logo" alt="${event.team2.name}" onerror="this.src='https://placehold.co/50x50/png?text=Team';">
-                            <span class="team-name">${event.team2.name}</span>
-                        </div>
+                `;
+                liveEventContent.insertAdjacentHTML('beforeend', eventHtml);
+                console.log(`🎯 Event Created: ${event.id} - Status: ${eventStatus.isLive ? 'LIVE' : 'FUTURE'}`);
+
+                const eventContainer = liveEventContent.querySelector(`.event-container[data-id="${event.id}"]`);
+                const buttonsContainer = eventContainer.querySelector('.buttons-container');
+                
+                if (!buttonsContainer) {
+                    console.error(`❌ Buttons container not found for event ${event.id}`);
+                    return;
+                }
+                
+                validServers.forEach((server, index) => {
+                    const button = document.createElement('div');
+                    button.className = 'server-button';
+                    if (index === 0) button.classList.add('active');
+                    button.setAttribute('data-url', server.url);
+                    button.textContent = server.label;
+                    buttonsContainer.appendChild(button);
+                    console.log(`🔘 Server button created for ${event.id}: ${server.label}`);
+                });
+
+                // Initialize event state
+                initializeEventState(eventContainer, event);
+                renderedEvents++;
+                
+            } catch (error) {
+                console.error(`❌ Error rendering event ${event.id}:`, error);
+            }
+        });
+
+        if (renderedEvents > 0) {
+            liveEventContent.insertAdjacentHTML('beforeend', '<div class="spacer"></div>');
+            setupEvents();
+            setupCopyButtons();
+            console.log(`✅ ${renderedEvents} events loaded successfully`);
+        } else {
+            liveEventContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-calendar-times"></i>
                     </div>
-                    <div class="server-buttons" style="display:none;">
-                        <div class="buttons-container"></div>
-                    </div>
+                    <h3>No Active Events</h3>
+                    <p>All events have ended or are not available yet.</p>
+                    <button class="refresh-button" onclick="location.reload()">
+                        <i class="fas fa-sync-alt"></i> Refresh Page
+                    </button>
                 </div>
             `;
-            liveEventContent.insertAdjacentHTML('beforeend', eventHtml);
-            console.log(`Event Created: ${event.id}`);
-
-            const eventContainer = liveEventContent.querySelector(`.event-container[data-id="${event.id}"]`);
-            const buttonsContainer = eventContainer.querySelector('.buttons-container');
-            
-            if (!buttonsContainer) {
-                console.error(`Buttons container not found for event ${event.id}`);
-                return;
-            }
-            
-            validServers.forEach((server, index) => {
-                const button = document.createElement('div');
-                button.className = 'server-button';
-                if (index === 0) button.classList.add('active');
-                button.setAttribute('data-url', server.url);
-                button.textContent = server.label;
-                buttonsContainer.appendChild(button);
-                console.log(`Server button created for ${event.id}: ${server.label} (${server.url})`);
-            });
-        });
-
-        liveEventContent.insertAdjacentHTML('beforeend', '<div class="spacer"></div>');
-        setupEvents();
-        setupCopyButtons();
-        console.log("✅ Events loaded successfully");
+        }
 
         // Handle saved events and URL-based loading
         initializeEventStates();
 
     } catch (error) {
         console.error("❌ Error loading events:", error);
+        
+        // Tampilkan error message
+        const liveEventContent = document.querySelector("#live-event #content");
+        if (liveEventContent) {
+            liveEventContent.innerHTML = `
+                <div class="no-events-message">
+                    <div class="message-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Failed to Load Events</h3>
+                    <p>Please check your connection and refresh the page.</p>
+                    <button class="refresh-button" onclick="location.reload()">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            `;
+        }
+    }
+}
+
+// Initialize individual event state
+function initializeEventState(container, event) {
+    try {
+        const eventStatus = getEventStatus(event);
+        const liveLabel = container.querySelector('.live-label');
+        
+        if (eventStatus.isLive) {
+            // Event is live - show live label
+            liveLabel.style.display = 'block';
+            
+            // Schedule hiding when duration ends
+            if (eventStatus.timeUntilEnd > 0) {
+                eventEndTimers[event.id] = setTimeout(() => {
+                    hideEvent(event.id);
+                }, eventStatus.timeUntilEnd);
+            }
+            
+            console.log(`🔴 Event ${event.id} is LIVE - will end in ${Math.round(eventStatus.timeUntilEnd / 60000)} minutes`);
+            
+        } else if (eventStatus.isFuture) {
+            // Event is in future - hide live label
+            liveLabel.style.display = 'none';
+            console.log(`⏰ Event ${event.id} starts in ${Math.round(eventStatus.timeUntilStart / 60000)} minutes`);
+            
+        } else {
+            // Event has ended - hide immediately
+            hideEvent(event.id);
+        }
+    } catch (error) {
+        console.error(`Error initializing event state for ${event.id}:`, error);
     }
 }
 
 // Initialize event states from sessionStorage and URL
 function initializeEventStates() {
-    const savedEventId = sessionStorage.getItem('activeEventId');
-    const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${savedEventId}`);
-    
-    if (savedEventId && savedServerUrl) {
-        const eventContainer = document.querySelector(`.event-container[data-id="${savedEventId}"]`);
-        if (eventContainer) {
-            const serverButton = eventContainer.querySelector(`.server-button[data-url="${savedServerUrl}"]`);
-            if (serverButton) selectServerButton(serverButton);
-            loadEventVideo(eventContainer, savedServerUrl, false);
-            const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
-            const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
-            const matchDateTime = parseEventDateTime(matchDate, matchTime);
-            if (new Date() >= matchDateTime) {
-                toggleServerButtons(eventContainer, true);
-                console.log(`Restored server buttons for saved event ${savedEventId}`);
+    try {
+        const savedEventId = sessionStorage.getItem('activeEventId');
+        const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${savedEventId}`);
+        
+        if (savedEventId && savedServerUrl) {
+            const eventContainer = document.querySelector(`.event-container[data-id="${savedEventId}"]`);
+            if (eventContainer) {
+                const serverButton = eventContainer.querySelector(`.server-button[data-url="${savedServerUrl}"]`);
+                if (serverButton) selectServerButton(serverButton);
+                loadEventVideo(eventContainer, savedServerUrl, false);
+                const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
+                const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
+                const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                if (new Date() >= matchDateTime) {
+                    toggleServerButtons(eventContainer, true);
+                    console.log(`Restored server buttons for saved event ${savedEventId}`);
+                }
             }
         }
-    }
 
-    // Handle URL-based event loading
-    const path = window.location.pathname;
-    const eventIdFromUrl = path.replace(/^\/+/, '');
-    console.log("Event ID from URL:", eventIdFromUrl);
-    
-    if (eventIdFromUrl) {
-        const eventContainer = document.querySelector(`.event-container[data-id="${eventIdFromUrl}"]`);
-        if (eventContainer) {
-            const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${eventIdFromUrl}`);
-            const defaultServerUrl = eventContainer.getAttribute('data-url');
-            const videoUrl = savedServerUrl || defaultServerUrl;
-            const serverButton = eventContainer.querySelector(`.server-button[data-url="${videoUrl}"]`);
-            if (serverButton) selectServerButton(serverButton);
-            loadEventVideo(eventContainer, videoUrl, false);
-            const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
-            const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
-            const matchDateTime = parseEventDateTime(matchDate, matchTime);
-            if (new Date() >= matchDateTime) {
-                toggleServerButtons(eventContainer, true);
-                console.log(`Showing server buttons for URL-loaded event ${eventIdFromUrl}`);
+        // Handle URL-based event loading
+        const path = window.location.pathname;
+        const eventIdFromUrl = path.replace(/^\/+/, '');
+        console.log("Event ID from URL:", eventIdFromUrl);
+        
+        if (eventIdFromUrl) {
+            const eventContainer = document.querySelector(`.event-container[data-id="${eventIdFromUrl}"]`);
+            if (eventContainer) {
+                const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${eventIdFromUrl}`);
+                const defaultServerUrl = eventContainer.getAttribute('data-url');
+                const videoUrl = savedServerUrl || defaultServerUrl;
+                const serverButton = eventContainer.querySelector(`.server-button[data-url="${videoUrl}"]`);
+                if (serverButton) selectServerButton(serverButton);
+                loadEventVideo(eventContainer, videoUrl, false);
+                
+                const matchDate = eventContainer.querySelector('.match-date')?.getAttribute('data-original-date');
+                const matchTime = eventContainer.querySelector('.match-time')?.getAttribute('data-original-time');
+                if (matchDate && matchTime) {
+                    const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                    if (new Date() >= matchDateTime) {
+                        toggleServerButtons(eventContainer, true);
+                        console.log(`Showing server buttons for URL-loaded event ${eventIdFromUrl}`);
+                    }
+                }
+                
+                sessionStorage.setItem('activeEventId', eventIdFromUrl);
+                sessionStorage.removeItem('activeChannelId');
+                setActiveHoverEffect(eventIdFromUrl);
+                switchContent('live-event');
+            } else {
+                console.warn(`No event found for ID: ${eventIdFromUrl}`);
             }
-            sessionStorage.setItem('activeEventId', eventIdFromUrl);
-            sessionStorage.removeItem('activeChannelId');
-            setActiveHoverEffect(eventIdFromUrl);
-            switchContent('live-event');
-        } else {
-            console.warn(`No event found for ID: ${eventIdFromUrl}`);
         }
+    } catch (error) {
+        console.error('Error initializing event states:', error);
     }
 }
 
@@ -314,24 +529,9 @@ function isMobileDevice() {
 function setupEvents() {
     const eventContainers = document.querySelectorAll('.event-container');
     console.log("Event Containers Found:", eventContainers.length);
-    const eventIds = [];
     
     eventContainers.forEach(container => {
         const eventId = container.getAttribute('data-id');
-        eventIds.push(eventId);
-
-        const matchDate = container.querySelector('.match-date');
-        const matchTime = container.querySelector('.match-time');
-        const kickoffDate = container.querySelector('.kickoff-match-date');
-        const kickoffTime = container.querySelector('.kickoff-match-time');
-        const matchDateTime = parseEventDateTime(matchDate.getAttribute('data-original-date'), matchTime.getAttribute('data-original-time'));
-        const kickoffDateTime = parseEventDateTime(kickoffDate.textContent.trim(), kickoffTime.textContent.trim());
-        const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
-        const durationMs = duration * 60 * 60 * 1000;
-
-        updateMatchTimes(container, matchDateTime);
-        updateMatchTimes(container, kickoffDateTime);
-        checkLiveStatus(container, matchDateTime, durationMs);
 
         const eventStatus = sessionStorage.getItem(`eventStatus_${eventId}`);
         if (eventStatus === 'ended') {
@@ -342,7 +542,6 @@ function setupEvents() {
         let servers;
         try {
             const serverData = decodeURIComponent(container.getAttribute('data-servers'));
-            console.log(`Raw data-servers for ${eventId}:`, serverData);
             servers = JSON.parse(serverData);
         } catch (e) {
             console.error(`Error parsing servers for event ${eventId}:`, e);
@@ -375,9 +574,17 @@ function setupEvents() {
             document.querySelectorAll('.event-container .server-buttons').forEach(buttons => {
                 buttons.style.display = 'none';
             });
-            if (now >= matchDateTime) {
-                toggleServerButtons(container, true);
+            
+            // Check if event is live to show server buttons
+            const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
+            const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
+            if (matchDate && matchTime) {
+                const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                if (now >= matchDateTime) {
+                    toggleServerButtons(container, true);
+                }
             }
+            
             loadEventVideo(container);
         });
 
@@ -388,29 +595,24 @@ function setupEvents() {
             if (serverButton) {
                 selectServerButton(serverButton);
                 loadEventVideo(container, savedServerUrl, false);
-                if (new Date() >= matchDateTime) {
-                    toggleServerButtons(container, true);
-                    console.log(`Restored server buttons for saved event ${eventId}`);
+                
+                const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
+                const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
+                if (matchDate && matchTime) {
+                    const matchDateTime = parseEventDateTime(matchDate, matchTime);
+                    if (new Date() >= matchDateTime) {
+                        toggleServerButtons(container, true);
+                        console.log(`Restored server buttons for saved event ${eventId}`);
+                    }
                 }
             }
         }
     });
 
-    if (activeEventId && !eventIds.includes(activeEventId)) {
-        redirectToEndedURL();
-    }
-
     startPeriodicEventCheck();
 }
 
-// Parses date and time strings into a Date object
-function parseEventDateTime(dateStr, timeStr) {
-    const dateTime = new Date(`${dateStr}T${timeStr}:00+07:00`);
-    console.log(`Parsed DateTime for ${dateStr} ${timeStr}:`, dateTime);
-    return dateTime;
-}
-
-// Updates the countdown timer for an event
+// Updates the countdown timer in video container
 function updateCountdown(videoCountdownContainer, videoCountdownTimer, eventDateTime, serverUrl, eventId) {
     if (!videoCountdownContainer || !videoCountdownTimer) {
         console.error(`Video countdown elements not found for event ${eventId}`);
@@ -436,11 +638,6 @@ function updateCountdown(videoCountdownContainer, videoCountdownTimer, eventDate
             const eventContainer = document.querySelector(`.event-container[data-id="${eventId}"]`);
             if (eventContainer) {
                 loadEventVideo(eventContainer, serverUrl, false);
-                checkLiveStatus(eventContainer, eventDateTime, (parseFloat(eventContainer.getAttribute('data-duration')) || 3.5) * 60 * 60 * 1000);
-                const serverButton = eventContainer.querySelector('.server-button');
-                if (serverButton) selectServerButton(serverButton);
-                toggleServerButtons(eventContainer, true);
-                console.log(`Showing server buttons for event ${eventId} after countdown`);
                 const durationMs = (parseFloat(eventContainer.getAttribute('data-duration')) * 60 * 60 * 1000) || 12600000;
                 const endTime = new Date(eventDateTime.getTime() + durationMs);
                 setTimeout(() => {
@@ -466,197 +663,109 @@ function updateCountdown(videoCountdownContainer, videoCountdownTimer, eventDate
     countdownIntervals[eventId] = interval;
 }
 
-// Updates match date and time displays based on user's timezone
-function updateMatchTimes(container, eventDateTime) {
-    const matchDateEl = container.querySelector('.match-date');
-    const matchTimeEl = container.querySelector('.match-time');
-    const kickoffDateEl = container.querySelector('.kickoff-match-date');
-    const kickoffTimeEl = container.querySelector('.kickoff-match-time');
-
-    if (!matchDateEl || !matchTimeEl) return;
-
-    if (!matchDateEl.hasAttribute('data-original-date')) {
-        matchDateEl.setAttribute('data-original-date', matchDateEl.textContent.trim());
-        matchTimeEl.setAttribute('data-original-time', matchTimeEl.textContent.trim());
-    }
-
-    const adjustedTime = new Date(eventDateTime.getTime() + eventDateTime.getTimezoneOffset() * 60000);
-    const localOffset = new Date().getTimezoneOffset() / 60;
-    const localTime = new Date(adjustedTime.getTime() - localOffset * 60 * 60 * 1000);
-    const formattedDate = localTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    const formattedTime = localTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
-
-    console.log(`Adjusted date for event: ${formattedDate}`);
-    console.log(`Adjusted time for event: ${formattedTime}`);
-    matchDateEl.textContent = formattedDate;
-    matchTimeEl.textContent = formattedTime;
-    if (kickoffDateEl && kickoffTimeEl) {
-        kickoffDateEl.textContent = formattedDate;
-        kickoffTimeEl.textContent = formattedTime;
-    }
-}
-
-// Checks if an event is live and updates its status
-function checkLiveStatus(container, eventDateTime, durationMs) {
-    const now = new Date();
-    const liveLabel = container.querySelector('.live-label');
-    const eventId = container.getAttribute('data-id');
-    
-    if (!liveLabel) return;
-    
-    console.log(`Checking live status for ${eventId}: now=${now}, eventDateTime=${eventDateTime}`);
-    
-    if (now >= eventDateTime) {
-        liveLabel.style.display = 'block';
-        console.log(`Event live: ${eventId}`);
-        toggleServerButtons(container, true);
-        console.log(`Showing server buttons for live event ${eventId}`);
-        
-        const endTime = new Date(eventDateTime.getTime() + durationMs);
-        if (now >= endTime) {
-            console.log(`Event ${eventId} has ended at ${endTime}`);
-            markEventAsEnded(eventId);
-        } else {
-            setTimeout(() => {
-                const currentTime = new Date();
-                if (currentTime >= endTime) {
-                    console.log(`Event ${eventId} has ended at ${endTime}`);
-                    markEventAsEnded(eventId);
-                }
-            }, endTime.getTime() - now.getTime());
-        }
-    } else {
-        liveLabel.style.display = 'none';
-        console.log(`Event not live yet: ${eventId}`);
-        toggleServerButtons(container, false);
-        setTimeout(() => {
-            checkLiveStatus(container, eventDateTime, durationMs);
-        }, eventDateTime.getTime() - now.getTime());
-    }
-}
-
-// Sets up event listeners for channel containers
-function setupChannels() {
-    const channelContainers = document.querySelectorAll('.channel-container');
-    console.log("Channel Containers Found:", channelContainers.length);
-    const activeChannelId = sessionStorage.getItem('activeChannelId');
-    
-    channelContainers.forEach(container => {
-        const channelId = container.getAttribute('data-id');
-        if (channelId === activeChannelId) {
-            container.classList.add('selected');
-            loadEventVideo(container);
-        }
-        container.addEventListener('click', () => {
-            channelContainers.forEach(c => c.classList.remove('selected'));
-            container.classList.add('selected');
-            sessionStorage.setItem('activeChannelId', channelId);
-            sessionStorage.removeItem('activeEventId');
-            loadEventVideo(container);
-        });
-    });
-}
-
 // Loads video for an event or channel
 function loadEventVideo(container, serverUrl = null, updateSession = true) {
-    const id = container.getAttribute('data-id');
-    const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${id}`);
-    const videoUrl = serverUrl || savedServerUrl || container.getAttribute('data-url') || 'https://listcanal.blogspot.com/';
-    const isChannel = container.classList.contains('channel-container');
-    const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
-    const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
-    const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
-    const durationMs = duration * 60 * 60 * 1000;
-    const eventDateTime = !isChannel && matchDate && matchTime ? parseEventDateTime(matchDate, matchTime) : null;
-    const now = new Date();
+    try {
+        const id = container.getAttribute('data-id');
+        const savedServerUrl = sessionStorage.getItem(`activeServerUrl_${id}`);
+        const videoUrl = serverUrl || savedServerUrl || container.getAttribute('data-url') || 'https://listcanal.blogspot.com/';
+        const isChannel = container.classList.contains('channel-container');
+        const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
+        const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
+        const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
+        const durationMs = duration * 60 * 60 * 1000;
+        const eventDateTime = !isChannel && matchDate && matchTime ? parseEventDateTime(matchDate, matchTime) : null;
+        const now = new Date();
 
-    if (!isChannel && (!eventDateTime || isNaN(eventDateTime.getTime()))) {
-        console.error(`Invalid event time for event ${id}: ${matchDate} ${matchTime}`);
-        return;
-    }
-
-    if (updateSession) {
-        if (isChannel) {
-            sessionStorage.setItem('activeChannelId', id);
-            sessionStorage.removeItem('activeEventId');
-        } else {
-            sessionStorage.setItem('activeEventId', id);
-            sessionStorage.removeItem('activeChannelId');
-            activeEventId = id;
-        }
-    }
-
-    const videoCountdownContainer = document.getElementById('video-countdown');
-    const videoCountdownTimer = videoCountdownContainer?.querySelector('.countdown-timer');
-    const videoIframe = document.getElementById('video-iframe');
-    const videoPlaceholder = document.getElementById('video-placeholder');
-
-    if (!videoIframe || !videoPlaceholder || !videoCountdownContainer) {
-        console.error("Required video elements not found");
-        return;
-    }
-
-    if (!videoUrl || videoUrl === 'about:blank') {
-        console.error(`Invalid video URL for ${id}: ${videoUrl}`);
-        videoIframe.src = 'https://listcanal.blogspot.com/';
-        videoIframe.style.display = 'block';
-        videoPlaceholder.style.display = 'none';
-        videoCountdownContainer.style.display = 'none';
-        return;
-    }
-
-    document.querySelectorAll('.countdown-wrapper').forEach(wrapper => {
-        wrapper.style.display = 'none';
-    });
-    
-    for (const intervalId in countdownIntervals) {
-        clearInterval(countdownIntervals[intervalId]);
-    }
-    
-    document.querySelectorAll('.event-container .server-buttons').forEach(buttons => {
-        buttons.style.display = 'none';
-    });
-
-    if (isChannel) {
-        videoIframe.src = videoUrl;
-        videoIframe.style.display = 'block';
-        videoPlaceholder.style.display = 'none';
-        videoCountdownContainer.style.display = 'none';
-        console.log(`Channel video loaded: ${videoUrl}`);
-        return;
-    }
-
-    if (now >= eventDateTime) {
-        const endTime = new Date(eventDateTime.getTime() + durationMs);
-        if (now >= endTime) {
-            console.log(`Event ${id} has ended at ${endTime}`);
-            markEventAsEnded(id);
+        if (!isChannel && (!eventDateTime || isNaN(eventDateTime.getTime()))) {
+            console.error(`Invalid event time for event ${id}: ${matchDate} ${matchTime}`);
             return;
         }
-        videoCountdownContainer.style.display = 'none';
-        videoIframe.src = videoUrl;
-        videoIframe.style.display = 'block';
-        videoPlaceholder.style.display = 'none';
-        setActiveHoverEffect(id);
-        console.log(`Loading event video now: ${id}, URL: ${videoUrl}`);
-        toggleServerButtons(container, true);
-        console.log(`Showing server buttons for live event ${id} in loadEventVideo`);
-        checkLiveStatus(container, eventDateTime, durationMs);
-        const serverButton = container.querySelector(`.server-button[data-url="${videoUrl}"]`);
-        if (serverButton) selectServerButton(serverButton);
-    } else {
-        if (videoCountdownContainer && videoCountdownTimer) {
-            updateCountdown(videoCountdownContainer, videoCountdownTimer, eventDateTime, videoUrl, id);
-        }
-        videoIframe.style.display = 'none';
-        videoPlaceholder.style.display = 'block';
-        setActiveHoverEffect(id);
-        toggleServerButtons(container, false);
-        console.log(`Setting countdown for future event: ${id}`);
-    }
 
-    if (updateSession && serverUrl) {
-        sessionStorage.setItem(`activeServerUrl_${id}`, serverUrl);
+        if (updateSession) {
+            if (isChannel) {
+                sessionStorage.setItem('activeChannelId', id);
+                sessionStorage.removeItem('activeEventId');
+            } else {
+                sessionStorage.setItem('activeEventId', id);
+                sessionStorage.removeItem('activeChannelId');
+                activeEventId = id;
+            }
+        }
+
+        const videoCountdownContainer = document.getElementById('video-countdown');
+        const videoCountdownTimer = videoCountdownContainer?.querySelector('.countdown-timer');
+        const videoIframe = document.getElementById('video-iframe');
+        const videoPlaceholder = document.getElementById('video-placeholder');
+
+        if (!videoIframe || !videoPlaceholder || !videoCountdownContainer) {
+            console.error("Required video elements not found");
+            return;
+        }
+
+        if (!videoUrl || videoUrl === 'about:blank') {
+            console.error(`Invalid video URL for ${id}: ${videoUrl}`);
+            videoIframe.src = 'https://listcanal.blogspot.com/';
+            videoIframe.style.display = 'block';
+            videoPlaceholder.style.display = 'none';
+            videoCountdownContainer.style.display = 'none';
+            return;
+        }
+
+        document.querySelectorAll('.countdown-wrapper').forEach(wrapper => {
+            wrapper.style.display = 'none';
+        });
+        
+        for (const intervalId in countdownIntervals) {
+            clearInterval(countdownIntervals[intervalId]);
+        }
+        
+        document.querySelectorAll('.event-container .server-buttons').forEach(buttons => {
+            buttons.style.display = 'none';
+        });
+
+        if (isChannel) {
+            videoIframe.src = videoUrl;
+            videoIframe.style.display = 'block';
+            videoPlaceholder.style.display = 'none';
+            videoCountdownContainer.style.display = 'none';
+            console.log(`Channel video loaded: ${videoUrl}`);
+            return;
+        }
+
+        if (now >= eventDateTime) {
+            const endTime = new Date(eventDateTime.getTime() + durationMs);
+            if (now >= endTime) {
+                console.log(`Event ${id} has ended at ${endTime}`);
+                markEventAsEnded(id);
+                return;
+            }
+            videoCountdownContainer.style.display = 'none';
+            videoIframe.src = videoUrl;
+            videoIframe.style.display = 'block';
+            videoPlaceholder.style.display = 'none';
+            setActiveHoverEffect(id);
+            console.log(`Loading event video now: ${id}, URL: ${videoUrl}`);
+            toggleServerButtons(container, true);
+            console.log(`Showing server buttons for live event ${id} in loadEventVideo`);
+            const serverButton = container.querySelector(`.server-button[data-url="${videoUrl}"]`);
+            if (serverButton) selectServerButton(serverButton);
+        } else {
+            if (videoCountdownContainer && videoCountdownTimer) {
+                updateCountdown(videoCountdownContainer, videoCountdownTimer, eventDateTime, videoUrl, id);
+            }
+            videoIframe.style.display = 'none';
+            videoPlaceholder.style.display = 'block';
+            setActiveHoverEffect(id);
+            toggleServerButtons(container, false);
+            console.log(`Setting countdown for future event: ${id}`);
+        }
+
+        if (updateSession && serverUrl) {
+            sessionStorage.setItem(`activeServerUrl_${id}`, serverUrl);
+        }
+    } catch (error) {
+        console.error('Error loading event video:', error);
     }
 }
 
@@ -667,6 +776,7 @@ function markEventAsEnded(eventId) {
         sessionStorage.setItem(`eventStatus_${eventId}`, 'ended');
         eventContainer.style.display = 'none';
         console.log(`Event ${eventId} marked as ended and hidden`);
+        checkNoEventsMessage();
     }
 }
 
@@ -700,9 +810,7 @@ function toggleServerButtons(container, show = true) {
     const serverButtons = container.querySelector('.server-buttons');
     if (serverButtons) {
         serverButtons.style.display = show ? 'flex' : 'none';
-        console.log(`Server buttons for ${container.getAttribute('data-id')}: ${show ? 'shown' : 'hidden'}, element:`, serverButtons);
-    } else {
-        console.error(`Server buttons not found for ${container.getAttribute('data-id')}`);
+        console.log(`Server buttons for ${container.getAttribute('data-id')}: ${show ? 'shown' : 'hidden'}`);
     }
 }
 
@@ -719,6 +827,28 @@ function selectServerButton(button) {
     const eventId = eventContainer.getAttribute('data-id');
     sessionStorage.setItem(`activeServerUrl_${eventId}`, url);
     console.log(`Server button selected: ${url} for event ${eventId}`);
+}
+
+// Sets up event listeners for channel containers
+function setupChannels() {
+    const channelContainers = document.querySelectorAll('.channel-container');
+    console.log("Channel Containers Found:", channelContainers.length);
+    const activeChannelId = sessionStorage.getItem('activeChannelId');
+    
+    channelContainers.forEach(container => {
+        const channelId = container.getAttribute('data-id');
+        if (channelId === activeChannelId) {
+            container.classList.add('selected');
+            loadEventVideo(container);
+        }
+        container.addEventListener('click', () => {
+            channelContainers.forEach(c => c.classList.remove('selected'));
+            container.classList.add('selected');
+            sessionStorage.setItem('activeChannelId', channelId);
+            sessionStorage.removeItem('activeEventId');
+            loadEventVideo(container);
+        });
+    });
 }
 
 // Switches between sidebar content sections
@@ -741,68 +871,20 @@ function startPeriodicEventCheck() {
         console.log("Checking event status at", new Date());
         const now = new Date();
         document.querySelectorAll('.event-container').forEach(container => {
-            const matchDate = container.querySelector('.match-date').getAttribute('data-original-date');
-            const matchTime = container.querySelector('.match-time').getAttribute('data-original-time');
+            const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
+            const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
             const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
             const durationMs = duration * 60 * 60 * 1000;
-            const eventDateTime = parseEventDateTime(matchDate, matchTime);
-            const endTime = new Date(eventDateTime.getTime() + durationMs);
-            if (now >= endTime) {
-                console.log(`Event ${container.getAttribute('data-id')} has ended at ${endTime}`);
-                markEventAsEnded(container.getAttribute('data-id'));
+            if (matchDate && matchTime) {
+                const eventDateTime = parseEventDateTime(matchDate, matchTime);
+                const endTime = new Date(eventDateTime.getTime() + durationMs);
+                if (now >= endTime) {
+                    console.log(`Event ${container.getAttribute('data-id')} has ended at ${endTime}`);
+                    markEventAsEnded(container.getAttribute('data-id'));
+                }
             }
         });
     }, 60000);
-}
-
-// Function to check for and handle ended events
-function checkAndHandleEndedEvents() {
-    const eventContainers = Array.from(document.querySelectorAll('.event-container'));
-    const currentlyActiveEvent = document.querySelector('.event-container.active');
-    const activeEventId = currentlyActiveEvent ? currentlyActiveEvent.getAttribute('data-id') : null;
-    const eventsToRemove = [];
-    
-    eventContainers.forEach(container => {
-        const eventId = container.getAttribute('data-id');
-        if (eventId === activeEventId) return;
-        
-        const matchDate = container.querySelector('.match-date')?.getAttribute('data-original-date');
-        const matchTime = container.querySelector('.match-time')?.getAttribute('data-original-time');
-        const duration = parseFloat(container.getAttribute('data-duration')) || 3.5;
-        
-        if (matchDate && matchTime) {
-            const matchDateTime = parseEventDateTime(matchDate, matchTime);
-            const durationMs = duration * 60 * 60 * 1000;
-            const endTime = new Date(matchDateTime.getTime() + durationMs);
-            
-            if (new Date() >= endTime) {
-                console.log(`Event ${eventId} has ended, marking for removal`);
-                eventsToRemove.push(container);
-            }
-        }
-    });
-
-    if (eventsToRemove.length > 0) {
-        console.log(`Removing ${eventsToRemove.length} ended events`);
-        
-        eventsToRemove.forEach(container => {
-            container.style.transition = 'opacity 0.5s ease';
-            container.style.opacity = '0';
-        });
-        
-        setTimeout(() => {
-            eventsToRemove.forEach(container => {
-                if (container && container.parentNode) {
-                    container.parentNode.removeChild(container);
-                }
-            });
-            
-            const content = document.querySelector("#live-event #content");
-            if (content && content.children.length === 0) {
-                content.innerHTML = '<div class="spacer"></div>';
-            }
-        }, 500);
-    }
 }
 
 // Initialize on page load
@@ -810,22 +892,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log("✅ DOM fully loaded and parsed");
     
     try {
-        // Load events and channels
-        await loadEvents();
-        await loadChannels();
-        
-        // Start periodic check for ended events
-        setInterval(checkAndHandleEndedEvents, 60000);
-        
+        // Load events and channels secara paralel
+        await Promise.all([loadEvents(), loadChannels()]);
         console.log("✅ Page initialization completed");
-        
-        // Mark page as loaded after a short delay to ensure everything is ready
-        setTimeout(markPageAsLoaded, 1000);
         
     } catch (error) {
         console.error("❌ Error during page initialization:", error);
-        // Even if there's an error, ensure loading overlay is hidden
-        markPageAsLoaded();
     }
 });
 
@@ -842,4 +914,17 @@ window.addEventListener('error', function(e) {
 // Handle unhandled promise rejections
 window.addEventListener('unhandledrejection', function(e) {
     console.error('❌ Unhandled promise rejection:', e.reason);
+});
+
+// Clean up timers when page unloads
+window.addEventListener('beforeunload', function() {
+    // Clear all countdown intervals
+    for (const intervalId in countdownIntervals) {
+        clearInterval(countdownIntervals[intervalId]);
+    }
+    
+    // Clear all end timers
+    for (const eventId in eventEndTimers) {
+        clearTimeout(eventEndTimers[eventId]);
+    }
 });
