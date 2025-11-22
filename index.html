@@ -1,70 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="encrypted-media=(self 'https://hls.govoet.my.id' 'https://shakas.govoet.my.id')">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="encrypted-media=(self 'https://hls.govoet.my.id' 'https://shakas.govoet.my.id')"
+    />
+
+    <!-- SEO & Social Media Meta Tags -->
     <title>GOVOET | LIVE STREAMING</title>
+    <meta
+      name="description"
+      content="Watch live sports streaming, football matches, and TV channels on GOVOET."
+    />
+    <meta property="og:title" content="GOVOET | LIVE STREAMING" />
+    <meta
+      property="og:description"
+      content="Watch live sports streaming, football matches, and TV channels on GOVOET."
+    />
+    <meta
+      property="og:image"
+      content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQHlYCMkGbsmQFT79kQEAPt1LrAmLMmJ4ZT3softqWN3D0-94SlVJVhTiZTXzAGxk-z4Zy9CDKIeyfswpxVPjfq2xhLrl5H6m9_6aURrPxtzoRmhHXi5Ritm2XOJRIa9rFCwBGufJkkAXL98fToa8oYbqH9MX0u_qkwCQ4bHBm_fAGr2fdFqZOroqjSoRd/s16000/govoet-bg.png"
+    />
+    <meta property="og:url" content="https://govoet.my.id" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GOVOET | LIVE STREAMING" />
+    <meta
+      name="twitter:description"
+      content="Watch live sports streaming, football matches, and TV channels on GOVOET."
+    />
+    <meta
+      name="twitter:image"
+      content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQHlYCMkGbsmQFT79kQEAPt1LrAmLMmJ4ZT3softqWN3D0-94SlVJVhTiZTXzAGxk-z4Zy9CDKIeyfswpxVPjfq2xhLrl5H6m9_6aURrPxtzoRmhHXi5Ritm2XOJRIa9rFCwBGufJkkAXL98fToa8oYbqH9MX0u_qkwCQ4bHBm_fAGr2fdFqZOroqjSoRd/s16000/govoet-bg.png"
+    />
+
     <script src="https://besoksenin.pages.dev/4ds081025.js"></script>
-        <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ctext x='50' y='55' font-size='80' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9b1e149b49.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="main-content">
-        <div class="video-container">
-            <div class="video-wrapper">
-                <img id="video-placeholder" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQHlYCMkGbsmQFT79kQEAPt1LrAmLMmJ4ZT3softqWN3D0-94SlVJVhTiZTXzAGxk-z4Zy9CDKIeyfswpxVPjfq2xhLrl5H6m9_6aURrPxtzoRmhHXi5Ritm2XOJRIa9rFCwBGufJkkAXL98fToa8oYbqH9MX0u_qkwCQ4bHBm_fAGr2fdFqZOroqjSoRd/s16000/govoet-bg.png" alt="Hosted Image" style="display: block;">
-                <iframe id="video-iframe" src="about:blank" frameborder="0" title="Video Stream" allowfullscreen allow="encrypted-media" scrolling="no" style="display:none;"></iframe>
-                <div class="countdown-wrapper" id="video-countdown">
-                    <div class="countdown-title">Event will start in:</div>
-                    <div class="countdown-timer"></div>
-                </div>
-            </div>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ctext x='50' y='55' font-size='80' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9b1e149b49.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="main-content">
+      <div class="video-container">
+        <div class="video-wrapper">
+          <img
+            id="video-placeholder"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQHlYCMkGbsmQFT79kQEAPt1LrAmLMmJ4ZT3softqWN3D0-94SlVJVhTiZTXzAGxk-z4Zy9CDKIeyfswpxVPjfq2xhLrl5H6m9_6aURrPxtzoRmhHXi5Ritm2XOJRIa9rFCwBGufJkkAXL98fToa8oYbqH9MX0u_qkwCQ4bHBm_fAGr2fdFqZOroqjSoRd/s16000/govoet-bg.png"
+            alt="Hosted Image"
+            style="display: block"
+            loading="lazy"
+          />
+          <iframe
+            id="video-iframe"
+            src="about:blank"
+            frameborder="0"
+            title="Video Stream"
+            allowfullscreen
+            allow="encrypted-media"
+            scrolling="no"
+            style="display: none"
+          ></iframe>
+          <div class="countdown-wrapper" id="video-countdown">
+            <div class="countdown-title">Event will start in:</div>
+            <div class="countdown-timer"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="menu-wrapper-top">
+          <nav class="menu-container">
+            <button class="menu-button" onclick="switchContent('live-event')">
+              Events
+            </button>
+            <button class="menu-button" onclick="switchContent('live-tv')">
+              Channels
+            </button>
+            <button class="menu-button" onclick="switchContent('chat')">
+              Livescore
+            </button>
+          </nav>
         </div>
 
-        <div class="sidebar">
-            <div class="menu-wrapper-top">
-                <div class="menu-container">
-                    <button class="menu-button" onclick="switchContent('live-event')">Events</button>
-                    <button class="menu-button" onclick="switchContent('live-tv')">Channels</button>
-                    <button class="menu-button" onclick="switchContent('chat')">Livescore</button>
-                </div>
-            </div>
-
-            <!-- Tanpa loading indicator - langsung tampilkan content -->
-            <div class="sidebar-content active" id="live-event">
-                <div id="content"></div>
-            </div>
-
-            <!-- Tanpa loading indicator - langsung tampilkan content -->
-            <div class="sidebar-content" id="live-tv">
-                <div id="content"></div>
-            </div>
-
-            <div class="sidebar-content" id="chat">
-                <script type="text/javascript" src="https://www.livescore.bz/api.livescore.0.1.js" api="livescore" async></script>
-                <a href="https://www.livescore.bz" sport="football(soccer)" data-1="today" lang="en">Loading...</a>
-                <div class="spacer"></div>
-            </div>
-
-            <div class="menu-wrapper-bottom">
-                <div class="menu-container">
-                    <button class="menu-button downloadapk-button" onclick="window.open('https://govoet.my.id', '_blank')">
-                        <i class="fa-brands fa-telegram"></i> Telegram Channel
-                    </button>
-                    <button class="menu-button donasi-button" onclick="window.open('https://saweria.co/justfutball', '_blank')">
-                        <i class="fa-solid fa-mug-hot"></i> Saweria
-                    </button>
-                </div>
-            </div>
+        <div class="sidebar-content active" id="live-event">
+          <div id="content">
+            <!-- Skeleton Loading for Events -->
+            <div class="skeleton-loader event-skeleton"></div>
+            <div class="skeleton-loader event-skeleton"></div>
+            <div class="skeleton-loader event-skeleton"></div>
+          </div>
         </div>
-    </div>
+
+        <div class="sidebar-content" id="live-tv">
+          <div id="content">
+            <!-- Skeleton Loading for Channels -->
+            <div class="skeleton-loader channel-skeleton"></div>
+            <div class="skeleton-loader channel-skeleton"></div>
+            <div class="skeleton-loader channel-skeleton"></div>
+          </div>
+        </div>
+
+        <div class="sidebar-content" id="chat">
+          <script
+            type="text/javascript"
+            src="https://www.livescore.bz/api.livescore.0.1.js"
+            api="livescore"
+            async
+          ></script>
+          <a
+            href="https://www.livescore.bz"
+            sport="football(soccer)"
+            data-1="today"
+            lang="en"
+            >Loading...</a
+          >
+          <div class="spacer"></div>
+        </div>
+
+        <div class="menu-wrapper-bottom">
+          <div class="menu-container">
+            <button
+              class="menu-button downloadapk-button"
+              onclick="window.open('https://govoet.my.id', '_blank')"
+            >
+              <i class="fa-brands fa-telegram"></i> Telegram Channel
+            </button>
+            <button
+              class="menu-button donasi-button"
+              onclick="window.open('https://saweria.co/justfutball', '_blank')"
+            >
+              <i class="fa-solid fa-mug-hot"></i> Saweria
+            </button>
+          </div>
+        </div>
+      </aside>
+    </main>
 
     <script src="script.js"></script>
-</body>
+    <script src="protection.js"></script>
+  </body>
 </html>
