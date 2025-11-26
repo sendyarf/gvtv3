@@ -839,3 +839,30 @@ body {
     border: 2px solid #feffff;
   }
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #17252a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3aafa9;
+  border-radius: 5px;
+  border: 2px solid #17252a; /* Creates a padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2b7a78;
+}
+
+/* Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3aafa9 #17252a;
+}
